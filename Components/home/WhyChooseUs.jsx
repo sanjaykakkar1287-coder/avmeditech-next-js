@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./WhyChooseUs.module.css";
-
+import HeroButtons from "@/Components/buttons/HeroButtons";
 export default function WhyChooseUs() {
   return (
     <section className={styles.section}>
@@ -25,10 +25,8 @@ export default function WhyChooseUs() {
             us today to explore our range of premium cataract lenses and
             experience the future of ophthalmic excellence!
           </p>
-
-          <a href="#contact" className={styles.button}>
-            Contact Us
-          </a>
+<HeroButtons />
+          
         </div>
 
         {/* Right Column */}

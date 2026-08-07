@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./FaqSection.module.css";
+import HeroButtons from "@/Components/buttons/HeroButtons";
 
 const FAQ_DATA = [
   {
@@ -230,12 +231,9 @@ export default function FaqSection() {
                 Our ophthalmic product specialists are available to guide surgeons, clinics, and patients on selecting the best lens options and surgical supplies across India.
               </p>
 
-              <a href="#contact" className={styles.contactBtn}>
-                <span>Contact Specialist</span>
-                <svg className={styles.arrowIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
+             
+                <HeroButtons />
+                
             </div>
 
             {/* Quick Stats Box */}

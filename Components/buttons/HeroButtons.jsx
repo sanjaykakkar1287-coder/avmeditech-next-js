@@ -7,7 +7,7 @@ const HeroButtons = () => {
     <div className="card-actions">
       <Link href="#" className="btn btn-primary" data-bs-toggle="modal"
   data-bs-target="#Modal">
-        Explore Products
+        Request a Callback
       </Link>
 
       <Link href="/contact" className="btn btn-secondary">

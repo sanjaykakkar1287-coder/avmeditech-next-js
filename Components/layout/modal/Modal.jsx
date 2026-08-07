@@ -8,7 +8,7 @@ export default function Modal() {
       tabIndex="-1"
       aria-hidden="true"
     >
-      <div className="modal-dialog modal-lg">
+      <div className="modal-dialog modal-sm" style={{ maxWidth: "450px" }}  >
         <div className="modal-content">
 
           {/* Header */}
