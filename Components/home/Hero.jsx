@@ -47,66 +47,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-right">
-          <div className="data-card">
-            <svg className="rotating-badge" viewBox="0 0 200 200" aria-hidden="true">
-              <defs>
-                <path
-                  id="badgePath"
-                  d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"
-                />
-                <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  {/* FIXED: stopColor */}
-                  <stop offset="0%" stopColor="#007AFF" />
-                  <stop offset="50%" stopColor="#63C7FF" />
-                  <stop offset="100%" stopColor="#00D4C4" />
-                </linearGradient>
-              </defs>
-              {/* FIXED: fontFamily, fontSize, letterSpacing */}
-              <text
-                fontFamily="'IBM Plex Mono', monospace"
-                fontSize="10.5"
-                letterSpacing="3.5"
-                fill="url(#badgeGrad)"
-              >
-                <textPath href="#badgePath" startOffset="0%">
-                  PRECISION ENGINEERED &#8226; PRECISION ENGINEERED &#8226;{" "}
-                </textPath>
-              </text>
-              <circle cx="100" cy="100" r="4" fill="#007AFF" className="badge-core" />
-            </svg>
-
-            <div className="data-card-header">
-              <span className="dot"></span>
-              <span className="gradient-highlight">Live Product Metrics</span>
-            </div>
-
-            <div className="stats-grid">
-              <div className="stat-item">
-                <span className="stat-number gradient-highlight">100%</span>
-                <span className="stat-label">Precision IOLs</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number gradient-highlight">ISO</span>
-                <span className="stat-label">Certified Quality</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number gradient-highlight">Micron</span>
-                <span className="stat-label">Grade Blades</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number gradient-highlight">Pan-India</span>
-                <span className="stat-label">Distribution</span>
-              </div>
-            </div>
-
-            <div className="data-card-footer">
-              <span className="gradient-highlight">
-                Manufactured to ISO standards &middot; distributed nationwide
-              </span>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

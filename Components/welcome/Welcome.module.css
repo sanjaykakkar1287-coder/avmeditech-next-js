@@ -1,0 +1,322 @@
+/* ===========================
+   Overlay (Fixed Container)
+=========================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   Popup
+=========================== */
+
+.popup {
+  position: relative;
+  box-sizing: border-box;
+
+  width: 100%;
+  max-width: 380px;
+
+  background: #ffffff;
+  border-radius: 24px;
+
+  padding: 36px 32px;
+
+  text-align: center;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.15);
+
+  /* Prevent Viewport Overflow */
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* Smooth Entrance */
+  animation: popup 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ===========================
+   Contained Blue Glow Effects
+=========================== */
+
+.popup::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+
+  width: 220px;
+  height: 220px;
+
+  top: -60px;
+  right: -60px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.18) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+.popup::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+
+  width: 200px;
+  height: 200px;
+
+  left: -50px;
+  bottom: -60px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.14) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+/* ===========================
+   Content Hierarchy
+=========================== */
+
+.logo {
+  position: relative;
+  z-index: 1;
+
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Title */
+
+.title {
+  position: relative;
+  z-index: 1;
+
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.title span {
+  background: linear-gradient(90deg, #0ea5e9, #2563eb);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Rotating Text */
+
+.rotateBox {
+  position: relative;
+  z-index: 1;
+
+  margin-bottom: 10px;
+}
+
+.rotateLabel {
+  color: #64748b;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.rotateWord {
+  color: #0ea5e9;
+
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+
+  animation: fadeWord 2s ease infinite;
+}
+
+/* Description */
+
+.description {
+  position: relative;
+  z-index: 1;
+
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 12px;
+
+  max-width: 480px;
+  margin: 0 auto 24px;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.buttons {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: none;
+  padding: 14px 20px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.primaryBtn {
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+}
+
+.secondaryBtn {
+  background: #ffffff;
+
+  color: #2563eb;
+
+  border: 2px solid #2563eb;
+}
+
+.secondaryBtn:hover {
+  background: #eff6ff;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeWord {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* ===========================
+   Custom Scrollbar
+=========================== */
+
+.popup::-webkit-scrollbar {
+  width: 5px;
+}
+
+.popup::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.popup::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* ===========================
+   Mobile Optimization
+=========================== */
+
+@media (max-width: 640px) {
+  .overlay {
+    padding: 12px;
+  }
+
+  .popup {
+    padding: 24px 18px;
+    border-radius: 18px;
+    max-height: 92vh;
+  }
+
+  .logo {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+}

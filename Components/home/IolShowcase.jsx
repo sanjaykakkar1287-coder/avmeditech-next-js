@@ -1,10 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 
 export default function IolShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
   const totalItems = 4;
 
@@ -14,21 +14,15 @@ export default function IolShowcase() {
 
   // Auto-rotation timer with hover pause capability
   useEffect(() => {
-    if (isPaused) return;
-
     const interval = setInterval(() => {
       handleNext();
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [isPaused, handleNext]);
+  }, [handleNext]);
 
   return (
-    <section 
-      className="iol-section"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <section className="iol-section">
       <div className="iol-container">
         
         <div className="section-header">
@@ -48,11 +42,11 @@ export default function IolShowcase() {
           
           <div className="selector-column">
             <h3 className="column-label">Best IOL Solutions for Clear Vision</h3>
-            
+            <Link href="#" >
             <div 
               className={`iol-pill ${activeIndex === 0 ? "active" : ""}`} 
               data-index="0"
-              onClick={() => { setActiveIndex(0); setIsPaused(true); }}
+              onClick={() => { setActiveIndex(0); }}
             >
               <div className="progress-bar"></div>
               <div className="pill-content">
@@ -63,11 +57,12 @@ export default function IolShowcase() {
                 <p className="pill-sub">Provides sharp vision at a single distance...</p>
               </div>
             </div>
-
+</Link>
+ <Link href="#" >
             <div 
               className={`iol-pill ${activeIndex === 1 ? "active" : ""}`} 
               data-index="1"
-              onClick={() => { setActiveIndex(1); setIsPaused(true); }}
+              onClick={() => { setActiveIndex(1); }}
             >
               <div className="progress-bar"></div>
               <div className="pill-content">
@@ -78,11 +73,12 @@ export default function IolShowcase() {
                 <p className="pill-sub">Enables clear vision at multiple distances...</p>
               </div>
             </div>
-
+</Link>
+ <Link href="#" >
             <div 
               className={`iol-pill ${activeIndex === 2 ? "active" : ""}`} 
               data-index="2"
-              onClick={() => { setActiveIndex(2); setIsPaused(true); }}
+              onClick={() => { setActiveIndex(2); }}
             >
               <div className="progress-bar"></div>
               <div className="pill-content">
@@ -93,11 +89,12 @@ export default function IolShowcase() {
                 <p className="pill-sub">Offers seamless vision at near, intermediate, and far...</p>
               </div>
             </div>
-
+</Link>
+ <Link href="#">
             <div 
               className={`iol-pill ${activeIndex === 3 ? "active" : ""}`} 
               data-index="3"
-              onClick={() => { setActiveIndex(3); setIsPaused(true); }}
+              onClick={() => { setActiveIndex(3); }}
             >
               <div className="progress-bar"></div>
               <div className="pill-content">
@@ -108,11 +105,12 @@ export default function IolShowcase() {
                 <p className="pill-sub">Corrects astigmatism, ensuring sharper vision...</p>
               </div>
             </div>
+            </Link>
           </div>
 
           <div className="display-column">
             <div className="glass-stage">
-              
+
               <div className={`stage-card ${activeIndex === 0 ? "active" : ""}`} data-stage="0">
                 <span className="type-tag">Single Vision Focus</span>
                 <h3>Monofocal IOLs</h3>

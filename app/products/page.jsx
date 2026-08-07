@@ -1,9 +1,16 @@
-
+import AllProducts from "@/Components/products/allProducts";
+export const metadata = {
+  title: "Products | AV Meditech",
+  description: "Explore our range of ophthalmic products.",
+};
 
 export default function ProductPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-3xl font-bold">Avmeditech Products</h1>
-    </main>
+    <>
+      <AllProducts />
+      </>
+   
   );
 }
+
+    

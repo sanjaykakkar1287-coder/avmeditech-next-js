@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import MenuItems from "./Menuitems";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,41 +44,7 @@ export default function Header() {
                     All Products
                   </Link>
                 </li>
-                <li>
-                  <Link href="/iol-intraocular-lens" onClick={closeMenu}>
-                    Intraocular Lenses (IOL)
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/surgical-consumables" onClick={closeMenu}>
-                    Surgical Consumables
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/vitreoretinal" onClick={closeMenu}>
-                    Vitreoretinal
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/phaco-equipments" onClick={closeMenu}>
-                    Phaco Equipments
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/plasmapp-sterilizer" onClick={closeMenu}>
-                    Plasmapp Sterilizer
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/ecp-system" onClick={closeMenu}>
-                    ECp System
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/dry-eye" onClick={closeMenu}>
-                    Dry-Eyes
-                  </Link>
-                </li>
+                <MenuItems />
               </ul>
             </li>
             <li>
@@ -85,6 +52,7 @@ export default function Header() {
                 Blogs
               </Link>
             </li>
+            
             <li>
               <Link href="/contact" onClick={closeMenu}>
                 Contact Us

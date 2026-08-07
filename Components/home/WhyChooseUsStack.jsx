@@ -11,7 +11,6 @@ export default function WhyChooseUsStack() {
     3: false,
     4: false,
   });
-  const [isPaused, setIsPaused] = useState(false);
 
   const totalCards = 4;
 
@@ -45,22 +44,15 @@ export default function WhyChooseUsStack() {
 
   // Auto-cycle timer with hover pause functionality
   useEffect(() => {
-    if (isPaused) return;
-
     const interval = setInterval(() => {
       handleNextPillar();
     }, 4500);
 
     return () => clearInterval(interval);
-  }, [isPaused, handleNextPillar]);
+  }, [handleNextPillar]);
 
   return (
-    <section 
-      id="why-choose-us" 
-      className={styles.section}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <section id="why-choose-us" className={styles.section}>
       <div className={styles.mainGrid}>
 
         {/* Card Stack Area */}
@@ -195,9 +187,7 @@ export default function WhyChooseUsStack() {
               <span>
                 Pillar <span className={styles.counterHighlight}>{currentPillar}</span> of 4
               </span>
-              <span className={styles.autoStatus}>
-                {isPaused ? "Paused" : "Auto-cycling (Hover to Pause)"}
-              </span>
+              <span className={styles.autoStatus}>Auto-cycling</span>
             </div>
             <div className={styles.trackBar}>
               <div 

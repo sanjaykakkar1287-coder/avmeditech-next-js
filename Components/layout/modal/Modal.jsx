@@ -1,5 +1,5 @@
 "use client";
-
+import styles from "./Modal.module.css";
 export default function Modal() {
   return (
     <div
@@ -24,45 +24,43 @@ export default function Modal() {
 
           {/* Body */}
           <div className="modal-body">
-            <form>
+            <form className={styles.form}>
+      <div className={styles.formGroup}>
+        <label className={styles.label}>Full Name</label>
+        <input
+          type="text"
+          className={styles.input}
+          placeholder="Enter your name"
+        />
+      </div>
 
-              <div className="mb-3">
-                <label className="form-label">Full Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter your name"
-                />
-              </div>
+      <div className={styles.formGroup}>
+        <label className={styles.label}>Email</label>
+        <input
+          type="email"
+          className={styles.input}
+          placeholder="Enter your email"
+        />
+      </div>
 
-              <div className="mb-3">
-                <label className="form-label">Email</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Enter your email"
-                />
-              </div>
+      <div className={styles.formGroup}>
+        <label className={styles.label}>Phone</label>
+        <input
+          type="tel"
+          className={styles.input}
+          placeholder="Enter phone number"
+        />
+      </div>
 
-              <div className="mb-3">
-                <label className="form-label">Phone</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter phone number"
-                />
-              </div>
-
-              <div className="mb-3">
-                <label className="form-label">Message</label>
-                <textarea
-                  rows="4"
-                  className="form-control"
-                  placeholder="Write your message"
-                ></textarea>
-              </div>
-
-            </form>
+      <div className={styles.formGroup}>
+        <label className={styles.label}>Message</label>
+        <textarea
+          rows={4}
+          className={styles.textarea}
+          placeholder="Write your message"
+        ></textarea>
+      </div>
+    </form>
           </div>
 
           {/* Footer */}

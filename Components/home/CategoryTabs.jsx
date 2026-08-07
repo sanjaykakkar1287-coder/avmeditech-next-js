@@ -14,7 +14,6 @@ const CATEGORIES = [
 
 export default function CategoryEcosystem() {
   const [activeCategory, setActiveCategory] = useState("iol");
-  const [isPaused, setIsPaused] = useState(false);
 
   // Auto-advance logic
   const handleNext = useCallback(() => {
@@ -27,21 +26,15 @@ export default function CategoryEcosystem() {
 
   // Interval timer for continuous rotation
   useEffect(() => {
-    if (isPaused) return;
-
     const interval = setInterval(() => {
       handleNext();
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isPaused, handleNext]);
+  }, [handleNext]);
 
   return (
-    <section 
-      className="category-ecosystem-section"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <section className="category-ecosystem-section">
       <div className="ecosystem-container">
         
         <div className="ecosystem-header">
@@ -63,7 +56,7 @@ export default function CategoryEcosystem() {
             <button 
               className={`cat-pill ${activeCategory === "iol" ? "active" : ""}`} 
               data-category="iol"
-              onClick={() => { setActiveCategory("iol"); setIsPaused(true); }}
+              onClick={() => { setActiveCategory("iol"); }}
             >
               <span className="cat-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
@@ -75,7 +68,7 @@ export default function CategoryEcosystem() {
             <button 
               className={`cat-pill ${activeCategory === "consumables" ? "active" : ""}`} 
               data-category="consumables"
-              onClick={() => { setActiveCategory("consumables"); setIsPaused(true); }}
+              onClick={() => { setActiveCategory("consumables"); }}
             >
               <span className="cat-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
@@ -87,7 +80,7 @@ export default function CategoryEcosystem() {
             <button 
               className={`cat-pill ${activeCategory === "vitreoretinal" ? "active" : ""}`} 
               data-category="vitreoretinal"
-              onClick={() => { setActiveCategory("vitreoretinal"); setIsPaused(true); }}
+              onClick={() => { setActiveCategory("vitreoretinal"); }}
             >
               <span className="cat-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -99,7 +92,7 @@ export default function CategoryEcosystem() {
             <button 
               className={`cat-pill ${activeCategory === "phaco" ? "active" : ""}`} 
               data-category="phaco"
-              onClick={() => { setActiveCategory("phaco"); setIsPaused(true); }}
+              onClick={() => { setActiveCategory("phaco"); }}
             >
               <span className="cat-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
@@ -111,7 +104,7 @@ export default function CategoryEcosystem() {
             <button 
               className={`cat-pill ${activeCategory === "plasmapp" ? "active" : ""}`} 
               data-category="plasmapp"
-              onClick={() => { setActiveCategory("plasmapp"); setIsPaused(true); }}
+              onClick={() => { setActiveCategory("plasmapp"); }}
             >
               <span className="cat-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
@@ -123,7 +116,7 @@ export default function CategoryEcosystem() {
             <button 
               className={`cat-pill ${activeCategory === "ecp" ? "active" : ""}`} 
               data-category="ecp"
-              onClick={() => { setActiveCategory("ecp"); setIsPaused(true); }}
+              onClick={() => { setActiveCategory("ecp"); }}
             >
               <span className="cat-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
@@ -135,7 +128,7 @@ export default function CategoryEcosystem() {
             <button 
               className={`cat-pill ${activeCategory === "dryeye" ? "active" : ""}`} 
               data-category="dryeye"
-              onClick={() => { setActiveCategory("dryeye"); setIsPaused(true); }}
+              onClick={() => { setActiveCategory("dryeye"); }}
             >
               <span className="cat-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
