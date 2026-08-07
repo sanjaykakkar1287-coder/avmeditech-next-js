@@ -2,9 +2,7 @@
 
 
 import HeroButtons from "@/Components/buttons/HeroButtons";
-import HeroRotatingText from "@/Components/buttons/HeroRotating";
-
-
+import HeroRotating from "@/Components/buttons/HeroRotating";
 
 export default function Hero() {
 
@@ -37,8 +35,7 @@ export default function Hero() {
             AV&nbsp;MEDITECH&nbsp;&middot;&nbsp;OPHTHALMIC&nbsp;ENGINEERING
           </div>
 
-          <HeroRotatingText /> 
-
+          <HeroRotating />
 
           <p className="hero-subtext">
             Delivering high-precision IOLs, advanced viscoelastic solutions, and

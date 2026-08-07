@@ -1,0 +1,307 @@
+.section {
+  position: relative;
+  padding: 80px 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.header {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  background: #e0f2fe;
+
+  border: 1px solid #bae6fd;
+
+  color: #0369a1;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0ea5e9;
+
+  animation: pulse 1.5s infinite;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.highlight {
+  background: linear-gradient(
+    90deg,
+    #0ea5e9,
+    #2563eb
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  margin-top: 16px;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+/* ===========================
+   Marquee
+=========================== */
+
+.marqueeContainer {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.marqueeForward,
+.marqueeReverse {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+}
+
+.marqueeForward {
+  animation: marquee 30s linear infinite;
+}
+
+.marqueeReverse {
+  animation: marqueeReverse 30s linear infinite;
+}
+
+.partnerCard {
+  width: 220px;
+  height: 80px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: white;
+
+  border-radius: 20px;
+
+  border: 1px solid #e2e8f0;
+
+  transition: 0.3s;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.partnerCard:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.partnerImg {
+  max-height: 48px;
+
+  width: auto;
+
+  object-fit: contain;
+
+  transition: transform .3s;
+}
+
+.partnerCard:hover .partnerImg {
+  transform: scale(1.05);
+}
+
+.partnerFallbackText {
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+.footer {
+  margin-top: 50px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
+
+  text-transform: uppercase;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+
+  color: #94a3b8;
+
+  font-weight: 600;
+}
+
+.footerDot {
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #cbd5e1;
+}
+
+/* ===========================
+   Aura
+=========================== */
+
+.auraGlow {
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 650px;
+
+  height: 650px;
+
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.15),
+    transparent 70%
+  );
+
+  filter: blur(90px);
+
+  z-index: 0;
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeReverse {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: .8;
+  }
+
+  70% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 16px;
+  }
+
+  .partnerCard {
+    width: 170px;
+    height: 70px;
+  }
+
+  .partnerImg {
+    max-height: 40px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+}
