@@ -1,0 +1,119 @@
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+  /* --- Hero Section --- */
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding-top: 80px; /* Adjust for header */
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-left {
+    order: 2;
+  }
+
+  .hero-right {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+
+  .dynamic-heading {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .data-card {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  /* --- Core Values Section (AV MEDITECH SURGICAL EXCELLENCE) --- */
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .values-headline {
+    font-size: 2rem;
+  }
+
+  /* --- Category Tabs Section (AV MEDITECH SURGICAL PORTFOLIO) --- */
+  .ecosystem-title {
+    font-size: 2rem;
+  }
+
+  .category-nav-wrapper {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+
+  .category-nav {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .cat-pill {
+    flex-shrink: 0;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .bento-main,
+  .bento-side {
+    text-align: center;
+  }
+
+  .feature-pills {
+    justify-content: center;
+  }
+
+  /* --- IOL Showcase Section (PRECISION OPHTHALMIC OPTICS) --- */
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .selector-column {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .display-column {
+    padding-left: 0;
+  }
+
+  .glass-stage {
+    min-height: 280px;
+  }
+
+  .iol-container {
+    overflow-x: hidden;
+  }
+
+  .quality-banner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+    padding: 1rem;
+  }
+}

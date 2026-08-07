@@ -232,7 +232,7 @@ export default function FaqSection() {
               </p>
 
              
-                <HeroButtons />
+                <HeroButtons text="Let's Talk"/>
                 
             </div>
 

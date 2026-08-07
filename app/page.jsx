@@ -8,7 +8,14 @@ import OurPartnersMarquee from "../Components/home/OurPartnersMarquee";
 import WhyChooseUs from "../Components/home/WhyChooseUs";
 import WhyChooseUsStack from "../Components/home/WhyChooseUsStack";
 import FaqSection from "../Components/home/FaqSection";
-import Modal from "@/Components/layout/modal/Modal";
+
+import "./home-responsive.css";
+
+
+export const metadata = {
+  title: "Home | AV Meditech",
+  description: "Welcome to AV Meditech.",
+};
 
 export default function Home() {
   return (
@@ -22,7 +29,7 @@ export default function Home() {
        <WhyChooseUs />
        <WhyChooseUsStack />
        <FaqSection />
-       <Modal />
+      
     </>
   );
 }

@@ -1,9 +1,16 @@
+import AboutUsSection from "@/Components/about/About";
+
+
+export const metadata = {
+  title: "About Us | AV Meditech",
+  description: "Know more about AV Meditech.",
+};
 
 
 export default function aboutpage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-3xl font-bold">Avmeditech about</h1>
-    </main>
+    <>
+           <AboutUsSection />    
+    </>
   );
 }

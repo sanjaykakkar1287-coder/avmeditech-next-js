@@ -1,9 +1,15 @@
+import Contact from "@/Components/contact/Contact";
+export const metadata = {
+  title: "Contact Us | AV Meditech",
+  description: "Get in touch with AV Meditech.",
+};
 
 
 export default function ContactPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-3xl font-bold">Avmeditech Contact</h1>
-    </main>
+    <>
+    <Contact />
+    </>
   );
 }
+
