@@ -36,7 +36,7 @@ export default function Welcome() {
 
   const handleProfessional = () => {
     document.body.style.overflow = "auto";
-    router.push("/professional");
+    router.push("/patient");
   };
 
   const handleVisitor = () => {
@@ -89,7 +89,7 @@ export default function Welcome() {
             onClick={handleProfessional}
             className={styles.primaryBtn}
           >
-            I'm a Healthcare Professional
+            I'm Patient
             <span>→</span>
           </button>
 

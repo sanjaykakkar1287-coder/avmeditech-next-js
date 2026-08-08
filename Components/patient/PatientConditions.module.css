@@ -1,0 +1,528 @@
+/* =========================================
+   PATIENT CONDITIONS — THIN CARD
+========================================= */
+
+.section {
+    position: relative;
+    padding: 65px 0 72px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    max-width: 680px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    margin-bottom: 10px;
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(22, 133, 165, 0.06);
+
+    color: #1685a5;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.header h2 {
+    margin: 0 0 10px;
+
+    color: #193b45;
+
+    font-size: clamp(27px, 3.4vw, 38px);
+
+    line-height: 1.2;
+
+    font-weight: 650;
+
+    letter-spacing: -0.6px;
+}
+
+.header h2 span {
+    color: #1685a5;
+}
+
+.header p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: #72858b;
+
+    font-size: 12.5px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   THIN SLIDER CARD
+========================================= */
+
+.slider {
+    display: grid;
+
+    grid-template-columns: 38% 62%;
+
+    min-height: 315px;
+
+    border: 1px solid #e6eff1;
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 5px 22px rgba(20, 70, 85, 0.045);
+
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.slider:hover {
+    border-color: #d9e9ec;
+
+    box-shadow:
+        0 10px 30px rgba(20, 70, 85, 0.07);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.imageSide {
+    position: relative;
+
+    min-height: 315px;
+
+    overflow: hidden;
+
+    background: #f4fafb;
+}
+
+.imageSide img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.55s ease;
+}
+
+.slider:hover .imageSide img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.imageSide::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 65%,
+            rgba(20, 70, 85, 0.07)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.contentSide {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 30px 38px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.category {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-bottom: 9px;
+
+    color: #1685a5;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.contentSide h3 {
+    margin: 0 0 10px;
+
+    color: #193b45;
+
+    font-size: clamp(24px, 2.5vw, 32px);
+
+    line-height: 1.2;
+
+    font-weight: 650;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description {
+    max-width: 500px;
+
+    margin: 0 0 18px;
+
+    color: #71848a;
+
+    font-size: 12.5px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   LEARN MORE
+========================================= */
+
+.learnMore {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    padding: 8px 13px;
+
+    border: 1px solid #1685a5;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #1685a5;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.learnMore:hover {
+    background: #1685a5;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+.arrow {
+    font-size: 14px;
+
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+.learnMore:hover .arrow {
+    transform: translateX(3px);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 24px;
+}
+
+.navButton {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #e0ecef;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #1685a5;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.navButton:hover {
+    border-color: #1685a5;
+
+    background: #1685a5;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.dots {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #d5e4e7;
+
+    cursor: pointer;
+
+    transition:
+        width 0.25s ease,
+        background 0.25s ease;
+}
+
+.activeDot {
+    width: 17px;
+
+    border-radius: 8px;
+
+    background: #1685a5;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .section {
+        padding: 55px 0 62px;
+    }
+
+    .slider {
+        grid-template-columns: 42% 58%;
+
+        min-height: 290px;
+    }
+
+    .imageSide {
+        min-height: 290px;
+    }
+
+    .contentSide {
+        padding: 26px 28px;
+    }
+
+    .contentSide h3 {
+        font-size: 27px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .section {
+        padding: 45px 0 52px;
+    }
+
+    .container {
+        width: min(100% - 26px, 600px);
+    }
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+    .header h2 {
+        font-size: 27px;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+
+    .slider {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        border-radius: 12px;
+    }
+
+    .imageSide {
+        height: 210px;
+
+        min-height: 210px;
+    }
+
+    .contentSide {
+        padding: 23px 20px 21px;
+    }
+
+    .contentSide h3 {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 12px;
+
+        margin-bottom: 16px;
+    }
+
+    .navigation {
+        margin-top: 20px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .section {
+        padding: 38px 0 45px;
+    }
+
+    .header h2 {
+        font-size: 24px;
+    }
+
+    .imageSide {
+        height: 180px;
+
+        min-height: 180px;
+    }
+
+    .contentSide {
+        padding: 21px 17px 19px;
+    }
+
+    .contentSide h3 {
+        font-size: 22px;
+    }
+
+    .description {
+        font-size: 11.5px;
+
+        line-height: 1.65;
+    }
+
+    .navButton {
+        width: 28px;
+        height: 28px;
+
+        font-size: 12px;
+    }
+}

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import MenuItems from "./Menuitems";
-
+import Image from "next/image";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -20,7 +20,7 @@ export default function Header() {
       <div className="header-container">
         <Link href="/" className="header-logo">
           <span className="text-logo">
-            AVMEDI<span className="logo-highlight">TECH</span>
+            <Image src="/images/logo/LOGO.png" alt="logo" width={150} height={50} />
           </span>
         </Link>
 
@@ -37,7 +37,23 @@ export default function Header() {
               </Link>
             </li>
             <li className="has-submenu">
-              <Link href="/products">Products</Link>
+              <Link href="/products"  style={{ marginTop: "-7px" }}>
+                Products
+                <svg
+                  className="submenu-arrow"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </Link>
               <ul className="submenu">
                 <li>
                   <Link href="/products" onClick={closeMenu}>

@@ -1,389 +1,700 @@
-/* Section Container & Background */
+/* =========================================
+   SECTION
+========================================= */
+
 .section {
-  position: relative;
-  overflow: hidden;
-  padding: 5rem 1rem;
-  background-color: #ffffff;
-  /* Light Grid / Pattern background matching the light math page style */
-  background-image: 
-    radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px),
-    linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
-  background-size: 24px 24px, 48px 48px, 48px 48px;
-  background-position: 0 0, 0 0, 0 0;
+    position: relative;
+
+    padding: 80px 0 90px;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(22, 133, 165, 0.06),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(22, 133, 165, 0.045),
+            transparent 25%
+        ),
+        #ffffff;
+
+    overflow: hidden;
 }
 
-@media (min-width: 640px) {
-  .section {
-    padding: 6rem 2rem;
-  }
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    position: relative;
+
+    width: min(1240px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    z-index: 2;
 }
 
-@media (min-width: 1024px) {
-  .section {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
+
+/* =========================================
+   DECORATIVE GLOWS
+========================================= */
+
+.auroraGlow1,
+.auroraGlow2 {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    pointer-events: none;
 }
 
-/* Background Ambient Glows */
 .auroraGlow1 {
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  width: 20rem;
-  height: 20rem;
-  background-color: rgba(14, 165, 233, 0.08);
-  border-radius: 9999px;
-  filter: blur(60px);
-  pointer-events: none;
+    width: 280px;
+    height: 280px;
+
+    top: 60px;
+    left: -120px;
+
+    background: rgba(22, 133, 165, 0.06);
 }
 
 .auroraGlow2 {
-  position: absolute;
-  bottom: 10%;
-  right: 20%;
-  width: 24rem;
-  height: 24rem;
-  background-color: rgba(37, 99, 235, 0.08);
-  border-radius: 9999px;
-  filter: blur(80px);
-  pointer-events: none;
+    width: 300px;
+    height: 300px;
+
+    right: -140px;
+    bottom: 100px;
+
+    background: rgba(36, 103, 180, 0.045);
 }
 
-.container {
-  max-width: 80rem;
-  margin: 0 auto;
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-}
 
-/* Header Section */
+/* =========================================
+   HEADER
+========================================= */
+
 .headerBlock {
-  text-align: center;
-  max-width: 48rem;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+    max-width: 760px;
+
+    margin: 0 auto 48px;
+
+    text-align: center;
 }
 
 .badgePill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.375rem 1rem;
-  border-radius: 9999px;
-  background-color: rgba(224, 242, 254, 0.8);
-  color: #0369a1;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border: 1px solid #bae6fd;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 7px 14px;
+
+    margin-bottom: 14px;
+
+    border: 1px solid #dcecef;
+
+    border-radius: 50px;
+
+    background: #f4fafb;
+
+    color: #1685a5;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
 }
 
 .pulseDot {
-  width: 0.625rem;
-  height: 0.625rem;
-  border-radius: 9999px;
-  background-color: #0284c7;
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
+    width: 6px;
+    height: 6px;
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+    border-radius: 50%;
+
+    background: #1685a5;
+
+    box-shadow: 0 0 0 4px rgba(22, 133, 165, 0.10);
 }
 
 .mainHeading {
-  font-size: 1.875rem;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
-}
+    margin: 0 0 14px;
 
-@media (min-width: 640px) {
-  .mainHeading {
-    font-size: 2.5rem;
-  }
-}
+    color: #143e4c;
 
-@media (min-width: 1024px) {
-  .mainHeading {
-    font-size: 3rem;
-  }
+    font-size: clamp(32px, 4vw, 46px);
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
 }
 
 .gradientText {
-  background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #4f46e5 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    color: #1685a5;
 }
 
 .headerSubtext {
-  font-size: 1rem;
-  color: #475569;
-  line-height: 1.625;
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    color: #6d8188;
+
+    font-size: 14px;
+
+    line-height: 1.75;
 }
 
-@media (min-width: 640px) {
-  .headerSubtext {
-    font-size: 1.125rem;
-  }
-}
 
-/* Category Cards Grid */
+/* =========================================
+   CARDS GRID
+========================================= */
+
 .cardsGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
 }
 
-@media (min-width: 768px) {
-  .cardsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
 
-@media (min-width: 1024px) {
-  .cardsGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
+/* =========================================
+   CARD
+========================================= */
 
-/* Glass Card Styling */
 .glassCard {
-  border-radius: 1.5rem;
-  padding: 1.75rem;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    min-height: 365px;
+
+    padding: 22px;
+
+    border: 1px solid #e2edef;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(248, 252, 253, 0.96)
+        );
+
+    box-shadow:
+        0 8px 28px rgba(21, 72, 86, 0.055);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.glassCard::before {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    top: -65px;
+    right: -65px;
+
+    border-radius: 50%;
+
+    background: rgba(22, 133, 165, 0.055);
+
+    transition: transform 0.4s ease;
 }
 
 .glassCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-  border-color: #bae6fd;
+    transform: translateY(-6px);
+
+    border-color: #c9e5ea;
+
+    box-shadow:
+        0 18px 42px rgba(21, 72, 86, 0.10);
 }
 
-.centerCardDesktop {
-  grid-column: span 1;
+.glassCard:hover::before {
+    transform: scale(1.35);
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .centerCardDesktop {
-    grid-column: span 2;
-  }
-}
 
-@media (min-width: 1024px) {
-  .centerCardDesktop {
-    grid-column: 2 / span 1;
-  }
-}
+/* =========================================
+   CARD TOP
+========================================= */
 
 .cardTop {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
 }
 
-/* Image Wrapper */
-.imageWrapper {
-  padding: 1rem;
-  background-color: #f8fafc;
-  border-radius: 1rem;
-  border: 1px solid #f1f5f9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 160px;
+
+/* =========================================
+   CATEGORY ICON
+========================================= */
+
+.cardIconWrapper {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border: 1px solid #d9edf0;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f2fafb,
+            #eaf6f8
+        );
+
+    color: #1685a5;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease;
 }
 
-.cardImg {
-  max-width: 100%;
-  max-height: 140px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+.cardIcon {
+    width: 28px;
+    height: 28px;
+
+    stroke-width: 1.7;
 }
 
-.glassCard:hover .cardImg {
-  transform: scale(1.05);
+.glassCard:hover .cardIconWrapper {
+    transform: translateY(-2px) scale(1.05);
+
+    background: #e4f5f7;
 }
+
+
+/* =========================================
+   TAG
+========================================= */
 
 .tagRow {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 9px;
 }
 
 .iconBox {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: #f0f9ff;
-  color: #0284c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background: #edf8fa;
+
+    color: #1685a5;
 }
 
 .tagLabel {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #0284c7;
-  background-color: #f0f9ff;
-  padding: 0.25rem 0.625rem;
-  border-radius: 0.375rem;
-  border: 1px solid #e0f2fe;
-}
+    color: #1685a5;
 
-.cardTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #0f172a;
-}
+    font-size: 9px;
 
-.cardDesc {
-  font-size: 0.875rem;
-  color: #475569;
-  line-height: 1.625;
-}
+    font-weight: 700;
 
-/* Card Button Footer */
-.cardFooter {
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(226, 232, 240, 0.8);
-}
+    letter-spacing: 0.9px;
 
-.categoryBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 100%;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.75rem;
-  background: linear-gradient(90deg, #0284c7 0%, #2563eb 100%);
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.2);
-}
-
-.categoryBtn:hover {
-  background: linear-gradient(90deg, #0369a1 0%, #1d4ed8 100%);
-  box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3);
+    text-transform: uppercase;
 }
 
 .btnIcon {
-  width: 1rem;
-  height: 1rem;
+    width: 13px;
+    height: 13px;
 }
 
-/* Bottom CTA Banner */
+
+/* =========================================
+   TITLE
+========================================= */
+
+.cardTitle {
+    margin: 0 0 10px;
+
+    color: #163e4b;
+
+    font-size: 18px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.cardDesc {
+    display: -webkit-box;
+
+    margin: 0;
+
+    color: #71848a;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PRODUCT COUNT
+========================================= */
+
+.productCount {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: auto;
+    padding-top: 18px;
+
+    color: #647b82;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.countDot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #1685a5;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 133, 165, 0.08);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.cardFooter {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 17px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #e8f0f2;
+}
+
+
+/* =========================================
+   CATEGORY BUTTON
+========================================= */
+
+.categoryBtn {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    min-height: 40px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d8eaed;
+
+    border-radius: 8px;
+
+    background: #f8fcfd;
+
+    color: #1685a5;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.categoryBtn .btnIcon {
+    width: 15px;
+    height: 15px;
+
+    transition: transform 0.3s ease;
+}
+
+.categoryBtn:hover {
+    border-color: #1685a5;
+
+    background: #1685a5;
+
+    color: #ffffff;
+}
+
+.categoryBtn:hover .btnIcon {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   CTA PANEL
+========================================= */
+
 .ctaPanel {
-  border-radius: 1.5rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #082f49 100%);
-  color: #ffffff;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
+    margin-top: 45px;
 
-@media (min-width: 640px) {
-  .ctaPanel {
-    padding: 3rem;
-  }
+    padding: 30px;
+
+    border: 1px solid #dcecef;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4fafb,
+            #ffffff
+        );
+
+    text-align: center;
 }
 
 .ctaHeading {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
-}
+    margin: 0 0 8px;
 
-@media (min-width: 640px) {
-  .ctaHeading {
-    font-size: 1.875rem;
-  }
+    color: #163e4b;
+
+    font-size: 22px;
+
+    font-weight: 700;
 }
 
 .ctaSubtext {
-  color: #e0f2fe;
-  max-width: 42rem;
-  font-size: 0.875rem;
-  line-height: 1.625;
-}
+    max-width: 650px;
 
-@media (min-width: 640px) {
-  .ctaSubtext {
-    font-size: 1rem;
-  }
+    margin: 0 auto 20px;
+
+    color: #6c8087;
+
+    font-size: 13px;
+
+    line-height: 1.7;
 }
 
 .ctaButtonGroup {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding-top: 0.5rem;
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.ctaPrimaryBtn,
+.ctaSecondaryBtn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 18px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
 }
 
 .ctaPrimaryBtn {
-  background-color: #ffffff;
-  color: #075985;
-  font-weight: 600;
-  font-size: 0.875rem;
-  padding: 0.875rem 1.75rem;
-  border-radius: 0.75rem;
-  text-decoration: none;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
+    background: #1685a5;
+
+    color: #ffffff;
 }
 
 .ctaPrimaryBtn:hover {
-  background-color: #f0f9ff;
+    background: #126f89;
 }
 
 .ctaSecondaryBtn {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.875rem;
-  padding: 0.875rem 1.75rem;
-  border-radius: 0.75rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
+    border: 1px solid #d5e7ea;
+
+    background: #ffffff;
+
+    color: #1685a5;
 }
 
 .ctaSecondaryBtn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+    border-color: #1685a5;
+
+    background: #f3fafb;
+}
+
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .cardsGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .section {
+        padding: 60px 0 70px;
+    }
+
+    .cardsGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+
+    .glassCard {
+        min-height: 350px;
+
+        padding: 20px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 560px) {
+
+    .container {
+        width: min(100% - 28px, 500px);
+    }
+
+    .section {
+        padding: 48px 0 55px;
+    }
+
+    .headerBlock {
+        margin-bottom: 32px;
+    }
+
+    .mainHeading {
+        font-size: 31px;
+    }
+
+    .headerSubtext {
+        font-size: 13px;
+    }
+
+    .cardsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .glassCard {
+        min-height: auto;
+
+        padding: 20px;
+    }
+
+    .cardIconWrapper {
+        width: 54px;
+        height: 54px;
+
+        margin-bottom: 18px;
+    }
+
+    .ctaPanel {
+        padding: 24px 18px;
+    }
+
+    .ctaHeading {
+        font-size: 19px;
+    }
+
+    .ctaButtonGroup {
+        flex-direction: column;
+    }
+
+    .ctaPrimaryBtn,
+    .ctaSecondaryBtn {
+        width: 100%;
+    }
 }

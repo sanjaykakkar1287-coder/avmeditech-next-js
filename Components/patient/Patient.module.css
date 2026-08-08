@@ -1,0 +1,326 @@
+/* ==========================================================================
+   Patient Hero Section — AV Meditech
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 72px 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 56px;
+}
+
+/* ---------------- Left content ---------------- */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0e7c86;
+  background: linear-gradient(135deg, rgba(14, 124, 134, 0.08), rgba(20, 160, 170, 0.12));
+  border: 1px solid rgba(14, 124, 134, 0.18);
+  margin-bottom: 24px;
+  animation: fadeInUp 0.7s ease both;
+}
+
+.heading {
+  font-size: clamp(2.1rem, 4vw, 3.25rem);
+  line-height: 1.15;
+  font-weight: 700;
+  color: #0f2530;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+  animation: fadeInUp 0.7s ease 0.1s both;
+}
+
+/* Fixed-width rotating word wrapper keeps layout stable */
+.rotatingWrap {
+  position: relative;
+  display: inline-flex;
+  min-width: 8.5ch;
+  height: 1.15em;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
+.rotatingWord {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  background: linear-gradient(120deg, #0e7c86 0%, #14a0aa 50%, #1cc4c9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.rotatingWord::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #0e7c86, #1cc4c9);
+  box-shadow: 0 0 12px rgba(20, 160, 170, 0.55);
+}
+
+.rotatingWordVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rotatingWordHidden {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5f66;
+  max-width: 520px;
+  margin: 0 0 36px 0;
+  animation: fadeInUp 0.7s ease 0.2s both;
+}
+
+.ctaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  animation: fadeInUp 0.7s ease 0.3s both;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  cursor: pointer;
+}
+
+.primaryBtn {
+  color: #ffffff;
+  background: linear-gradient(120deg, #0e7c86, #14a0aa);
+  box-shadow: 0 8px 20px rgba(14, 124, 134, 0.25);
+}
+
+.primaryBtn:hover,
+.primaryBtn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(14, 124, 134, 0.32);
+}
+
+.secondaryBtn {
+  color: #0e7c86;
+  background: #ffffff;
+  border: 1.5px solid rgba(14, 124, 134, 0.3);
+}
+
+.secondaryBtn:hover,
+.secondaryBtn:focus-visible {
+  background: rgba(14, 124, 134, 0.06);
+  transform: translateY(-2px);
+}
+
+.primaryBtn:focus-visible,
+.secondaryBtn:focus-visible {
+  outline: 2px solid #14a0aa;
+  outline-offset: 2px;
+}
+
+/* ---------------- Right visual ---------------- */
+
+.visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(15, 37, 48, 0.25);
+  border: 6px solid #ffffff;
+  animation: fadeIn 0.9s ease 0.15s both;
+  z-index: 2;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.blobOne,
+.blobTwo {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.blobOne {
+  width: 280px;
+  height: 280px;
+  top: -30px;
+  right: 20px;
+  background: radial-gradient(circle, rgba(20, 160, 170, 0.22), transparent 70%);
+}
+
+.blobTwo {
+  width: 240px;
+  height: 240px;
+  bottom: -20px;
+  left: -10px;
+  background: radial-gradient(circle, rgba(14, 124, 134, 0.16), transparent 70%);
+}
+
+/* ---------------- Animations ---------------- */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge,
+  .heading,
+  .description,
+  .ctaGroup,
+  .imageFrame,
+  .rotatingWord {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------------- Tablet ---------------- */
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 56px 0;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .heading {
+    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  }
+
+  .visual {
+    min-height: 340px;
+  }
+
+  .imageFrame {
+    max-width: 400px;
+  }
+
+  .blobOne,
+  .blobTwo {
+    display: none;
+  }
+}
+
+/* ---------------- Mobile ---------------- */
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+    gap: 32px;
+  }
+
+  .content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .heading {
+    font-size: clamp(1.65rem, 7vw, 2.1rem);
+    line-height: 1.2;
+  }
+
+  .rotatingWrap {
+    min-width: 6ch;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+  }
+
+  .visual {
+    min-height: 280px;
+  }
+
+  .imageFrame {
+    max-width: 100%;
+    aspect-ratio: 4 / 3.2;
+  }
+}

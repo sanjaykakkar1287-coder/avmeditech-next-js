@@ -6,6 +6,12 @@ export const categories = [
     {
         name: "IOL - Intraocular Lens",
         slug: "iol-lens",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639l4.43-7.087a1.012 1.012 0 011.583 0l4.43 7.087a1.012 1.012 0 010 .639l-4.43 7.087a1.012 1.012 0 01-1.583 0l-4.43-7.087z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+        ),
 
         products: [
 
@@ -198,6 +204,12 @@ export const categories = [
     {
         name: "Consumables",
         slug: "consumables",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.47 2.118S3.847 16.5 4.239 16.112a9.753 9.753 0 015.292-3.118z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14.47 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.47 2.118S9.847 16.5 10.239 16.112a9.753 9.753 0 015.292-3.118z" />
+            </svg>
+        ),
 
         products: [
 
@@ -520,6 +532,11 @@ export const categories = [
     {
         name: "Vitreoretinal",
         slug: "vitreoretinal",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+            </svg>
+        ),
 
         products: [
 
@@ -625,6 +642,11 @@ export const categories = [
     {
         name: "Phaco Equipments",
         slug: "phaco-equipments",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.03 1.121 0 1.131.094 1.976 1.057 1.976 2.192V7.5M8.25 7.5h7.5M8.25 7.5V9a.75.75 0 01-.75.75H5.625c-.621 0-1.125.504-1.125 1.125v4.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V10.875c0-.621-.504-1.125-1.125-1.125H16.5a.75.75 0 01-.75-.75V7.5" />
+            </svg>
+        ),
 
         products: [
 
@@ -792,6 +814,11 @@ export const categories = [
     {
         name: "Plasmapp Sterilizer",
         slug: "plasmapp-sterilizer",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" />
+            </svg>
+        ),
 
         products: [
 
@@ -835,6 +862,11 @@ export const categories = [
     {
         name: "ECP System",
         slug: "ecp-system",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+        ),
 
         products: [
 
@@ -878,6 +910,11 @@ export const categories = [
     {
         name: "Endo Optiks®",
         slug: "endo-optiks",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25a8.25 8.25 0 00-8.25 8.25c0 1.892.633 3.667 1.693 5.058a9.75 9.75 0 001.583 2.342A5.995 5.995 0 0112 21a5.995 5.995 0 013.975-1.729 9.75 9.75 0 001.583-2.342c1.06-1.391 1.693-3.166 1.693-5.058a8.25 8.25 0 00-16.5 0z" />
+            </svg>
+        ),
 
         products: [
 
@@ -921,6 +958,11 @@ export const categories = [
     {
         name: "Dry Eye",
         slug: "dry-eye",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.002 9.002 0 008.684-12.234 9.002 9.002 0 00-17.368 0A9.002 9.002 0 0012 21zM12 3.75a.75.75 0 01.75.75v6.75h-1.5V4.5a.75.75 0 01.75-.75z" />
+            </svg>
+        ),
 
         products: [
 

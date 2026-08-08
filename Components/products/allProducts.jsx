@@ -66,21 +66,10 @@ export default function AllProducts() {
 
                             <div className={styles.cardTop}>
 
-                                {/* IMAGE */}
-
-                                <div className={styles.imageWrapper}>
-
-                                    <img
-                                        src={
-                                            category.image ||
-                                            "/images/products/default.webp"
-                                        }
-                                        alt={category.name}
-                                        className={styles.cardImg}
-                                    />
-
-                                </div>
-
+                                {category.icon && React.cloneElement(category.icon, {
+                                    className: styles.cardIcon,
+                                    "aria-hidden": "true",
+                                })}
 
                                 {/* CATEGORY TAG */}
 
