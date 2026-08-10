@@ -258,32 +258,30 @@
 
     padding: 8px 13px;
 
-    border: 1px solid #1685a5;
+    border: 1px solid transparent;
 
     border-radius: 6px;
 
-    background: transparent;
+    background: linear-gradient(135deg, #1685a5, #0c718e);
 
-    color: #1685a5;
+    color: #ffffff;
 
     font-size: 11px;
 
     font-weight: 650;
 
     text-decoration: none;
+    
+    box-shadow: 0 8px 20px rgba(22, 133, 165, 0.18);
 
     transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .learnMore:hover {
-    background: #1685a5;
-
-    color: #ffffff;
-
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(22, 133, 165, 0.25);
 }
 
 .arrow {

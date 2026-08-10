@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 /* ===========================
    About Section
 =========================== */
@@ -5,6 +7,7 @@
 .aboutSection {
   padding: 100px 20px;
   background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  font-family: 'Plus Jakarta Sans', sans-serif;
   position: relative;
   overflow: hidden;
 }
@@ -17,10 +20,9 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(
-    rgba(14, 165, 233, 0.12),
-    transparent 70%
-  );
+  background: radial-gradient(rgba(23, 105, 232, 0.12), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
 }
 
 .aboutSection::after {
@@ -31,10 +33,9 @@
   width: 450px;
   height: 450px;
   border-radius: 50%;
-  background: radial-gradient(
-    rgba(37, 99, 235, 0.08),
-    transparent 70%
-  );
+  background: radial-gradient(rgba(8, 127, 189, 0.1), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
 }
 
 /* ===========================
@@ -44,13 +45,10 @@
 .container {
   max-width: 1200px;
   margin: auto;
-
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 70px;
-
   align-items: center;
-
   position: relative;
   z-index: 2;
 }
@@ -67,61 +65,58 @@
 .badge {
   display: inline-flex;
   align-items: center;
-
+  gap: 8px;
   width: fit-content;
-
-  padding: 10px 20px;
-
-  margin-bottom: 25px;
-
+  padding: 6px 16px;
+  margin-bottom: 22px;
   border-radius: 50px;
-
-  background: #eff8ff;
-
-  border: 1px solid #bfe3ff;
-
-  color: #0284c7;
-
-  font-size: 13px;
-
+  background: #ffffff;
+  border: 1px solid #dcecef;
+  color: #1685a5;
+  font-size: 11px;
   font-weight: 700;
-
   letter-spacing: 1px;
-
   text-transform: uppercase;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1685a5;
+  box-shadow: 0 0 0 3px rgba(22, 133, 165, 0.15);
 }
 
 .heading {
   font-size: clamp(2.2rem, 4vw, 3.5rem);
-
   line-height: 1.15;
-
   font-weight: 800;
-
+  letter-spacing: -0.5px;
   color: #0f172a;
-
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
 .highlight {
   background: linear-gradient(
-    90deg,
-    #0ea5e9,
-    #2563eb
+    115deg,
+    #087fbd 0%,
+    #078fca 25%,
+    #1769e8 55%,
+    #315bea 78%,
+    #087fbd 100%
   );
-
+  background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease-in-out infinite;
 }
 
 .description {
   color: #64748b;
-
   font-size: 16px;
-
   line-height: 1.9;
-
-  margin-bottom: 22px;
+  margin-bottom: 26px;
 }
 
 /* ===========================
@@ -130,38 +125,33 @@
 
 .button {
   margin-top: 10px;
-
   width: fit-content;
-
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
   padding: 15px 32px;
-
   border-radius: 12px;
-
   text-decoration: none;
-
-  color: #fff;
-
+  color: #ffffff;
   font-weight: 600;
-
+  font-size: 15px;
   background: linear-gradient(
-    135deg,
-    #0ea5e9,
-    #2563eb
+    115deg,
+    #087fbd 0%,
+    #078fca 25%,
+    #1769e8 55%,
+    #315bea 78%,
+    #087fbd 100%
   );
-
-  box-shadow: 0 15px 35px rgba(37,99,235,.22);
-
-  transition: .3s;
+  background-size: 200% auto;
+  box-shadow: 0 15px 35px rgba(23, 105, 232, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease;
 }
 
 .button:hover {
   transform: translateY(-4px);
-
-  box-shadow: 0 20px 45px rgba(37,99,235,.3);
+  background-position: 100% 50%;
+  box-shadow: 0 20px 45px rgba(23, 105, 232, 0.32);
 }
 
 /* ===========================
@@ -171,7 +161,7 @@
 .infoCard {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 20px;
 }
 
 /* ===========================
@@ -180,65 +170,63 @@
 
 .card {
   padding: 28px;
-
-  border-radius: 22px;
-
-  background: rgba(255,255,255,.75);
-
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(14px);
-
-  border: 1px solid rgba(173,216,255,.35);
-
-  box-shadow:
-      0 10px 30px rgba(15,23,42,.06);
-
-  transition: .35s;
-
+  border: 1px solid rgba(173, 216, 255, 0.35);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
   position: relative;
-
   overflow: hidden;
 }
 
 .card::before {
   content: "";
-
   position: absolute;
-
   left: 0;
   top: 0;
-
-  width: 5px;
+  width: 4px;
   height: 100%;
-
-  background: linear-gradient(
-    #0ea5e9,
-    #2563eb
-  );
+  background: linear-gradient(180deg, #087fbd, #1769e8, #315bea);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover {
   transform: translateY(-6px);
+  border-color: transparent;
+  box-shadow: 0 20px 45px rgba(23, 105, 232, 0.16);
+}
 
-  box-shadow:
-      0 20px 45px rgba(37,99,235,.15);
+.card:hover::before {
+  transform: scaleY(1);
 }
 
 .card h3 {
   color: #0f172a;
-
-  font-size: 22px;
-
-  margin-bottom: 12px;
-
+  font-size: 21px;
+  margin-bottom: 10px;
   font-weight: 700;
+  letter-spacing: -0.2px;
 }
 
 .card p {
   color: #64748b;
-
   line-height: 1.8;
+  font-size: 14.5px;
+}
 
-  font-size: 15px;
+/* ===========================
+   Shared gradient animation
+=========================== */
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ===========================
@@ -246,7 +234,6 @@
 =========================== */
 
 @media (max-width: 992px) {
-
   .container {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -256,11 +243,9 @@
     text-align: center;
     align-items: center;
   }
-
 }
 
 @media (max-width: 768px) {
-
   .aboutSection {
     padding: 70px 18px;
   }
@@ -278,7 +263,13 @@
   }
 
   .card h3 {
-    font-size: 20px;
+    font-size: 19px;
   }
+}
 
+@media (prefers-reduced-motion: reduce) {
+  .highlight,
+  .button {
+    animation: none;
+  }
 }

@@ -35,6 +35,13 @@
   initial-value: 0deg;
 }
 
+
+
+
+
+
+
+
 /* ==========================================================================
    2. BASE & RESET STYLES
    ========================================================================== */
@@ -255,7 +262,424 @@ body {
 
 .btn:hover {
   background: #0284c7;
-  transform: translateY(-2px);
+  transform: translateY(-2px);@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ================= Section Shell ================= */
+.iol-section {
+  position: relative;
+  padding: 70px 0;
+  background: #f8fafc;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow: hidden;
+}
+
+.iol-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(23, 105, 232, 0.12) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.iol-section::after {
+  content: '';
+  position: absolute;
+  bottom: -120px;
+  left: -100px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(8, 127, 189, 0.1) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.iol-container {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* ================= Header ================= */
+.section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 48px;
+}
+
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  margin-bottom: 14px;
+  border: 1px solid #dcecef;
+  border-radius: 50px;
+  background: #ffffff;
+  color: #1685a5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1685a5;
+  box-shadow: 0 0 0 3px rgba(22, 133, 165, 0.15);
+}
+
+.section-title {
+  margin: 0 0 16px;
+  color: #0f172a;
+  font-size: clamp(24px, 3.4vw, 34px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+.gradient-highlight {
+  background: linear-gradient(115deg, #087fbd 0%, #078fca 25%, #1769e8 55%, #315bea 78%, #087fbd 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+.section-intro {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ================= Grid ================= */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* ================= Selector Column (Pills) ================= */
+.selector-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.column-label {
+  margin: 0 0 4px;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.iol-pill {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.iol-pill:hover {
+  transform: translateX(4px);
+  border-color: #a5e0f5;
+}
+
+.iol-pill:focus-visible {
+  outline: 2px solid #1769e8;
+  outline-offset: 2px;
+}
+
+.iol-pill.active {
+  border-color: transparent;
+  box-shadow: 0 12px 28px rgba(23, 105, 232, 0.18);
+}
+
+.iol-pill.active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: 16px;
+  background: linear-gradient(115deg, #087fbd, #1769e8, #315bea);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* animated progress bar — matches the 3s JS auto-rotate interval */
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #087fbd, #1769e8);
+  border-radius: 0 0 0 16px;
+  display: block;
+}
+
+.iol-pill.active .progress-bar {
+  animation: fillProgress 3s linear forwards;
+}
+
+@keyframes fillProgress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+.pill-content {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.pill-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.pill-num {
+  font-size: 12px;
+  font-weight: 800;
+  color: #94a3b8;
+  transition: color 0.3s ease;
+}
+
+.iol-pill.active .pill-num {
+  color: #1769e8;
+}
+
+.pill-title {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.pill-sub {
+  display: block;
+  margin: 0;
+  color: #64748b;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* ================= Display Column (Glass Stage) ================= */
+.display-column {
+  display: flex;
+}
+
+.glass-stage {
+  position: relative;
+  flex: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #087fbd 0%,
+    #078fca 25%,
+    #1769e8 55%,
+    #315bea 78%,
+    #087fbd 100%
+  );
+  background-size: 220% 220%;
+  animation: gradientShift 10s ease-in-out infinite;
+  box-shadow: 0 24px 48px rgba(23, 105, 232, 0.25);
+}
+
+.glass-stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(255,255,255,0.18) 0%, transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(255,255,255,0.12) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.stage-card {
+  position: absolute;
+  inset: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(16px);
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stage-card.active {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.type-tag {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 5px 14px;
+  margin-bottom: 16px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.stage-card h3 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.card-desc {
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.specs-box {
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  max-width: 480px;
+}
+
+.specs-box h4 {
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.specs-box p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ================= Quality Banner ================= */
+.quality-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.quality-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: #ecfeff;
+  border: 1px solid #cffaff;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(115deg, #087fbd, #1769e8);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* ================= Shared gradient animation ================= */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  .glass-stage {
+    min-height: 320px;
+  }
+  .stage-card {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 550px) {
+  .iol-section {
+    padding: 50px 0;
+  }
+  .quality-banner {
+    justify-content: flex-start;
+  }
+  .stage-card {
+    padding: 24px;
+  }
+  .card-desc, .specs-box {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-highlight,
+  .glass-stage {
+    animation: none;
+  }
+  .progress-bar {
+    animation: none;
+    width: 100%;
+  }
+}
 }
 
 /* .btn-primary { background-color: var(--accent); color: #FFFFFF; }
@@ -499,265 +923,6 @@ body {
   color: var(--text-sub);
 }
 
-/* ==========================================================================
-   5. IOL SHOWCASE SECTION
-   ========================================================================== */
-.iol-section {
-  background-color: var(--page-bg);
-  padding: 100px 20px;
-  color: var(--text-main);
-}
-
-.iol-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-header {
-  max-width: 850px;
-  margin: 0 auto 60px auto;
-  text-align: center;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  background: var(--accent-light);
-  padding: 6px 16px;
-  border-radius: 30px;
-  margin-bottom: 20px;
-}
-
-.badge .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-.section-title {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--text-main);
-  margin-bottom: 20px;
-}
-
-.section-intro {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--text-sub);
-}
-
-.showcase-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: stretch;
-}
-
-.column-label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-sub);
-  margin-bottom: 20px;
-}
-
-.selector-column {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.iol-pill {
-  position: relative;
-  background: var(--card-bg);
-  border: 1px solid var(--border-light);
-  border-radius: 16px;
-  padding: 20px 24px;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.iol-pill:hover {
-  transform: translateX(6px);
-  border-color: rgba(0, 122, 255, 0.3);
-}
-
-.iol-pill.active {
-  border-color: var(--accent);
-  box-shadow: 0 12px 28px rgba(0, 122, 255, 0.12);
-}
-
-.pill-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 6px;
-}
-
-.pill-num {
-  font-family: monospace;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--text-sub);
-  transition: color 0.3s ease;
-}
-
-.iol-pill.active .pill-num {
-  color: var(--accent);
-}
-
-.pill-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-}
-
-.pill-sub {
-  font-size: 0.88rem;
-  color: var(--text-sub);
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  width: 0%;
-  background: var(--accent);
-}
-
-.iol-pill.active .progress-bar {
-  animation: fillProgress 5s linear forwards;
-}
-
-@keyframes fillProgress {
-  from { width: 0%; }
-  to { width: 100%; }
-}
-
-.display-column {
-  position: relative;
-}
-
-.glass-stage {
-  position: relative;
-  height: 100%;
-  min-height: 380px;
-  background: var(--card-bg);
-  border: 1px solid var(--border-light);
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-  display: flex;
-  align-items: center;
-}
-
-.stage-card {
-  position: absolute;
-  inset: 40px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(15px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.stage-card.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.type-tag {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--accent);
-  letter-spacing: 0.08em;
-  margin-bottom: 12px;
-}
-
-.stage-card h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.card-desc {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--text-sub);
-  margin-bottom: 28px;
-}
-
-.specs-box {
-  background: var(--page-bg);
-  border-left: 3px solid var(--accent);
-  padding: 20px;
-  border-radius: 0 12px 12px 0;
-}
-
-.specs-box h4 {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.specs-box p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--text-sub);
-  margin: 0;
-}
-
-.quality-banner {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  background: var(--card-bg);
-  padding: 24px;
-  border-radius: 18px;
-  border: 1px solid var(--border-light);
-}
-
-.quality-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 600;
-  font-size: 0.92rem;
-}
-
-.check-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  background: var(--accent-light);
-  color: var(--accent);
-  border-radius: 50%;
-  font-size: 0.8rem;
-  font-weight: 800;
-}
 
 /* ==========================================================================
    6. CATEGORY ECOSYSTEM SECTION

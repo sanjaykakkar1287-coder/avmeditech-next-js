@@ -18,7 +18,7 @@ export const categories = [
             {
                 name: "Trifocal",
                 slug: "trifocal",
-                image: "/images/products/iol/trifocal.webp",
+                image: "/images/products/iol/trifocal.png",
 
                 description:
                     "Premium Trifocal Intraocular Lens designed for advanced visual correction and cataract surgery applications.",
@@ -44,7 +44,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/iol/trifocal.webp"
+                    "/images/products/iol/trifocal.png"
                 ],
 
                 brochure: ""
@@ -54,7 +54,7 @@ export const categories = [
             {
                 name: "Trifocal Toric",
                 slug: "trifocal-toric",
-                image: "/images/products/iol/trifocal-toric.webp",
+                image: "/images/products/iol/toric.png",
 
                 description:
                     "Premium Trifocal Toric Intraocular Lens designed for cataract surgery with advanced visual correction requirements.",
@@ -80,7 +80,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/iol/trifocal-toric.webp"
+                    "/images/products/iol/toric.png"
                 ],
 
                 brochure: ""
@@ -90,7 +90,7 @@ export const categories = [
             {
                 name: "Premium Monofocal",
                 slug: "premium-monofocal",
-                image: "/images/products/iol/premium-monofocal.webp",
+                image: "/images/products/iol/mono.png",
 
                 description:
                     "Premium Monofocal Intraocular Lens designed to provide reliable optical performance for cataract surgery.",
@@ -116,7 +116,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/iol/premium-monofocal.webp"
+                    "/images/products/iol/mono.png"
                 ],
 
                 brochure: ""
@@ -126,7 +126,7 @@ export const categories = [
             {
                 name: "Monofocal Toric",
                 slug: "monofocal-toric",
-                image: "/images/products/iol/monofocal-toric.webp",
+                image: "/images/products/iol/toric.png",
 
                 description:
                     "Monofocal Toric Intraocular Lens designed for cataract surgery requiring a monofocal lens solution with toric correction.",
@@ -152,7 +152,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/iol/monofocal-toric.webp"
+                    "/images/products/iol/toric.png"
                 ],
 
                 brochure: ""
@@ -162,7 +162,7 @@ export const categories = [
             {
                 name: "Monofocal",
                 slug: "monofocal",
-                image: "/images/products/iol/monofocal.webp",
+                image: "/images/products/iol/monofocalpre.png",
 
                 description:
                     "Monofocal Intraocular Lens designed to provide reliable optical performance for cataract surgery.",
@@ -188,7 +188,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/iol/monofocal.webp"
+                    "/images/products/iol/monofocalpre.png"
                 ],
 
                 brochure: ""
@@ -653,7 +653,7 @@ export const categories = [
             {
                 name: "R-Evo Smart E",
                 slug: "r-evo-smart-e",
-                image: "/images/products/phaco/r-evo-smart-e.webp",
+                image: "/images/products/phaco/r-evo-smart-e.jpeg",
 
                 description:
                     "R-Evo Smart E is a phacoemulsification system designed for modern cataract surgery applications.",
@@ -674,7 +674,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/phaco/r-evo-smart-e.webp"
+                    "/images/products/phaco/r-evo-smart-e.jpeg"
                 ],
 
                 brochure: ""
@@ -684,7 +684,7 @@ export const categories = [
             {
                 name: "R-Evo Smart S",
                 slug: "r-evo-smart-s",
-                image: "/images/products/phaco/r-evo-smart-s.webp",
+                image: "/images/products/phaco/r-evo-smart-s.jpeg",
 
                 description:
                     "R-Evo Smart S is a phacoemulsification system designed for modern cataract surgery applications.",
@@ -705,7 +705,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/phaco/r-evo-smart-s.webp"
+                    "/images/products/phaco/r-evo-smart-s.jpeg"
                 ],
 
                 brochure: ""
@@ -715,7 +715,7 @@ export const categories = [
             {
                 name: "R-Evo Smart CR",
                 slug: "r-evo-smart-cr",
-                image: "/images/products/phaco/r-evo-smart-cr.webp",
+                image: "/images/products/phaco/r-evo-smart-cr.png",
 
                 description:
                     "R-Evo Smart CR is a phacoemulsification system designed for cataract surgery applications.",
@@ -736,7 +736,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/phaco/r-evo-smart-cr.webp"
+                    "/images/products/phaco/r-evo-smart-cr.png"
                 ],
 
                 brochure: ""
@@ -746,7 +746,7 @@ export const categories = [
             {
                 name: "R-Evolution® CR",
                 slug: "r-evolution-cr",
-                image: "/images/products/phaco/r-evolution-cr.webp",
+                image: "/images/products/phaco/r-evolution-cr.png",
 
                 description:
                     "R-Evolution® CR is an ophthalmic phacoemulsification platform designed for cataract surgery applications.",
@@ -767,7 +767,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/phaco/r-evolution-cr.webp"
+                    "/images/products/phaco/r-evolution-cr.png"
                 ],
 
                 brochure: ""
@@ -777,7 +777,7 @@ export const categories = [
             {
                 name: "R-Evolution®",
                 slug: "r-evolution",
-                image: "/images/products/phaco/r-evolution.webp",
+                image: "/images/products/phaco/r-evolution.png",
 
                 description:
                     "R-Evolution® is an ophthalmic phacoemulsification platform designed for modern cataract surgery applications.",
@@ -798,7 +798,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/phaco/r-evolution.webp"
+                    "/images/products/phaco/r-evolution.png"
                 ],
 
                 brochure: ""
@@ -825,7 +825,7 @@ export const categories = [
             {
                 name: "STERLINK FPS-15s Sterilizer",
                 slug: "sterlink-fps-15s",
-                image: "/images/products/plasmapp/sterlink-fps-15s.webp",
+                image: "/images/products/plasmap/STERLINK-Sterilizer.jpg",
 
                 description:
                     "STERLINK FPS-15s is a plasma sterilization system designed for medical instrument sterilization applications.",
@@ -873,7 +873,7 @@ export const categories = [
             {
                 name: "Endoscopic Cyclophotocoagulation System",
                 slug: "endoscopic-cyclophotocoagulation-system",
-                image: "/images/products/ecp/ecp-system.webp",
+                image: "/images/products/ecp/Endo-Optiks.jpg",
 
                 description:
                     "Endoscopic Cyclophotocoagulation System designed for ophthalmic surgical applications.",
@@ -894,7 +894,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/ecp/ecp-system.webp"
+                    "/images/products/ecp/Endo-Optiks.jpg"
                 ],
 
                 brochure: ""
@@ -921,7 +921,7 @@ export const categories = [
             {
                 name: "Endo Optiks® System",
                 slug: "endo-optiks-system",
-                image: "/images/products/endo-optiks/endo-optiks.webp",
+                image: "/images/products/ecp/Endo-Optiks.png",
 
                 description:
                     "Endo Optiks® System designed for endoscopic ophthalmic visualization and surgical applications.",
@@ -942,7 +942,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/endo-optiks/endo-optiks.webp"
+                    "/images/products/ecp/Endo-Optiks.png"
                 ],
 
                 brochure: ""
@@ -969,7 +969,7 @@ export const categories = [
             {
                 name: "Dry Eye Treatment System",
                 slug: "dry-eye-treatment-system",
-                image: "/images/products/dry-eye/dry-eye.webp",
+                image: "/images/products/dryeye/dryeye.png",
 
                 description:
                     "Dry Eye Treatment System designed to support clinical management and treatment of dry eye conditions.",
@@ -990,7 +990,7 @@ export const categories = [
                 specifications: {},
 
                 gallery: [
-                    "/images/products/dry-eye/dry-eye.webp"
+                    "/images/products/dryeye/dryeye.png"
                 ],
 
                 brochure: ""

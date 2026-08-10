@@ -1,20 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import styles from "./HeroButtons.module.css";
 
-const HeroButtons = (data) => {
-  return (
-    <div className="card-actions">
-      <Link href="#" className="btn btn-primary" data-bs-toggle="modal"
-  data-bs-target="#Modal">
-        {data.text ? data.text : "Request a Call Back"}
-      </Link>
+const HeroButtons = ({ text }) => {
+    return (
+        <div className={styles.heroButtons}>
+            <Link href="/contact" className={styles.heroPrimaryBtn}>
+                <span>{text || "Request a Call Back"}</span>
 
-      <Link href="/contact" className="btn btn-secondary">
-        Contact Us
-      </Link>
-    </div>
-  );
+                <span className={styles.heroArrow}>
+                    →
+                </span>
+            </Link>
+
+            <Link href="/contact" className={styles.heroSecondaryBtn}>
+                Contact Us
+            </Link>
+        </div>
+    );
 };
 
 export default HeroButtons;

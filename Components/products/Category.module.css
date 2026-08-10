@@ -79,23 +79,23 @@
 ========================================= */
 
 .card {
+    position: relative;
     display: flex;
     flex-direction: column;
 
     min-width: 0;
+    min-height: 365px;
 
     background: #ffffff;
 
-    border: 1px solid #e5eef0;
-
-    border-radius: 18px;
+    border: 1px solid #e9f1f3;
+    border-radius: 16px;
 
     overflow: hidden;
 
     text-decoration: none;
 
-    box-shadow:
-        0 8px 30px rgba(25, 75, 90, 0.055);
+    box-shadow: 0 4px 25px rgba(25, 75, 90, 0.04);
 
     transition:
         transform 0.35s ease,
@@ -106,10 +106,12 @@
 .card:hover {
     transform: translateY(-6px);
 
-    border-color: #cce6eb;
+    border-color: transparent;
 
     box-shadow:
-        0 18px 45px rgba(25, 75, 90, 0.10);
+        0 16px 40px rgba(22, 133, 165, 0.1),
+        /* Create a gradient border effect on hover */
+        0 0 0 2px #1685a5;
 }
 
 
@@ -127,31 +129,14 @@
     justify-content: center;
 
     padding: 25px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #eef9fb 0%,
-            #f8fbfc 48%,
-            #ffffff 100%
-        );
+    
+    background: #f8fbfc;
 
     overflow: hidden;
-}
-
-.imageWrapper::after {
-    content: "";
-
-    position: absolute;
-
-    width: 150px;
-    height: 150px;
-
-    border-radius: 50%;
-
-    background: rgba(22, 133, 165, 0.045);
-
-    pointer-events: none;
+    
+    /* Clip the corners to match the card's border-radius */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .image {
@@ -167,7 +152,7 @@
 }
 
 .card:hover .image {
-    transform: scale(1.055);
+    transform: scale(1.06);
 }
 
 
@@ -181,7 +166,7 @@
 
     flex: 1;
 
-    padding: 21px 22px 20px;
+    padding: 20px 22px;
 }
 
 .productCategory {
@@ -257,7 +242,6 @@
 
 .cardFooter {
     margin-top: auto;
-
     padding-top: 18px;
 }
 
@@ -272,12 +256,12 @@
 
     padding: 0 15px;
 
-    border: 1px solid #d9eaed;
+    border: 1px solid transparent;
     border-radius: 7px;
 
-    background: #f8fcfd;
+    background: #eef8fa;
 
-    color: #1685a5;
+    color: #12728f;
 
     font-size: 12px;
     font-weight: 700;
@@ -292,11 +276,13 @@
 }
 
 .card:hover .button {
-    border-color: #1685a5;
-
     background: #1685a5;
 
     color: #ffffff;
+
+    box-shadow: 0 6px 15px rgba(22, 133, 165, 0.2);
+
+    transform: translateY(-2px);
 }
 
 .card:hover .button span {

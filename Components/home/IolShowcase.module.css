@@ -1,0 +1,1062 @@
+/* =========================================================
+   IOL SHOWCASE
+========================================================= */
+
+.iolSection {
+    position: relative;
+
+    padding: 100px 0;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(18, 150, 190, 0.07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(37, 99, 235, 0.05),
+            transparent 30%
+        ),
+        #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.sectionHeader {
+    max-width: 850px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+
+.categoryBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 8px 15px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #d8edf2;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #effbfd,
+            #ffffff
+        );
+
+    color: #1685a5;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    box-shadow:
+        0 8px 20px rgba(22, 133, 165, 0.06);
+}
+
+
+.badgeDot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #1685a5;
+
+    box-shadow:
+        0 0 0 5px rgba(22, 133, 165, 0.10);
+
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+
+.sectionTitle {
+    margin: 0;
+
+    color: #123c4a;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.12;
+
+    font-weight: 750;
+
+    letter-spacing: -1.5px;
+}
+
+
+.gradientHighlight {
+    display: inline;
+
+    background:
+        linear-gradient(
+            100deg,
+            #078fca,
+            #1769e8,
+            #5146e5,
+            #078fca
+        );
+
+    background-size: 250% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: textGradient 6s ease infinite;
+}
+
+
+.sectionIntro {
+    max-width: 790px;
+
+    margin: 22px auto 0;
+
+    color: #6d8086;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   SHOWCASE GRID
+========================================================= */
+
+.showcaseGrid {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 45px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   SELECTOR
+========================================================= */
+
+.selectorColumn {
+    position: relative;
+}
+
+
+.columnHeading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+.columnLine {
+    width: 28px;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1685a5,
+            #5ac6d7
+        );
+}
+
+
+.columnLabel {
+    margin: 0;
+
+    color: #183f4c;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.pillsWrapper {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   IOL PILL
+========================================================= */
+
+.iolPill {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 92px;
+
+    padding: 17px 18px;
+
+    border: 1px solid #e3eef1;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f8fcfd
+        );
+
+    color: #183f4c;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(25, 80, 95, 0.035);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+
+.iolPill:hover {
+    transform: translateX(5px);
+
+    border-color: #c9e5eb;
+
+    box-shadow:
+        0 12px 28px rgba(25, 80, 95, 0.08);
+}
+
+
+.iolPill.active {
+    transform: translateX(8px);
+
+    border-color: #9bd4df;
+
+    background:
+        linear-gradient(
+            120deg,
+            #edfafd,
+            #ffffff
+        );
+
+    box-shadow:
+        0 15px 35px rgba(22, 133, 165, 0.11);
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.progressBar {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #078fca,
+            #1769e8,
+            #5146e5
+        );
+
+    transform-origin: left;
+
+    animation: progressAnimation 4s linear forwards;
+}
+
+
+/* =========================================================
+   PILL CONTENT
+========================================================= */
+
+.pillContent {
+    display: block;
+
+    flex: 1;
+
+    padding-left: 3px;
+}
+
+
+.pillHeader {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 7px;
+}
+
+
+.pillNum {
+    color: #1685a5;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.pillTitle {
+    color: #173f4d;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.pillSub {
+    display: block;
+
+    padding-left: 34px;
+
+    color: #829398;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.pillArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    color: #8aa6ad;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.iolPill:hover .pillArrow,
+.iolPill.active .pillArrow {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #078fca,
+            #1769e8
+        );
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   DISPLAY COLUMN
+========================================================= */
+
+.displayColumn {
+    min-width: 0;
+}
+
+
+.glassStage {
+    position: relative;
+
+    min-height: 470px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 45px;
+
+    border: 1px solid rgba(202, 229, 235, 0.9);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(248, 253, 254, 0.98),
+            rgba(235, 248, 251, 0.92)
+        );
+
+    box-shadow:
+        0 30px 70px rgba(24, 76, 91, 0.10),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   STAGE DECORATIONS
+========================================================= */
+
+.stageGlow {
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    top: -120px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(21, 151, 190, 0.17),
+            transparent 68%
+        );
+
+    filter: blur(3px);
+
+    animation: stageFloat 7s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+.stageRing {
+    position: absolute;
+
+    width: 370px;
+    height: 370px;
+
+    right: -170px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(22, 133, 165, 0.09);
+
+    animation: ringRotate 14s linear infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   STAGE CARD
+========================================================= */
+
+.stageCard {
+    position: absolute;
+
+    inset: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(18px)
+        scale(0.97);
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease,
+        visibility 0.45s ease;
+}
+
+
+.stageCard.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+.bigNumber {
+    position: absolute;
+
+    top: -20px;
+    right: 0;
+
+    color: rgba(22, 133, 165, 0.055);
+
+    font-size: 130px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TYPE TAG
+========================================================= */
+
+.typeTag {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    margin-bottom: 18px;
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    border: 1px solid #d9edf1;
+
+    color: #1685a5;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.typeTag span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #1685a5;
+
+    box-shadow:
+        0 0 0 4px rgba(22, 133, 165, 0.09);
+}
+
+
+.stageCard h3 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0 0 14px;
+
+    color: #123c4a;
+
+    font-size: clamp(28px, 3vw, 38px);
+
+    line-height: 1.15;
+
+    font-weight: 750;
+
+    letter-spacing: -1px;
+}
+
+
+.cardDesc {
+    position: relative;
+    z-index: 2;
+
+    max-width: 570px;
+
+    margin: 0;
+
+    color: #637a81;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SPECS BOX
+========================================================= */
+
+.specsBox {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 28px;
+
+    padding: 17px 18px;
+
+    border: 1px solid #dcecef;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.72);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.specsIcon {
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #078fca,
+            #1769e8
+        );
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 7px 16px rgba(23, 105, 232, 0.18);
+}
+
+
+.specsBox h4 {
+    margin: 0 0 5px;
+
+    color: #244a57;
+
+    font-size: 12px;
+
+    font-weight: 750;
+}
+
+
+.specsBox p {
+    margin: 0;
+
+    color: #7a8e93;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   QUALITY BANNER
+========================================================= */
+
+.qualityBanner {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 30px;
+
+    border: 1px solid #e0edf0;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 35px rgba(25, 80, 95, 0.05);
+
+    overflow: hidden;
+}
+
+
+.qualityItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 58px;
+
+    padding: 10px 15px;
+
+    border-right: 1px solid #edf2f3;
+
+    color: #60777e;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    text-align: center;
+}
+
+
+.qualityItem:last-child {
+    border-right: none;
+}
+
+
+.checkIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 21px;
+    height: 21px;
+
+    border-radius: 50%;
+
+    background: #e8f8fb;
+
+    color: #1685a5;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.25);
+        opacity: 0.7;
+    }
+}
+
+
+@keyframes progressAnimation {
+
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+
+@keyframes textGradient {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+@keyframes stageFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-20px, 18px);
+    }
+}
+
+
+@keyframes ringRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .iolSection {
+        padding: 80px 0;
+    }
+
+    .showcaseGrid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .selectorColumn {
+        max-width: 750px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+    .glassStage {
+        min-height: 440px;
+    }
+
+    .qualityBanner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .qualityItem:nth-child(2) {
+        border-right: none;
+    }
+
+    .qualityItem:nth-child(-n + 2) {
+        border-bottom: 1px solid #edf2f3;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .iolSection {
+        padding: 65px 0;
+    }
+
+    .sectionHeader {
+        margin-bottom: 40px;
+    }
+
+    .categoryBadge {
+        font-size: 8px;
+
+        letter-spacing: 1.3px;
+    }
+
+    .sectionTitle {
+        font-size: 31px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .sectionIntro {
+        margin-top: 18px;
+
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+    .iolPill {
+        min-height: 86px;
+
+        padding: 15px;
+    }
+
+    .iolPill.active,
+    .iolPill:hover {
+        transform: translateX(0);
+    }
+
+    .pillTitle {
+        font-size: 14px;
+    }
+
+    .pillSub {
+        font-size: 11px;
+    }
+
+    .glassStage {
+        min-height: 500px;
+
+        padding: 28px;
+
+        border-radius: 22px;
+    }
+
+    .stageCard {
+        inset: 28px;
+    }
+
+    .bigNumber {
+        font-size: 100px;
+
+        top: -10px;
+    }
+
+    .stageCard h3 {
+        font-size: 29px;
+    }
+
+    .cardDesc {
+        font-size: 13px;
+    }
+
+    .specsBox {
+        margin-top: 22px;
+
+        padding: 14px;
+    }
+
+    .qualityBanner {
+        grid-template-columns: 1fr;
+
+        border-radius: 14px;
+    }
+
+    .qualityItem {
+        justify-content: flex-start;
+
+        min-height: 52px;
+
+        text-align: left;
+
+        border-right: none;
+
+        border-bottom: 1px solid #edf2f3;
+    }
+
+    .qualityItem:last-child {
+        border-bottom: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .sectionTitle {
+        font-size: 27px;
+    }
+
+    .sectionIntro {
+        font-size: 12.5px;
+    }
+
+    .columnLabel {
+        font-size: 14px;
+    }
+
+    .pillSub {
+        padding-left: 0;
+    }
+
+    .pillArrow {
+        width: 26px;
+        height: 26px;
+
+        font-size: 16px;
+    }
+
+    .glassStage {
+        min-height: 530px;
+
+        padding: 22px;
+    }
+
+    .stageCard {
+        inset: 22px;
+    }
+
+    .stageCard h3 {
+        font-size: 26px;
+    }
+
+    .typeTag {
+        font-size: 8px;
+    }
+
+    .bigNumber {
+        font-size: 80px;
+    }
+
+    .specsBox {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}

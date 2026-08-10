@@ -1,7 +1,7 @@
 import Hero from "@/Components/home/Hero";
 import CategoryTabs from "@/Components/home/CategoryTabs";
 import CoreValues from "@/Components/home/CoreValues";
-
+import StatsSection from "@/Components/home/Team";
 import IolShowcase from "@/Components/home/IolShowcase";
 import IolBenefitsSection from "@/Components/home/IolBenefitsSection";
 import OurPartnersMarquee from "../Components/home/OurPartnersMarquee";
@@ -29,8 +29,9 @@ export default function Home() {
       <IolShowcase />
       <IolBenefitsSection />
       <OurPartnersMarquee />
+      <StatsSection />
        <WhyChooseUs />
-       <WhyChooseUsStack />
+       
        <FaqSection />
       
     </>

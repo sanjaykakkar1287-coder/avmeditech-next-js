@@ -6,10 +6,8 @@ export default function Footer() {
   return (
     <footer className="site-footer-main">
       <div className="footer-container">
-        
         {/* TOP ROW: Column Links & Contact Details */}
         <div className="footer-top">
-          
           {/* Col 1: Brand & Bio */}
           <div className="footer-col">
             <a href="/" className="header-logo mb-4">
@@ -18,18 +16,30 @@ export default function Footer() {
               </span>
             </a>
             <p className="footer-about-text">
-              Delivering high-precision IOLs, advanced viscoelastic solutions, and ultra-sharp surgical blades to empower eye surgeons across India.
+              Delivering high-precision IOLs, advanced viscoelastic solutions,
+              and ultra-sharp surgical blades to empower eye surgeons across
+              India.
             </p>
+
+            
           </div>
 
           {/* Col 2: Quick Links */}
           <div className="footer-col">
             <h3 className="footer-col-title">Quick Links</h3>
             <ul className="footer-links">
-              <li><a href="#products">Products</a></li>
-              <li><a href="#why-choose-us">About Us</a></li>
-              <li><a href="#iol-benefits">Benefits</a></li>
-              <li><a href="#faq-section">FAQs</a></li>
+              <li>
+                <a href="#products">Products</a>
+              </li>
+              <li>
+                <a href="#why-choose-us">About Us</a>
+              </li>
+              <li>
+                <a href="#iol-benefits">Benefits</a>
+              </li>
+              <li>
+                <a href="#faq-section">FAQs</a>
+              </li>
             </ul>
           </div>
 
@@ -37,10 +47,18 @@ export default function Footer() {
           <div className="footer-col">
             <h3 className="footer-col-title">Our Solutions</h3>
             <ul className="footer-links">
-              <li><a href="#">Intraocular Lenses</a></li>
-              <li><a href="#">Surgical Consumables</a></li>
-              <li><a href="#">Vitreoretinal</a></li>
-              <li><a href="#">Phaco Equipments</a></li>
+              <li>
+                <a href="#">Intraocular Lenses</a>
+              </li>
+              <li>
+                <a href="#">Surgical Consumables</a>
+              </li>
+              <li>
+                <a href="#">Vitreoretinal</a>
+              </li>
+              <li>
+                <a href="#">Phaco Equipments</a>
+              </li>
             </ul>
           </div>
 
@@ -50,27 +68,124 @@ export default function Footer() {
             <ul className="footer-contact">
               <li>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
                 </svg>
-                <span>AV Meditech, 123 Ophthalmic Way, New Delhi, 110001, India</span>
+                <span>
+                  Unit No.715, 7th Floor, B-wing, Emaar Digital Greens, Sector
+                  61, Golf Course Extension Road, Gurugram, Haryana, 122011
+                </span>
               </li>
+
               <li>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M22 16.92v3a2 2 0 01-2.18 2
+      19.79 19.79 0 01-8.63-3.07
+      19.5 19.5 0 01-6-6
+      19.79 19.79 0 01-3.07-8.67
+      A2 2 0 014.11 2h3
+      a2 2 0 012 1.72
+      12.84 12.84 0 00.7 2.81
+      2 2 0 01-.45 2.11L8.09 9.91
+      a16 16 0 006 6l1.27-1.27
+      a2 2 0 012.11-.45
+      12.84 12.84 0 002.81.7
+      A2 2 0 0122 16.92z"
+                  />
+                </svg>
+
+                <span>+91-124-4106078.</span>
+              </li>
+
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <span>
+                  Regd. Address: D.S.S 308, Ground Floor, Sector 20, Huda, Kaithal, Haryana 136027
+                </span>
+              </li>
+
+<li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M22 16.92v3a2 2 0 01-2.18 2
+      19.79 19.79 0 01-8.63-3.07
+      19.5 19.5 0 01-6-6
+      19.79 19.79 0 01-3.07-8.67
+      A2 2 0 014.11 2h3
+      a2 2 0 012 1.72
+      12.84 12.84 0 00.7 2.81
+      2 2 0 01-.45 2.11L8.09 9.91
+      a16 16 0 006 6l1.27-1.27
+      a2 2 0 012.11-.45
+      12.84 12.84 0 002.81.7
+      A2 2 0 0122 16.92z"
+                  />
+                </svg>
+
+                <span>+91 9354343355 , +91 9812023148</span>
+              </li>
+
+
+
+
+
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
                 </svg>
                 <span>info@avmeditech.com</span>
               </li>
             </ul>
+            
           </div>
-
+          
         </div>
 
         {/* BOTTOM ROW: Copyright & Social Links */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            &copy; {currentYear} AV Meditech. All Rights Reserved. | Created &amp; Maintained by{" "}
-            <a href="https://businexperts.com/" target="_blank" rel="noopener noreferrer">
+            &copy; {currentYear} AV Meditech. All Rights Reserved. | Created
+            &amp; Maintained by{" "}
+            <a
+              href="https://businexperts.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="gradient-highlight">Businexperts.com</span>
             </a>
           </p>
@@ -97,7 +212,6 @@ export default function Footer() {
             </a>
           </div>
         </div>
-
       </div>
     </footer>
   );

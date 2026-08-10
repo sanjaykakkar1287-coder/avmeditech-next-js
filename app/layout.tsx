@@ -22,6 +22,7 @@ export const metadata = {
   title: {
     default: "AV Meditech",
     template: "%s | AV Meditech",
+    cache: "no-cache",
   },
   description: "Leading Ophthalmic Solutions",
 };
