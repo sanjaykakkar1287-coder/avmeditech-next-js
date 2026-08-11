@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "./Welcome.module.css";
 
@@ -51,7 +52,12 @@ export default function Welcome() {
 
         {/* Logo */}
         <div className={styles.logo}>
-          AV
+          <Image
+            src="/images/logo/LOGO2.PNG"
+            alt="AV Meditech Logo"
+            width={80}
+            height={80}
+          />
         </div>
 
         {/* Heading */}

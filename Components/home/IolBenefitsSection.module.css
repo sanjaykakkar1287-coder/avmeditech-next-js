@@ -1,0 +1,525 @@
+/* ==========================================
+   AV MEDITECH — IOL BENEFITS SECTION
+   Left: animated 2D diagnostic visual (scan
+   line, rotating rings, pulsing eye icon).
+   Right: two book-style flip cards cycling
+   through the benefit content.
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+.iolBenefitsSection {
+  --iol-bg: #f3f6f8;
+  --iol-surface: #ffffff;
+  --iol-ink: #10223f;
+  --iol-body: #57626f;
+  --iol-line: rgba(16, 34, 63, 0.09);
+
+  --iol-blue: #2c6ecb;
+  --iol-blue-deep: #163e7a;
+  --iol-amber: #d98c1f;
+  --iol-teal: #26948a;
+  --iol-navy: #16305a;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  position: relative;
+  background-color: var(--iol-bg);
+  padding: 100px 20px;
+  font-family: var(--font-body);
+  color: var(--iol-ink);
+  overflow: hidden;
+}
+
+.iolBenefitsContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ---------- HEADER ---------- */
+
+.iolBenefitsHeader {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.iolHeaderBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--iol-blue);
+  background: rgba(44, 110, 203, 0.08);
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.iolBadgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--iol-blue);
+  box-shadow: 0 0 8px var(--iol-blue);
+  animation: pulseDot 2.2s infinite ease-in-out;
+}
+
+.iolBenefitsTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--iol-ink);
+  margin-bottom: 18px;
+}
+
+.gradientHighlight {
+  background: linear-gradient(90deg, var(--iol-blue) 0%, var(--iol-teal) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-style: italic;
+}
+
+.iolBenefitsSubtitle {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--iol-body);
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+
+.iolBenefitsGrid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* ================================================
+   LEFT: ANIMATED DIAGNOSTIC VISUAL
+   ================================================ */
+
+.visualCard {
+  position: relative;
+  background: var(--iol-surface);
+  border: 1px solid var(--iol-line);
+  border-radius: 26px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px rgba(16, 34, 63, 0.04);
+  overflow: hidden;
+}
+
+.visualHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  z-index: 3;
+  position: relative;
+}
+
+.visualLabel {
+  font-weight: 600;
+  color: var(--iol-body);
+}
+
+.visualStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--iol-blue);
+  background: rgba(44, 110, 203, 0.08);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.visualStatusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--iol-blue);
+  animation: pulseDot 2.2s infinite ease-in-out;
+}
+
+.visualStage {
+  position: relative;
+  height: 250px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at center, rgba(44, 110, 203, 0.06) 0%, transparent 70%);
+  overflow: hidden;
+}
+
+/* corner reticle brackets, camera-focus style */
+.reticle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--iol-blue);
+  opacity: 0.45;
+}
+.reticleTL { top: 14px; left: 14px; border-right: none; border-bottom: none; border-radius: 4px 0 0 0; }
+.reticleTR { top: 14px; right: 14px; border-left: none; border-bottom: none; border-radius: 0 4px 0 0; }
+.reticleBL { bottom: 14px; left: 14px; border-right: none; border-top: none; border-radius: 0 0 0 4px; }
+.reticleBR { bottom: 14px; right: 14px; border-left: none; border-top: none; border-radius: 0 0 4px 0; }
+
+/* sweeping scan line */
+.scanLine {
+  position: absolute;
+  left: 6%;
+  width: 88%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--iol-blue), var(--iol-teal), transparent);
+  box-shadow: 0 0 12px rgba(44, 110, 203, 0.6);
+  animation: scanSweep 3.4s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* rotating focus rings */
+.ringOuter,
+.ringInner {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(44, 110, 203, 0.35);
+}
+.ringOuter {
+  width: 168px;
+  height: 168px;
+  animation: rotateForward 16s linear infinite;
+}
+.ringInner {
+  width: 118px;
+  height: 118px;
+  border-color: rgba(38, 148, 138, 0.4);
+  animation: rotateReverse 11s linear infinite;
+}
+
+.orbitDot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  margin: -3.5px;
+  border-radius: 50%;
+  background: var(--iol-teal);
+  box-shadow: 0 0 8px var(--iol-teal);
+  animation: orbit 6s linear infinite;
+}
+
+.eyeIcon {
+  position: relative;
+  width: 78px;
+  height: 78px;
+  color: var(--iol-blue-deep);
+  z-index: 2;
+}
+
+.eyePupil {
+  fill: var(--iol-blue);
+  stroke: none;
+  transform-origin: center;
+  animation: pulsePupil 2.6s ease-in-out infinite;
+}
+
+.visualFooter {
+  z-index: 3;
+  position: relative;
+}
+
+.visualFooterLabel {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--iol-body);
+  margin-bottom: 8px;
+}
+
+.calibrationTrack {
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  background: rgba(16, 34, 63, 0.07);
+  overflow: hidden;
+}
+
+.calibrationFill {
+  width: 40%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--iol-blue), var(--iol-teal));
+  animation: calibrationSweep 2.8s ease-in-out infinite;
+}
+
+/* ================================================
+   RIGHT: BOOK-FLIP CARDS
+   ================================================ */
+
+.booksColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bookCard {
+  background: var(--iol-surface);
+  border: 1px solid var(--iol-line);
+  border-radius: 22px;
+  padding: 20px 22px 18px;
+  box-shadow: 0 16px 32px rgba(16, 34, 63, 0.04);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.bookLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--card-accent, var(--iol-blue));
+}
+
+.bookNextBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: color-mix(in srgb, var(--card-accent, var(--iol-blue)) 12%, transparent);
+  color: var(--card-accent, var(--iol-blue));
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.bookNextBtn:hover {
+  background: color-mix(in srgb, var(--card-accent, var(--iol-blue)) 22%, transparent);
+  transform: translateX(2px);
+}
+
+.bookNextBtn:focus-visible {
+  outline: 2px solid var(--card-accent, var(--iol-blue));
+  outline-offset: 2px;
+}
+
+.bookViewport {
+  position: relative;
+  height: 168px;
+  perspective: 1600px;
+}
+
+.bookPage {
+  position: absolute;
+  inset: 0;
+  background: var(--iol-surface);
+  border: 1px solid var(--iol-line);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  transition: none;
+  box-shadow: 4px 0 14px rgba(16, 34, 63, 0.05);
+}
+
+.bookPage.turning {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotateY(-170deg);
+}
+
+.bookPageSpine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 22px;
+  background: linear-gradient(90deg, rgba(16, 34, 63, 0.06), transparent);
+  border-radius: 16px 0 0 16px;
+  pointer-events: none;
+}
+
+.bookPageIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--card-accent, var(--iol-blue)) 12%, transparent);
+  color: var(--card-accent, var(--iol-blue));
+  margin-bottom: 10px;
+}
+
+.bookPageIcon {
+  width: 17px;
+  height: 17px;
+}
+
+.bookPageTag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--card-accent, var(--iol-blue));
+  margin-bottom: 4px;
+}
+
+.bookPageTitle {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.28;
+  color: var(--iol-ink);
+  margin-bottom: 6px;
+}
+
+.bookPageText {
+  font-size: 0.83rem;
+  line-height: 1.55;
+  color: var(--iol-body);
+  margin: 0;
+}
+
+.bookDots {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.bookDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: var(--iol-line);
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.bookDotActive {
+  width: 18px;
+  border-radius: 4px;
+  background: var(--card-accent, var(--iol-blue));
+}
+
+.bookDot:focus-visible {
+  outline: 2px solid var(--card-accent, var(--iol-blue));
+  outline-offset: 2px;
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+@keyframes scanSweep {
+  0% { top: 12%; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 88%; opacity: 0; }
+}
+
+@keyframes rotateForward {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(76px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(76px) rotate(-360deg); }
+}
+
+@keyframes pulsePupil {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.18); opacity: 0.75; }
+}
+
+@keyframes calibrationSweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(340%); }
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .iolBadgeDot,
+  .visualStatusDot,
+  .scanLine,
+  .ringOuter,
+  .ringInner,
+  .orbitDot,
+  .eyePupil,
+  .calibrationFill {
+    animation: none;
+  }
+  .bookPage.turning {
+    transition: none;
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1024px) {
+  .iolBenefitsGrid {
+    grid-template-columns: 1fr;
+  }
+  .visualStage {
+    height: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .iolBenefitsSection {
+    padding: 64px 16px;
+  }
+  .bookCard {
+    padding: 18px;
+  }
+  .bookViewport {
+    height: 200px;
+  }
+}

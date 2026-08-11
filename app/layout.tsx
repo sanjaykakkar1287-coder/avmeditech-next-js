@@ -22,9 +22,33 @@ export const metadata = {
   title: {
     default: "AV Meditech",
     template: "%s | AV Meditech",
-    cache: "no-cache",
   },
+
   description: "Leading Ophthalmic Solutions",
+
+  openGraph: {
+    title: "AV Meditech",
+    description: "Leading Ophthalmic Solutions",
+    siteName: "AV Meditech",
+    type: "website",
+    locale: "en_IN",
+    url: "https://www.avmeditech.com",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AV Meditech - Leading Ophthalmic Solutions",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "AV Meditech",
+    description: "Leading Ophthalmic Solutions",
+    images: ["/images/og-image.png"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

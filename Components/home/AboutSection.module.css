@@ -1,14 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+/* ==========================================
+   AV MEDITECH — ABOUT SECTION
+   Shares the type/color system introduced in
+   the benefits section for site-wide cohesion.
+   Signature: an animated light beam traveling
+   down through the three pillar cards.
+   ========================================== */
 
-/* ===========================
-   About Section
-=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
 
 .aboutSection {
-  padding: 100px 20px;
-  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  --iol-bg: #f3f6f8;
+  --iol-surface: #ffffff;
+  --iol-ink: #10223f;
+  --iol-body: #57626f;
+  --iol-line: rgba(16, 34, 63, 0.09);
+
+  --iol-blue: #2c6ecb;
+  --iol-blue-deep: #163e7a;
+  --iol-amber: #d98c1f;
+  --iol-teal: #26948a;
+  --iol-navy: #16305a;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
   position: relative;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, var(--iol-bg) 100%);
+  font-family: var(--font-body);
+  color: var(--iol-ink);
   overflow: hidden;
 }
 
@@ -20,7 +41,7 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(rgba(23, 105, 232, 0.12), transparent 70%);
+  background: radial-gradient(rgba(44, 110, 203, 0.1), transparent 70%);
   filter: blur(10px);
   pointer-events: none;
 }
@@ -33,14 +54,12 @@
   width: 450px;
   height: 450px;
   border-radius: 50%;
-  background: radial-gradient(rgba(8, 127, 189, 0.1), transparent 70%);
+  background: radial-gradient(rgba(38, 148, 138, 0.08), transparent 70%);
   filter: blur(10px);
   pointer-events: none;
 }
 
-/* ===========================
-   Container
-=========================== */
+/* ---------- CONTAINER ---------- */
 
 .container {
   max-width: 1200px;
@@ -53,9 +72,7 @@
   z-index: 2;
 }
 
-/* ===========================
-   Left Side
-=========================== */
+/* ---------- LEFT: CONTENT ---------- */
 
 .content {
   display: flex;
@@ -70,12 +87,12 @@
   padding: 6px 16px;
   margin-bottom: 22px;
   border-radius: 50px;
-  background: #ffffff;
-  border: 1px solid #dcecef;
-  color: #1685a5;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  background: rgba(44, 110, 203, 0.08);
+  color: var(--iol-blue);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -83,103 +100,168 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #1685a5;
-  box-shadow: 0 0 0 3px rgba(22, 133, 165, 0.15);
+  background: var(--iol-blue);
+  box-shadow: 0 0 0 3px rgba(44, 110, 203, 0.15);
+  animation: pulseDot 2.2s infinite ease-in-out;
 }
 
 .heading {
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  line-height: 1.15;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #0f172a;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  line-height: 1.18;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--iol-ink);
   margin-bottom: 22px;
 }
 
 .highlight {
-  background: linear-gradient(
-    115deg,
-    #087fbd 0%,
-    #078fca 25%,
-    #1769e8 55%,
-    #315bea 78%,
-    #087fbd 100%
-  );
-  background-size: 200% auto;
+  background: linear-gradient(90deg, var(--iol-blue) 0%, var(--iol-teal) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientShift 8s ease-in-out infinite;
+  font-style: italic;
 }
 
 .description {
-  color: #64748b;
-  font-size: 16px;
-  line-height: 1.9;
-  margin-bottom: 26px;
+  color: var(--iol-body);
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 20px;
 }
 
-/* ===========================
-   Button
-=========================== */
+/* ---------- STAT STRIP ---------- */
+
+.statStrip {
+  display: flex;
+  gap: 28px;
+  margin: 10px 0 30px;
+}
+
+.stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-right: 28px;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--iol-ink);
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--iol-body);
+  margin-top: 6px;
+}
+
+.statDivider {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: var(--iol-line);
+}
+
+/* ---------- BUTTON ---------- */
 
 .button {
-  margin-top: 10px;
+  margin-top: 4px;
   width: fit-content;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 15px 32px;
+  padding: 15px 30px;
   border-radius: 12px;
   text-decoration: none;
   color: #ffffff;
   font-weight: 600;
-  font-size: 15px;
-  background: linear-gradient(
-    115deg,
-    #087fbd 0%,
-    #078fca 25%,
-    #1769e8 55%,
-    #315bea 78%,
-    #087fbd 100%
-  );
-  background-size: 200% auto;
-  box-shadow: 0 15px 35px rgba(23, 105, 232, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease;
+  font-size: 0.95rem;
+  background: linear-gradient(115deg, var(--iol-blue) 0%, var(--iol-teal) 100%);
+  box-shadow: 0 15px 35px rgba(44, 110, 203, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buttonArrow {
+  transition: transform 0.25s ease;
 }
 
 .button:hover {
   transform: translateY(-4px);
-  background-position: 100% 50%;
-  box-shadow: 0 20px 45px rgba(23, 105, 232, 0.32);
+  box-shadow: 0 20px 45px rgba(44, 110, 203, 0.32);
 }
 
-/* ===========================
-   Right Side
-=========================== */
+.button:hover .buttonArrow {
+  transform: translateX(3px);
+}
 
-.infoCard {
+/* ---------- RIGHT: PILLAR CARDS + LIGHT BEAM ---------- */
+
+.pillars {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* ===========================
-   Cards
-=========================== */
+.beam {
+  position: absolute;
+  left: 52px;
+  top: 52px;
+  bottom: 52px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--iol-blue), var(--iol-teal), var(--iol-amber));
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.beamGlow {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  border-radius: 50%;
+  background: var(--iol-teal);
+  box-shadow: 0 0 12px var(--iol-teal);
+  animation: beamTravel 4.2s ease-in-out infinite;
+}
 
 .card {
-  padding: 28px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 18px;
+  padding: 26px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(173, 216, 255, 0.35);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+  border: 1px solid var(--iol-line);
+  box-shadow: 0 10px 30px rgba(16, 34, 63, 0.05);
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.35s ease,
               border-color 0.35s ease;
-  position: relative;
-  overflow: hidden;
+}
+
+.card.isVisible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
 }
 
 .card::before {
@@ -187,51 +269,87 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 4px;
+  width: 3px;
   height: 100%;
-  background: linear-gradient(180deg, #087fbd, #1769e8, #315bea);
+  background: linear-gradient(180deg, var(--iol-blue), var(--iol-teal));
   transform: scaleY(0);
   transform-origin: top;
+  border-radius: 20px 0 0 20px;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover {
   transform: translateY(-6px);
   border-color: transparent;
-  box-shadow: 0 20px 45px rgba(23, 105, 232, 0.16);
+  box-shadow: 0 20px 45px rgba(44, 110, 203, 0.14);
 }
 
 .card:hover::before {
   transform: scaleY(1);
 }
 
+.cardIconWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(44, 110, 203, 0.08);
+  color: var(--iol-blue);
+}
+
+.cardIcon {
+  width: 24px;
+  height: 24px;
+}
+
 .card h3 {
-  color: #0f172a;
-  font-size: 21px;
-  margin-bottom: 10px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
+  font-family: var(--font-display);
+  color: var(--iol-ink);
+  font-size: 1.18rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .card p {
-  color: #64748b;
-  line-height: 1.8;
-  font-size: 14.5px;
+  color: var(--iol-body);
+  line-height: 1.75;
+  font-size: 0.9rem;
+  margin: 0;
 }
 
-/* ===========================
-   Shared gradient animation
-=========================== */
+/* ---------- ANIMATIONS ---------- */
 
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
 }
 
-/* ===========================
-   Responsive
-=========================== */
+@keyframes beamTravel {
+  0% { top: 0%; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .highlight,
+  .badgeDot,
+  .beamGlow {
+    animation: none;
+  }
+  .card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    filter: none;
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 992px) {
   .container {
@@ -242,6 +360,14 @@
   .content {
     text-align: center;
     align-items: center;
+  }
+
+  .statStrip {
+    justify-content: center;
+  }
+
+  .beam {
+    display: none;
   }
 }
 
@@ -255,21 +381,22 @@
   }
 
   .description {
-    font-size: 15px;
+    font-size: 0.92rem;
+  }
+
+  .statStrip {
+    gap: 20px;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
   }
 
   .card {
-    padding: 22px;
+    padding: 20px;
   }
 
   .card h3 {
-    font-size: 19px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .highlight,
-  .button {
-    animation: none;
+    font-size: 1.05rem;
   }
 }
