@@ -40,7 +40,7 @@
 .heading h1 {
     margin: 0 0 12px;
 
-    color: #123c4a;
+    color: var(--theme-heading);
 
     font-size: clamp(32px, 4vw, 46px);
     line-height: 1.15;

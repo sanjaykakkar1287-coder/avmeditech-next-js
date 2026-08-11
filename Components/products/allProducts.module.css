@@ -129,7 +129,7 @@
 .mainHeading {
     margin: 0 0 14px;
 
-    color: #143e4c;
+    color: var(--theme-heading);
 
     font-size: clamp(32px, 4vw, 46px);
 

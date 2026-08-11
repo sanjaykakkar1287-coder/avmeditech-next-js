@@ -1,440 +1,1041 @@
-/* Container & Background */
+/* =========================================================
+   SECTION — UNIFIED HEALTHCARE TEAL THEME
+========================================================= */
+
 .section {
-  position: relative;
-  overflow: hidden;
-  padding: 4rem 1rem;
-  background-color: #ffffff;
-  /* Light Grid / Pattern background */
-  background-image: 
-    radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px),
-    linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
-  background-size: 24px 24px, 48px 48px, 48px 48px;
-  background-position: 0 0, 0 0, 0 0;
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 4rem 1rem;
+
+    background-color: #ffffff;
+
+    /* Light Teal Grid / Pattern */
+    background-image:
+        radial-gradient(
+            rgba(22, 133, 165, 0.10) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to right,
+            rgba(220, 236, 239, 0.45) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(220, 236, 239, 0.45) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        24px 24px,
+        48px 48px,
+        48px 48px;
+
+    background-position:
+        0 0,
+        0 0,
+        0 0;
 }
+
 
 @media (min-width: 640px) {
-  .section {
-    padding: 6rem 2rem;
-  }
+    .section {
+        padding: 6rem 2rem;
+    }
 }
 
+
 @media (min-width: 1024px) {
-  .section {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
+    .section {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
 }
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container {
-  max-width: 80rem;
-  margin: 0 auto;
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+    max-width: 80rem;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4rem;
 }
 
-/* Header Badge Row */
+
+/* =========================================================
+   HEADER ROW
+========================================================= */
+
 .headerRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-  padding-bottom: 1.5rem;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid
+        rgba(220, 236, 239, 0.9);
+
+    padding-bottom: 1.5rem;
 }
+
+
+/* =========================================================
+   BADGE
+========================================================= */
 
 .badgePill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
-  padding: 0.375rem 1rem;
-  border-radius: 9999px;
-  background-color: rgba(224, 242, 254, 0.8);
-  color: #075985;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border: 1px solid #bae6fd;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.625rem;
+
+    padding: 0.375rem 1rem;
+
+    border-radius: 9999px;
+
+    background-color: #f4fafb;
+
+    color: #1685a5;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+
+    border:
+        1px solid
+        #dcecef;
+
+    box-shadow:
+        0 1px 2px
+        rgba(21, 72, 86, 0.04);
 }
+
+
+/* =========================================================
+   PULSE DOT
+========================================================= */
 
 .pulseDot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 9999px;
-  background-color: #0284c7;
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    width: 0.5rem;
+    height: 0.5rem;
+
+    border-radius: 9999px;
+
+    background-color: #1685a5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 133, 165, 0.14);
+
+    animation:
+        pulse 2s
+        cubic-bezier(0.4, 0, 0.6, 1)
+        infinite;
 }
+
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
 
 .subtitle {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  display: none;
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    color: #94aeb5;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+    display: none;
 }
+
 
 @media (min-width: 640px) {
-  .subtitle {
-    display: inline-block;
-  }
+    .subtitle {
+        display: inline-block;
+    }
 }
 
-/* Main Editorial Layout Grid */
+
+/* =========================================================
+   MAIN EDITORIAL GRID
+========================================================= */
+
 .mainGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: center;
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+
+    align-items: center;
 }
+
 
 @media (min-width: 1024px) {
-  .mainGrid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 4rem;
-  }
+    .mainGrid {
+        grid-template-columns:
+            repeat(12, minmax(0, 1fr));
+
+        gap: 4rem;
+    }
 }
 
-/* Left Content Column */
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
 .leftCol {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
 }
 
+
 @media (min-width: 1024px) {
-  .leftCol {
-    grid-column: span 7 / span 7;
-  }
+    .leftCol {
+        grid-column:
+            span 7 / span 7;
+    }
 }
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
 
 .mainHeading {
-  font-size: 1.875rem;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.025em;
-  line-height: 1.15;
+    font-size: 1.875rem;
+
+    font-weight: 800;
+
+    color: #163e4b;
+
+    letter-spacing: -0.025em;
+
+    line-height: 1.15;
 }
+
 
 @media (min-width: 640px) {
-  .mainHeading { font-size: 2.25rem; }
+    .mainHeading {
+        font-size: 2.25rem;
+    }
 }
 
+
 @media (min-width: 1024px) {
-  .mainHeading { font-size: 3rem; }
+    .mainHeading {
+        font-size: 3rem;
+    }
 }
+
+
+/* =========================================================
+   GRADIENT TEXT
+========================================================= */
 
 .gradientText {
-  background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #4f46e5 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    background:
+        linear-gradient(
+            135deg,
+            #126f89 0%,
+            #1685a5 50%,
+            #1b91a5 100%
+        );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientShift 7s
+        ease-in-out
+        infinite;
 }
+
+
+/* =========================================================
+   LEAD TEXT
+========================================================= */
 
 .leadText {
-  font-size: 1rem;
-  color: #475569;
-  line-height: 1.625;
-  font-weight: 400;
+    font-size: 1rem;
+
+    color: #60777e;
+
+    line-height: 1.625;
+
+    font-weight: 400;
 }
 
+
 @media (min-width: 640px) {
-  .leadText { font-size: 1.125rem; }
+    .leadText {
+        font-size: 1.125rem;
+    }
 }
+
+
+/* =========================================================
+   STRONG TEXT
+========================================================= */
 
 .strongText {
-  color: #0f172a;
-  font-weight: 600;
+    color: #163e4b;
+
+    font-weight: 700;
 }
+
+
+/* =========================================================
+   BODY TEXT
+========================================================= */
 
 .bodyText {
-  font-size: 0.875rem;
-  color: #475569;
-  line-height: 1.625;
+    font-size: 0.875rem;
+
+    color: #71848a;
+
+    line-height: 1.625;
 }
+
 
 @media (min-width: 640px) {
-  .bodyText { font-size: 1rem; }
+    .bodyText {
+        font-size: 1rem;
+    }
 }
 
-/* Principles Grid */
+
+/* =========================================================
+   PRINCIPLES GRID
+========================================================= */
+
 .principlesGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(226, 232, 240, 0.8);
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+
+    padding-top: 1rem;
+
+    border-top:
+        1px solid
+        rgba(220, 236, 239, 0.9);
 }
 
+
 @media (min-width: 640px) {
-  .principlesGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    .principlesGrid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 }
+
+
+/* =========================================================
+   PRINCIPLE ITEM
+========================================================= */
 
 .principleItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 0.75rem;
 }
 
-.principleNumSky {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: rgba(2, 132, 199, 0.1);
-  color: #0284c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-weight: 700;
-  font-size: 0.875rem;
-}
 
+/* =========================================================
+   PRINCIPLE NUMBER
+========================================================= */
+
+.principleNumSky,
 .principleNumBlue {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: rgba(37, 99, 235, 0.1);
-  color: #2563eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-weight: 700;
-  font-size: 0.875rem;
+    width: 2rem;
+
+    height: 2rem;
+
+    border-radius: 0.5rem;
+
+    background-color:
+        rgba(22, 133, 165, 0.09);
+
+    color: #1685a5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-weight: 700;
+
+    font-size: 0.875rem;
+
+    border:
+        1px solid
+        rgba(22, 133, 165, 0.08);
 }
+
+
+/* =========================================================
+   PRINCIPLE TITLE
+========================================================= */
 
 .principleTitle {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: #0f172a;
+    font-size: 0.875rem;
+
+    font-weight: 700;
+
+    color: #163e4b;
 }
+
+
+/* =========================================================
+   PRINCIPLE DESCRIPTION
+========================================================= */
 
 .principleDesc {
-  font-size: 0.75rem;
-  color: #64748b;
-  margin-top: 0.125rem;
+    font-size: 0.75rem;
+
+    color: #71848a;
+
+    margin-top: 0.125rem;
 }
 
-/* Right Feature Column (Light Theme Refined) */
+
+/* =========================================================
+   RIGHT FEATURE COLUMN
+========================================================= */
+
 .rightCol {
-  position: relative;
+    position: relative;
 }
+
 
 @media (min-width: 1024px) {
-  .rightCol {
-    grid-column: span 5 / span 5;
-  }
+    .rightCol {
+        grid-column:
+            span 5 / span 5;
+    }
 }
+
+
+/* =========================================================
+   GLOW AURA
+========================================================= */
 
 .glowAura {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 16rem;
-  height: 16rem;
-  background-color: rgba(14, 165, 233, 0.15);
-  border-radius: 9999px;
-  filter: blur(40px);
-  pointer-events: none;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 16rem;
+
+    height: 16rem;
+
+    background-color:
+        rgba(22, 133, 165, 0.13);
+
+    border-radius: 9999px;
+
+    filter: blur(40px);
+
+    pointer-events: none;
 }
+
+
+/* =========================================================
+   FEATURE CARD
+========================================================= */
 
 .featureCard {
-  position: relative;
-  z-index: 10;
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  padding: 2rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    position: relative;
+
+    z-index: 10;
+
+    border-radius: 1.5rem;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid
+        rgba(220, 236, 239, 0.95);
+
+    padding: 2rem;
+
+    box-shadow:
+        0 20px 25px -5px
+        rgba(21, 72, 86, 0.05),
+
+        0 8px 10px -6px
+        rgba(21, 72, 86, 0.025);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
 }
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
 
 .cardHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-  padding-bottom: 1rem;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid
+        rgba(220, 236, 239, 0.9);
+
+    padding-bottom: 1rem;
 }
+
+
+/* =========================================================
+   CARD HEADER LABEL
+========================================================= */
 
 .cardHeaderLabel {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #0284c7;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    color: #1685a5;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
 }
+
+
+/* =========================================================
+   STATUS DOT
+========================================================= */
 
 .greenDot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 9999px;
-  background-color: #10b981;
+    width: 0.5rem;
+
+    height: 0.5rem;
+
+    border-radius: 9999px;
+
+    background-color: #1685a5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 133, 165, 0.12);
+
+    animation:
+        pulse 2s
+        ease-in-out
+        infinite;
 }
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
 
 .cardTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #0f172a;
-  line-height: 1.375;
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    color: #163e4b;
+
+    line-height: 1.375;
 }
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
 
 .cardDesc {
-  font-size: 0.75rem;
-  color: #475569;
-  line-height: 1.625;
+    font-size: 0.75rem;
+
+    color: #71848a;
+
+    line-height: 1.625;
 }
 
+
 @media (min-width: 640px) {
-  .cardDesc { font-size: 0.875rem; }
+    .cardDesc {
+        font-size: 0.875rem;
+    }
 }
+
+
+/* =========================================================
+   OFFERINGS LABEL
+========================================================= */
 
 .offeringsLabel {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 0.75rem;
+    font-size: 0.6875rem;
+
+    font-weight: 700;
+
+    color: #94aeb5;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    display: block;
+
+    margin-bottom: 0.75rem;
 }
+
+
+/* =========================================================
+   TAG GROUP
+========================================================= */
 
 .tagGroup {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
 }
+
+
+/* =========================================================
+   PRODUCT TAG
+========================================================= */
 
 .productTag {
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.5rem;
-  background-color: #f0f9ff;
-  color: #0369a1;
-  border: 1px solid #bae6fd;
-  transition: all 0.2s ease;
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    padding: 0.375rem 0.75rem;
+
+    border-radius: 0.5rem;
+
+    background-color: #f2fafb;
+
+    color: #126f89;
+
+    border:
+        1px solid
+        #d9edf0;
+
+    transition:
+        all 0.2s ease;
 }
+
 
 .productTag:hover {
-  background-color: #e0f2fe;
+    background-color: #e5f5f7;
+
+    border-color: #b9dce3;
+
+    color: #1685a5;
+
+    transform:
+        translateY(-1px);
 }
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
 
 .cardFooter {
-  padding-top: 1rem;
-  border-top: 1px solid rgba(226, 232, 240, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #0284c7;
+    padding-top: 1rem;
+
+    border-top:
+        1px solid
+        rgba(220, 236, 239, 0.9);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    color: #1685a5;
 }
 
-/* Bottom Value Strip */
+
+/* =========================================================
+   BOTTOM VALUE STRIP
+========================================================= */
+
 .valueStrip {
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(8px);
+
+    padding: 1.5rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1.5rem;
+
+    border:
+        1px solid
+        rgba(220, 236, 239, 0.95);
+
+    box-shadow:
+        0 1px 3px
+        rgba(21, 72, 86, 0.05);
 }
+
 
 @media (min-width: 768px) {
-  .valueStrip {
-    flex-direction: row;
-    padding: 2rem;
-  }
+    .valueStrip {
+        flex-direction: row;
+
+        padding: 2rem;
+    }
 }
+
+
+/* =========================================================
+   STRIP LEFT
+========================================================= */
 
 .stripLeft {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
 }
+
+
+/* =========================================================
+   ICON BADGE
+========================================================= */
 
 .iconBadge {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.75rem;
-  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  flex-shrink: 0;
-  box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.2);
+    width: 3rem;
+
+    height: 3rem;
+
+    border-radius: 0.75rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            #126f89 0%,
+            #1685a5 100%
+        );
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 4px 6px -1px
+        rgba(22, 133, 165, 0.20);
 }
+
 
 .stripIcon {
-  width: 1.5rem;
-  height: 1.5rem;
+    width: 1.5rem;
+
+    height: 1.5rem;
 }
+
+
+/* =========================================================
+   STRIP TITLE
+========================================================= */
 
 .stripTitle {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #0f172a;
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    color: #163e4b;
 }
+
+
+/* =========================================================
+   STRIP DESCRIPTION
+========================================================= */
 
 .stripDesc {
-  font-size: 0.75rem;
-  color: #475569;
+    font-size: 0.75rem;
+
+    color: #71848a;
 }
 
+
 @media (min-width: 640px) {
-  .stripDesc { font-size: 0.875rem; }
+    .stripDesc {
+        font-size: 0.875rem;
+    }
 }
+
+
+/* =========================================================
+   ACTION BUTTON
+========================================================= */
 
 .actionBtn {
-  flex-shrink: 0;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  background: linear-gradient(90deg, #0284c7 0%, #2563eb 100%);
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-decoration: none;
-  box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.2);
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    flex-shrink: 0;
+
+    padding: 0.75rem 1.5rem;
+
+    border-radius: 0.75rem;
+
+    background:
+        linear-gradient(
+            90deg,
+            #126f89 0%,
+            #1685a5 100%
+        );
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    font-size: 0.75rem;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 4px 6px -1px
+        rgba(22, 133, 165, 0.20);
+
+    transition:
+        all 0.25s ease;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
 }
+
 
 @media (min-width: 640px) {
-  .actionBtn { font-size: 0.875rem; }
+    .actionBtn {
+        font-size: 0.875rem;
+    }
 }
+
 
 .actionBtn:hover {
-  background: linear-gradient(90deg, #0369a1 0%, #1d4ed8 100%);
-  box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3);
+    background:
+        linear-gradient(
+            90deg,
+            #0f6075 0%,
+            #126f89 100%
+        );
+
+    box-shadow:
+        0 10px 15px -3px
+        rgba(22, 133, 165, 0.28);
+
+    transform:
+        translateY(-2px);
 }
 
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
 .btnArrow {
-  width: 1rem;
-  height: 1rem;
+    width: 1rem;
+
+    height: 1rem;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.actionBtn:hover .btnArrow {
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   GRADIENT ANIMATION
+========================================================= */
+
+@keyframes gradientShift {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .section {
+        padding: 3.5rem 1rem;
+    }
+
+    .container {
+        gap: 3rem;
+    }
+
+    .headerRow {
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .badgePill {
+        font-size: 0.68rem;
+
+        padding:
+            0.35rem 0.8rem;
+    }
+
+    .mainHeading {
+        font-size: 2rem;
+    }
+
+    .leadText {
+        font-size: 0.95rem;
+    }
+
+    .featureCard {
+        padding: 1.5rem;
+
+        border-radius: 1.25rem;
+    }
+
+    .valueStrip {
+        padding: 1.25rem;
+
+        align-items: stretch;
+    }
+
+    .stripLeft {
+        align-items: flex-start;
+    }
+
+    .actionBtn {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .gradientText,
+    .pulseDot,
+    .greenDot {
+        animation: none;
+    }
+
+    .productTag,
+    .actionBtn,
+    .btnArrow {
+        transition: none;
+    }
 }

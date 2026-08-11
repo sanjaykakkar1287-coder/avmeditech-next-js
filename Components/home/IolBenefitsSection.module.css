@@ -1,525 +1,1163 @@
-/* ==========================================
-   AV MEDITECH — IOL BENEFITS SECTION
-   Left: animated 2D diagnostic visual (scan
-   line, rotating rings, pulsing eye icon).
-   Right: two book-style flip cards cycling
-   through the benefit content.
-   ========================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+/* =========================================================
+   AV MEDITECH — IOL BENEFITS
+   Unified Healthcare Teal Theme
+========================================================= */
 
 .iolBenefitsSection {
-  --iol-bg: #f3f6f8;
-  --iol-surface: #ffffff;
-  --iol-ink: #10223f;
-  --iol-body: #57626f;
-  --iol-line: rgba(16, 34, 63, 0.09);
+    --iol-bg: #f4fafb;
+    --iol-surface: #ffffff;
 
-  --iol-blue: #2c6ecb;
-  --iol-blue-deep: #163e7a;
-  --iol-amber: #d98c1f;
-  --iol-teal: #26948a;
-  --iol-navy: #16305a;
+    --iol-ink: #163e4b;
+    --iol-body: #71848a;
 
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --iol-line: #dcecef;
 
-  position: relative;
-  background-color: var(--iol-bg);
-  padding: 100px 20px;
-  font-family: var(--font-body);
-  color: var(--iol-ink);
-  overflow: hidden;
+    --iol-blue: #1685a5;
+    --iol-blue-deep: #126f89;
+
+    --iol-amber: #1685a5;
+    --iol-teal: #1685a5;
+    --iol-navy: #163e4b;
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(22, 133, 165, 0.07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(18, 111, 137, 0.05),
+            transparent 30%
+        ),
+        #ffffff;
+
+    padding: 100px 20px;
+
+    font-family: var(--font-body);
+
+    color: var(--iol-ink);
+
+    overflow: hidden;
 }
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .iolBenefitsContainer {
-  max-width: 1180px;
-  margin: 0 auto;
-  position: relative;
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    position: relative;
 }
 
-/* ---------- HEADER ---------- */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .iolBenefitsHeader {
-  max-width: 720px;
-  margin: 0 auto 56px;
-  text-align: center;
+    max-width: 720px;
+
+    margin: 0 auto 56px;
+
+    text-align: center;
 }
+
+
+/* =========================================================
+   HEADER BADGE
+========================================================= */
 
 .iolHeaderBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--iol-blue);
-  background: rgba(44, 110, 203, 0.08);
-  padding: 6px 16px;
-  border-radius: 30px;
-  margin-bottom: 20px;
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.72rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    color: var(--iol-blue);
+
+    background: #f4fafb;
+
+    border: 1px solid #dcecef;
+
+    padding: 6px 16px;
+
+    border-radius: 30px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(22, 133, 165, 0.06);
 }
+
 
 .iolBadgeDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--iol-blue);
-  box-shadow: 0 0 8px var(--iol-blue);
-  animation: pulseDot 2.2s infinite ease-in-out;
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background-color: var(--iol-blue);
+
+    box-shadow:
+        0 0 8px rgba(22, 133, 165, 0.55);
+
+    animation:
+        pulseDot 2.2s infinite ease-in-out;
 }
+
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 .iolBenefitsTitle {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.4vw, 2.85rem);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  color: var(--iol-ink);
-  margin-bottom: 18px;
+    font-family: var(--font-display);
+
+    font-size: clamp(2rem, 3.4vw, 2.85rem);
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.01em;
+
+    color: var(--iol-ink);
+
+    margin-bottom: 18px;
 }
+
+
+/* =========================================================
+   GRADIENT HIGHLIGHT
+========================================================= */
 
 .gradientHighlight {
-  background: linear-gradient(90deg, var(--iol-blue) 0%, var(--iol-teal) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-style: italic;
+    background:
+        linear-gradient(
+            90deg,
+            #1685a5 0%,
+            #126f89 50%,
+            #1685a5 100%
+        );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    font-style: italic;
+
+    animation:
+        textGradient 6s ease infinite;
 }
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
 
 .iolBenefitsSubtitle {
-  font-size: 1.02rem;
-  line-height: 1.65;
-  color: var(--iol-body);
+    font-size: 1.02rem;
+
+    line-height: 1.65;
+
+    color: var(--iol-body);
 }
 
-/* ---------- MAIN LAYOUT ---------- */
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
 
 .iolBenefitsGrid {
-  display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
-  gap: 28px;
-  align-items: stretch;
+    display: grid;
+
+    grid-template-columns: 0.82fr 1.18fr;
+
+    gap: 28px;
+
+    align-items: stretch;
 }
 
-/* ================================================
-   LEFT: ANIMATED DIAGNOSTIC VISUAL
-   ================================================ */
+
+/* =========================================================
+   LEFT — DIAGNOSTIC VISUAL
+========================================================= */
 
 .visualCard {
-  position: relative;
-  background: var(--iol-surface);
-  border: 1px solid var(--iol-line);
-  border-radius: 26px;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 20px 40px rgba(16, 34, 63, 0.04);
-  overflow: hidden;
+    position: relative;
+
+    background: var(--iol-surface);
+
+    border: 1px solid var(--iol-line);
+
+    border-radius: 26px;
+
+    padding: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    box-shadow:
+        0 20px 40px rgba(21, 72, 86, 0.05);
+
+    overflow: hidden;
 }
+
+
+/* =========================================================
+   VISUAL HEADER
+========================================================= */
 
 .visualHeaderRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.78rem;
-  z-index: 3;
-  position: relative;
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 0.78rem;
+
+    z-index: 3;
+
+    position: relative;
 }
+
 
 .visualLabel {
-  font-weight: 600;
-  color: var(--iol-body);
+    font-weight: 600;
+
+    color: var(--iol-body);
 }
+
 
 .visualStatus {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--iol-blue);
-  background: rgba(44, 110, 203, 0.08);
-  padding: 4px 10px;
-  border-radius: 20px;
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.68rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.06em;
+
+    color: var(--iol-blue);
+
+    background: #f4fafb;
+
+    border: 1px solid #dcecef;
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
 }
+
 
 .visualStatusDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--iol-blue);
-  animation: pulseDot 2.2s infinite ease-in-out;
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background-color: var(--iol-blue);
+
+    animation:
+        pulseDot 2.2s infinite ease-in-out;
 }
+
+
+/* =========================================================
+   VISUAL STAGE
+========================================================= */
 
 .visualStage {
-  position: relative;
-  height: 250px;
-  margin: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at center, rgba(44, 110, 203, 0.06) 0%, transparent 70%);
-  overflow: hidden;
+    position: relative;
+
+    height: 250px;
+
+    margin: 20px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(22, 133, 165, 0.07) 0%,
+            transparent 70%
+        );
+
+    overflow: hidden;
 }
 
-/* corner reticle brackets, camera-focus style */
+
+/* =========================================================
+   RETICLES
+========================================================= */
+
 .reticle {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border: 2px solid var(--iol-blue);
-  opacity: 0.45;
-}
-.reticleTL { top: 14px; left: 14px; border-right: none; border-bottom: none; border-radius: 4px 0 0 0; }
-.reticleTR { top: 14px; right: 14px; border-left: none; border-bottom: none; border-radius: 0 4px 0 0; }
-.reticleBL { bottom: 14px; left: 14px; border-right: none; border-top: none; border-radius: 0 0 0 4px; }
-.reticleBR { bottom: 14px; right: 14px; border-left: none; border-top: none; border-radius: 0 0 4px 0; }
+    position: absolute;
 
-/* sweeping scan line */
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid var(--iol-blue);
+
+    opacity: 0.45;
+}
+
+
+.reticleTL {
+    top: 14px;
+    left: 14px;
+
+    border-right: none;
+    border-bottom: none;
+
+    border-radius: 4px 0 0 0;
+}
+
+
+.reticleTR {
+    top: 14px;
+    right: 14px;
+
+    border-left: none;
+    border-bottom: none;
+
+    border-radius: 0 4px 0 0;
+}
+
+
+.reticleBL {
+    bottom: 14px;
+    left: 14px;
+
+    border-right: none;
+    border-top: none;
+
+    border-radius: 0 0 0 4px;
+}
+
+
+.reticleBR {
+    bottom: 14px;
+    right: 14px;
+
+    border-left: none;
+    border-top: none;
+
+    border-radius: 0 0 4px 0;
+}
+
+
+/* =========================================================
+   SCAN LINE
+========================================================= */
+
 .scanLine {
-  position: absolute;
-  left: 6%;
-  width: 88%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--iol-blue), var(--iol-teal), transparent);
-  box-shadow: 0 0 12px rgba(44, 110, 203, 0.6);
-  animation: scanSweep 3.4s ease-in-out infinite;
-  z-index: 2;
+    position: absolute;
+
+    left: 6%;
+
+    width: 88%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #1685a5,
+            #6cc3d5,
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(22, 133, 165, 0.45);
+
+    animation:
+        scanSweep 3.4s ease-in-out infinite;
+
+    z-index: 2;
 }
 
-/* rotating focus rings */
+
+/* =========================================================
+   ROTATING RINGS
+========================================================= */
+
 .ringOuter,
 .ringInner {
-  position: absolute;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(44, 110, 203, 0.35);
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1.5px dashed rgba(22, 133, 165, 0.35);
 }
+
+
 .ringOuter {
-  width: 168px;
-  height: 168px;
-  animation: rotateForward 16s linear infinite;
+    width: 168px;
+    height: 168px;
+
+    animation:
+        rotateForward 16s linear infinite;
 }
+
+
 .ringInner {
-  width: 118px;
-  height: 118px;
-  border-color: rgba(38, 148, 138, 0.4);
-  animation: rotateReverse 11s linear infinite;
+    width: 118px;
+    height: 118px;
+
+    border-color: rgba(18, 111, 137, 0.4);
+
+    animation:
+        rotateReverse 11s linear infinite;
 }
+
+
+/* =========================================================
+   ORBIT DOT
+========================================================= */
 
 .orbitDot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 7px;
-  height: 7px;
-  margin: -3.5px;
-  border-radius: 50%;
-  background: var(--iol-teal);
-  box-shadow: 0 0 8px var(--iol-teal);
-  animation: orbit 6s linear infinite;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    margin: -3.5px;
+
+    border-radius: 50%;
+
+    background: var(--iol-teal);
+
+    box-shadow:
+        0 0 8px rgba(22, 133, 165, 0.6);
+
+    animation:
+        orbit 6s linear infinite;
 }
+
+
+/* =========================================================
+   EYE ICON
+========================================================= */
 
 .eyeIcon {
-  position: relative;
-  width: 78px;
-  height: 78px;
-  color: var(--iol-blue-deep);
-  z-index: 2;
+    position: relative;
+
+    width: 78px;
+    height: 78px;
+
+    color: var(--iol-blue-deep);
+
+    z-index: 2;
 }
+
 
 .eyePupil {
-  fill: var(--iol-blue);
-  stroke: none;
-  transform-origin: center;
-  animation: pulsePupil 2.6s ease-in-out infinite;
+    fill: var(--iol-blue);
+
+    stroke: none;
+
+    transform-origin: center;
+
+    animation:
+        pulsePupil 2.6s ease-in-out infinite;
 }
+
+
+/* =========================================================
+   VISUAL FOOTER
+========================================================= */
 
 .visualFooter {
-  z-index: 3;
-  position: relative;
+    z-index: 3;
+
+    position: relative;
 }
+
 
 .visualFooterLabel {
-  display: block;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--iol-body);
-  margin-bottom: 8px;
+    display: block;
+
+    font-size: 0.78rem;
+
+    font-weight: 500;
+
+    color: var(--iol-body);
+
+    margin-bottom: 8px;
 }
+
 
 .calibrationTrack {
-  width: 100%;
-  height: 4px;
-  border-radius: 10px;
-  background: rgba(16, 34, 63, 0.07);
-  overflow: hidden;
+    width: 100%;
+
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: rgba(22, 62, 75, 0.07);
+
+    overflow: hidden;
 }
+
 
 .calibrationFill {
-  width: 40%;
-  height: 100%;
-  border-radius: 10px;
-  background: linear-gradient(90deg, var(--iol-blue), var(--iol-teal));
-  animation: calibrationSweep 2.8s ease-in-out infinite;
+    width: 40%;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1685a5,
+            #126f89
+        );
+
+    animation:
+        calibrationSweep 2.8s ease-in-out infinite;
 }
 
-/* ================================================
-   RIGHT: BOOK-FLIP CARDS
-   ================================================ */
+
+/* =========================================================
+   RIGHT — BOOK CARDS
+========================================================= */
 
 .booksColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
 }
+
 
 .bookCard {
-  background: var(--iol-surface);
-  border: 1px solid var(--iol-line);
-  border-radius: 22px;
-  padding: 20px 22px 18px;
-  box-shadow: 0 16px 32px rgba(16, 34, 63, 0.04);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    background: var(--iol-surface);
+
+    border: 1px solid var(--iol-line);
+
+    border-radius: 22px;
+
+    padding: 20px 22px 18px;
+
+    box-shadow:
+        0 16px 32px rgba(21, 72, 86, 0.05);
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
 }
+
+
+/* =========================================================
+   BOOK HEADER
+========================================================= */
 
 .bookHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
 }
+
 
 .bookLabel {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--card-accent, var(--iol-blue));
+    font-family: var(--font-mono);
+
+    font-size: 0.72rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+    color: var(
+        --card-accent,
+        var(--iol-blue)
+    );
 }
+
+
+/* =========================================================
+   NEXT BUTTON
+========================================================= */
 
 .bookNextBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: none;
-  background: color-mix(in srgb, var(--card-accent, var(--iol-blue)) 12%, transparent);
-  color: var(--card-accent, var(--iol-blue));
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(22, 133, 165, 0.12);
+
+    background:
+        rgba(22, 133, 165, 0.08);
+
+    color:
+        var(--card-accent, var(--iol-blue));
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
 }
+
 
 .bookNextBtn:hover {
-  background: color-mix(in srgb, var(--card-accent, var(--iol-blue)) 22%, transparent);
-  transform: translateX(2px);
+    background:
+        rgba(22, 133, 165, 0.16);
+
+    transform:
+        translateX(2px);
 }
+
 
 .bookNextBtn:focus-visible {
-  outline: 2px solid var(--card-accent, var(--iol-blue));
-  outline-offset: 2px;
+    outline:
+        2px solid
+        var(--card-accent, var(--iol-blue));
+
+    outline-offset: 2px;
 }
+
+
+/* =========================================================
+   BOOK VIEWPORT
+========================================================= */
 
 .bookViewport {
-  position: relative;
-  height: 168px;
-  perspective: 1600px;
+    position: relative;
+
+    height: 168px;
+
+    perspective: 1600px;
 }
+
 
 .bookPage {
-  position: absolute;
-  inset: 0;
-  background: var(--iol-surface);
-  border: 1px solid var(--iol-line);
-  border-radius: 16px;
-  padding: 18px 20px;
-  display: flex;
-  flex-direction: column;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-origin: left center;
-  transform: rotateY(0deg);
-  transition: none;
-  box-shadow: 4px 0 14px rgba(16, 34, 63, 0.05);
+    position: absolute;
+
+    inset: 0;
+
+    background: var(--iol-surface);
+
+    border: 1px solid var(--iol-line);
+
+    border-radius: 16px;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    backface-visibility: hidden;
+
+    -webkit-backface-visibility: hidden;
+
+    transform-origin: left center;
+
+    transform: rotateY(0deg);
+
+    transition: none;
+
+    box-shadow:
+        4px 0 14px rgba(21, 72, 86, 0.05);
 }
+
 
 .bookPage.turning {
-  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: rotateY(-170deg);
+    transition:
+        transform 0.7s
+        cubic-bezier(0.4, 0, 0.2, 1);
+
+    transform:
+        rotateY(-170deg);
 }
+
+
+/* =========================================================
+   BOOK SPINE
+========================================================= */
 
 .bookPageSpine {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 22px;
-  background: linear-gradient(90deg, rgba(16, 34, 63, 0.06), transparent);
-  border-radius: 16px 0 0 16px;
-  pointer-events: none;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(22, 62, 75, 0.06),
+            transparent
+        );
+
+    border-radius: 16px 0 0 16px;
+
+    pointer-events: none;
 }
+
+
+/* =========================================================
+   BOOK ICON
+========================================================= */
 
 .bookPageIconWrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--card-accent, var(--iol-blue)) 12%, transparent);
-  color: var(--card-accent, var(--iol-blue));
-  margin-bottom: 10px;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(22, 133, 165, 0.08);
+
+    color:
+        var(--card-accent, var(--iol-blue));
+
+    margin-bottom: 10px;
 }
+
 
 .bookPageIcon {
-  width: 17px;
-  height: 17px;
+    width: 17px;
+    height: 17px;
 }
+
+
+/* =========================================================
+   BOOK TAG
+========================================================= */
 
 .bookPageTag {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--card-accent, var(--iol-blue));
-  margin-bottom: 4px;
+    font-family: var(--font-mono);
+
+    font-size: 0.65rem;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.09em;
+
+    color:
+        var(--card-accent, var(--iol-blue));
+
+    margin-bottom: 4px;
 }
+
+
+/* =========================================================
+   BOOK TITLE
+========================================================= */
 
 .bookPageTitle {
-  font-family: var(--font-display);
-  font-size: 1.02rem;
-  font-weight: 600;
-  line-height: 1.28;
-  color: var(--iol-ink);
-  margin-bottom: 6px;
+    font-family: var(--font-display);
+
+    font-size: 1.02rem;
+
+    font-weight: 600;
+
+    line-height: 1.28;
+
+    color: var(--iol-ink);
+
+    margin-bottom: 6px;
 }
+
+
+/* =========================================================
+   BOOK TEXT
+========================================================= */
 
 .bookPageText {
-  font-size: 0.83rem;
-  line-height: 1.55;
-  color: var(--iol-body);
-  margin: 0;
+    font-size: 0.83rem;
+
+    line-height: 1.55;
+
+    color: var(--iol-body);
+
+    margin: 0;
 }
+
+
+/* =========================================================
+   BOOK DOTS
+========================================================= */
 
 .bookDots {
-  display: flex;
-  gap: 7px;
-  justify-content: center;
-  margin-top: 14px;
+    display: flex;
+
+    gap: 7px;
+
+    justify-content: center;
+
+    margin-top: 14px;
 }
+
 
 .bookDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  border: none;
-  padding: 0;
-  background: var(--iol-line);
-  cursor: pointer;
-  transition: width 0.25s ease, background 0.25s ease;
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    padding: 0;
+
+    background: #dcecef;
+
+    cursor: pointer;
+
+    transition:
+        width 0.25s ease,
+        background 0.25s ease;
 }
+
 
 .bookDotActive {
-  width: 18px;
-  border-radius: 4px;
-  background: var(--card-accent, var(--iol-blue));
+    width: 18px;
+
+    border-radius: 4px;
+
+    background:
+        var(--card-accent, var(--iol-blue));
 }
+
 
 .bookDot:focus-visible {
-  outline: 2px solid var(--card-accent, var(--iol-blue));
-  outline-offset: 2px;
+    outline:
+        2px solid
+        var(--card-accent, var(--iol-blue));
+
+    outline-offset: 2px;
 }
 
-/* ---------- ANIMATIONS ---------- */
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
 @keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
+
+    0%,
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+
+        transform: scale(0.8);
+    }
 }
+
 
 @keyframes scanSweep {
-  0% { top: 12%; opacity: 0; }
-  15% { opacity: 1; }
-  85% { opacity: 1; }
-  100% { top: 88%; opacity: 0; }
+
+    0% {
+        top: 12%;
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 88%;
+
+        opacity: 0;
+    }
 }
+
 
 @keyframes rotateForward {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
+
 
 @keyframes rotateReverse {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
 }
+
 
 @keyframes orbit {
-  from { transform: rotate(0deg) translateX(76px) rotate(0deg); }
-  to { transform: rotate(360deg) translateX(76px) rotate(-360deg); }
+
+    from {
+        transform:
+            rotate(0deg)
+            translateX(76px)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg)
+            translateX(76px)
+            rotate(-360deg);
+    }
 }
+
 
 @keyframes pulsePupil {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.18); opacity: 0.75; }
+
+    0%,
+    100% {
+        transform: scale(1);
+
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.18);
+
+        opacity: 0.75;
+    }
 }
+
 
 @keyframes calibrationSweep {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(340%); }
+
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(340%);
+    }
 }
 
-/* ---------- ACCESSIBILITY ---------- */
+
+@keyframes textGradient {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .iolBadgeDot,
-  .visualStatusDot,
-  .scanLine,
-  .ringOuter,
-  .ringInner,
-  .orbitDot,
-  .eyePupil,
-  .calibrationFill {
-    animation: none;
-  }
-  .bookPage.turning {
-    transition: none;
-  }
+
+    .iolBadgeDot,
+    .visualStatusDot,
+    .scanLine,
+    .ringOuter,
+    .ringInner,
+    .orbitDot,
+    .eyePupil,
+    .calibrationFill,
+    .gradientHighlight {
+        animation: none;
+    }
+
+    .bookPage.turning {
+        transition: none;
+    }
 }
 
-/* ---------- RESPONSIVE ---------- */
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 1024px) {
-  .iolBenefitsGrid {
-    grid-template-columns: 1fr;
-  }
-  .visualStage {
-    height: 220px;
-  }
+
+    .iolBenefitsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .visualStage {
+        height: 220px;
+    }
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 640px) {
-  .iolBenefitsSection {
-    padding: 64px 16px;
-  }
-  .bookCard {
-    padding: 18px;
-  }
-  .bookViewport {
-    height: 200px;
-  }
+
+    .iolBenefitsSection {
+        padding: 64px 16px;
+    }
+
+    .iolBenefitsHeader {
+        margin-bottom: 40px;
+    }
+
+    .iolBenefitsTitle {
+        font-size: 2rem;
+    }
+
+    .iolBenefitsSubtitle {
+        font-size: 0.95rem;
+    }
+
+    .bookCard {
+        padding: 18px;
+    }
+
+    .bookViewport {
+        height: 200px;
+    }
+
+    .visualCard {
+        padding: 22px;
+    }
+
+    .visualStage {
+        height: 220px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .iolBenefitsSection {
+        padding: 52px 14px;
+    }
+
+    .iolBenefitsTitle {
+        font-size: 1.8rem;
+    }
+
+    .iolBenefitsSubtitle {
+        font-size: 0.88rem;
+    }
+
+    .visualCard {
+        border-radius: 20px;
+
+        padding: 18px;
+    }
+
+    .bookCard {
+        border-radius: 18px;
+
+        padding: 16px;
+    }
+
+    .bookViewport {
+        height: 215px;
+    }
+
+    .bookPage {
+        padding: 16px;
+    }
+
+    .eyeIcon {
+        width: 68px;
+        height: 68px;
+    }
 }

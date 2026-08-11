@@ -1,402 +1,962 @@
-/* ==========================================
+/* =========================================================
    AV MEDITECH — ABOUT SECTION
-   Shares the type/color system introduced in
-   the benefits section for site-wide cohesion.
-   Signature: an animated light beam traveling
-   down through the three pillar cards.
-   ========================================== */
+   Unified Healthcare Teal Theme
+========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   SECTION SHELL
+========================================================= */
 
 .aboutSection {
-  --iol-bg: #f3f6f8;
-  --iol-surface: #ffffff;
-  --iol-ink: #10223f;
-  --iol-body: #57626f;
-  --iol-line: rgba(16, 34, 63, 0.09);
+    --iol-bg: #f4fafb;
+    --iol-surface: #ffffff;
 
-  --iol-blue: #2c6ecb;
-  --iol-blue-deep: #163e7a;
-  --iol-amber: #d98c1f;
-  --iol-teal: #26948a;
-  --iol-navy: #16305a;
+    --iol-ink: #163e4b;
+    --iol-body: #71848a;
 
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --iol-line: #dcecef;
 
-  position: relative;
-  padding: 100px 20px;
-  background: linear-gradient(180deg, #ffffff 0%, var(--iol-bg) 100%);
-  font-family: var(--font-body);
-  color: var(--iol-ink);
-  overflow: hidden;
+    --iol-blue: #1685a5;
+    --iol-blue-deep: #126f89;
+
+    --iol-teal: #1685a5;
+
+    --font-display: 'Plus Jakarta Sans',
+        system-ui,
+        -apple-system,
+        sans-serif;
+
+    --font-body: 'Plus Jakarta Sans',
+        system-ui,
+        -apple-system,
+        sans-serif;
+
+    --font-mono: 'Plus Jakarta Sans',
+        system-ui,
+        sans-serif;
+
+    position: relative;
+
+    padding: 100px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f4fafb 100%
+        );
+
+    font-family: var(--font-body);
+
+    color: var(--iol-ink);
+
+    overflow: hidden;
 }
+
+
+/* =========================================================
+   BACKGROUND GLOW — TOP RIGHT
+========================================================= */
 
 .aboutSection::before {
-  content: "";
-  position: absolute;
-  top: -180px;
-  right: -180px;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(rgba(44, 110, 203, 0.1), transparent 70%);
-  filter: blur(10px);
-  pointer-events: none;
+    content: "";
+
+    position: absolute;
+
+    top: -180px;
+    right: -180px;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22, 133, 165, 0.11),
+            transparent 70%
+        );
+
+    filter: blur(12px);
+
+    pointer-events: none;
 }
+
+
+/* =========================================================
+   BACKGROUND GLOW — BOTTOM LEFT
+========================================================= */
 
 .aboutSection::after {
-  content: "";
-  position: absolute;
-  bottom: -180px;
-  left: -180px;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  background: radial-gradient(rgba(38, 148, 138, 0.08), transparent 70%);
-  filter: blur(10px);
-  pointer-events: none;
+    content: "";
+
+    position: absolute;
+
+    bottom: -180px;
+    left: -180px;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(18, 111, 137, 0.08),
+            transparent 70%
+        );
+
+    filter: blur(12px);
+
+    pointer-events: none;
 }
 
-/* ---------- CONTAINER ---------- */
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 70px;
-  align-items: center;
-  position: relative;
-  z-index: 2;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
 }
 
-/* ---------- LEFT: CONTENT ---------- */
+
+/* =========================================================
+   LEFT — CONTENT
+========================================================= */
 
 .content {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+
+    flex-direction: column;
 }
+
+
+/* =========================================================
+   BADGE
+========================================================= */
 
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  padding: 6px 16px;
-  margin-bottom: 22px;
-  border-radius: 50px;
-  background: rgba(44, 110, 203, 0.08);
-  color: var(--iol-blue);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    padding: 6px 16px;
+
+    margin-bottom: 22px;
+
+    border-radius: 50px;
+
+    background: #f2fafb;
+
+    border: 1px solid #dcecef;
+
+    color: var(--iol-blue);
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 6px 18px
+        rgba(22, 133, 165, 0.05);
 }
+
+
+/* =========================================================
+   BADGE DOT
+========================================================= */
 
 .badgeDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--iol-blue);
-  box-shadow: 0 0 0 3px rgba(44, 110, 203, 0.15);
-  animation: pulseDot 2.2s infinite ease-in-out;
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--iol-blue);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 133, 165, 0.14);
+
+    animation:
+        pulseDot 2.2s infinite ease-in-out;
 }
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
 
 .heading {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 3.3rem);
-  line-height: 1.18;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--iol-ink);
-  margin-bottom: 22px;
+    font-family: var(--font-display);
+
+    font-size:
+        clamp(
+            2.2rem,
+            4vw,
+            3.3rem
+        );
+
+    line-height: 1.18;
+
+    font-weight: 800;
+
+    letter-spacing: -0.035em;
+
+    color: #163e4b;
+
+    margin: 0 0 22px;
 }
+
+
+/* =========================================================
+   HEADING HIGHLIGHT
+========================================================= */
 
 .highlight {
-  background: linear-gradient(90deg, var(--iol-blue) 0%, var(--iol-teal) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-style: italic;
+    background:
+        linear-gradient(
+            90deg,
+            #1685a5 0%,
+            #126f89 50%,
+            #1685a5 100%
+        );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
+
+    font-style: italic;
+
+    animation:
+        gradientShift 6s ease-in-out infinite;
 }
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .description {
-  color: var(--iol-body);
-  font-size: 1rem;
-  line-height: 1.85;
-  margin-bottom: 20px;
+    color: var(--iol-body);
+
+    font-size: 1rem;
+
+    line-height: 1.85;
+
+    margin: 0 0 20px;
+
+    max-width: 620px;
 }
 
-/* ---------- STAT STRIP ---------- */
+
+/* =========================================================
+   STAT STRIP
+========================================================= */
 
 .statStrip {
-  display: flex;
-  gap: 28px;
-  margin: 10px 0 30px;
+    display: flex;
+
+    gap: 28px;
+
+    margin: 10px 0 30px;
 }
+
 
 .stat {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding-right: 28px;
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding-right: 28px;
 }
+
 
 .statValue {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--iol-ink);
-  line-height: 1;
+    font-family: var(--font-display);
+
+    font-size: 1.8rem;
+
+    font-weight: 800;
+
+    color: #163e4b;
+
+    line-height: 1;
 }
+
 
 .statLabel {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--iol-body);
-  margin-top: 6px;
+    font-family: var(--font-mono);
+
+    font-size: 0.68rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+
+    color: var(--iol-body);
+
+    margin-top: 6px;
 }
+
 
 .statDivider {
-  position: absolute;
-  right: 0;
-  top: 4px;
-  bottom: 4px;
-  width: 1px;
-  background: var(--iol-line);
+    position: absolute;
+
+    right: 0;
+
+    top: 4px;
+
+    bottom: 4px;
+
+    width: 1px;
+
+    background: #dcecef;
 }
 
-/* ---------- BUTTON ---------- */
+
+/* =========================================================
+   BUTTON
+========================================================= */
 
 .button {
-  margin-top: 4px;
-  width: fit-content;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 30px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  background: linear-gradient(115deg, var(--iol-blue) 0%, var(--iol-teal) 100%);
-  box-shadow: 0 15px 35px rgba(44, 110, 203, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 4px;
+
+    width: fit-content;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 30px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    font-size: 0.95rem;
+
+    background:
+        linear-gradient(
+            115deg,
+            #126f89 0%,
+            #1685a5 50%,
+            #126f89 100%
+        );
+
+    background-size: 200% auto;
+
+    box-shadow:
+        0 15px 35px
+        rgba(22, 133, 165, 0.22);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-position 0.4s ease;
 }
 
-.buttonArrow {
-  transition: transform 0.25s ease;
-}
 
 .button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 45px rgba(44, 110, 203, 0.32);
+    transform: translateY(-4px);
+
+    background-position: 100% 50%;
+
+    box-shadow:
+        0 20px 45px
+        rgba(22, 133, 165, 0.28);
 }
+
+
+.buttonArrow {
+    transition:
+        transform 0.25s ease;
+}
+
 
 .button:hover .buttonArrow {
-  transform: translateX(3px);
+    transform:
+        translateX(3px);
 }
 
-/* ---------- RIGHT: PILLAR CARDS + LIGHT BEAM ---------- */
+
+/* =========================================================
+   RIGHT — PILLARS
+========================================================= */
 
 .pillars {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
 }
+
+
+/* =========================================================
+   LIGHT BEAM
+========================================================= */
 
 .beam {
-  position: absolute;
-  left: 52px;
-  top: 52px;
-  bottom: 52px;
-  width: 2px;
-  background: linear-gradient(180deg, var(--iol-blue), var(--iol-teal), var(--iol-amber));
-  opacity: 0.25;
-  z-index: 0;
+    position: absolute;
+
+    left: 52px;
+
+    top: 52px;
+
+    bottom: 52px;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1685a5,
+            #126f89,
+            #1685a5
+        );
+
+    opacity: 0.25;
+
+    z-index: 0;
 }
+
+
+/* =========================================================
+   BEAM GLOW
+========================================================= */
 
 .beamGlow {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 9px;
-  height: 9px;
-  margin-left: -4.5px;
-  border-radius: 50%;
-  background: var(--iol-teal);
-  box-shadow: 0 0 12px var(--iol-teal);
-  animation: beamTravel 4.2s ease-in-out infinite;
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    width: 9px;
+    height: 9px;
+
+    margin-left: -4.5px;
+
+    border-radius: 50%;
+
+    background: #1685a5;
+
+    box-shadow:
+        0 0 12px
+        rgba(22, 133, 165, 0.75),
+
+        0 0 24px
+        rgba(22, 133, 165, 0.35);
+
+    animation:
+        beamTravel 4.2s ease-in-out infinite;
 }
+
+
+/* =========================================================
+   PILLAR CARD
+========================================================= */
 
 .card {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: 18px;
-  padding: 26px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--iol-line);
-  box-shadow: 0 10px 30px rgba(16, 34, 63, 0.05);
-  opacity: 0;
-  filter: blur(8px);
-  transform: translateY(20px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    gap: 18px;
+
+    padding: 26px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.86);
+
+    backdrop-filter: blur(14px);
+
+    border: 1px solid #dcecef;
+
+    box-shadow:
+        0 10px 30px
+        rgba(21, 72, 86, 0.055);
+
+    opacity: 0;
+
+    filter: blur(8px);
+
+    transform:
+        translateY(20px);
+
+    transition:
+        opacity 0.8s
+        cubic-bezier(0.16, 1, 0.3, 1),
+
+        filter 0.8s
+        cubic-bezier(0.16, 1, 0.3, 1),
+
+        transform 0.35s
+        cubic-bezier(0.16, 1, 0.3, 1),
+
+        box-shadow 0.35s ease,
+
+        border-color 0.35s ease;
 }
+
+
+/* =========================================================
+   VISIBLE CARD
+========================================================= */
 
 .card.isVisible {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
+    opacity: 1;
+
+    filter: blur(0);
+
+    transform:
+        translateY(0);
 }
+
+
+/* =========================================================
+   CARD SIDE ACCENT
+========================================================= */
 
 .card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--iol-blue), var(--iol-teal));
-  transform: scaleY(0);
-  transform-origin: top;
-  border-radius: 20px 0 0 20px;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 3px;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1685a5,
+            #126f89
+        );
+
+    transform:
+        scaleY(0);
+
+    transform-origin: top;
+
+    border-radius:
+        20px 0 0 20px;
+
+    transition:
+        transform 0.4s
+        cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
 
 .card:hover {
-  transform: translateY(-6px);
-  border-color: transparent;
-  box-shadow: 0 20px 45px rgba(44, 110, 203, 0.14);
+    transform:
+        translateY(-6px);
+
+    border-color: #c9e5ea;
+
+    box-shadow:
+        0 20px 45px
+        rgba(22, 133, 165, 0.12);
 }
+
 
 .card:hover::before {
-  transform: scaleY(1);
+    transform:
+        scaleY(1);
 }
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
 
 .cardIconWrap {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(44, 110, 203, 0.08);
-  color: var(--iol-blue);
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background:
+        #f2fafb;
+
+    border: 1px solid #d9edf0;
+
+    color:
+        var(--iol-blue);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
 }
+
+
+.card:hover .cardIconWrap {
+    background:
+        linear-gradient(
+            135deg,
+            #1685a5,
+            #126f89
+        );
+
+    color: #ffffff;
+
+    transform:
+        scale(1.05);
+}
+
 
 .cardIcon {
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
 }
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
 
 .card h3 {
-  font-family: var(--font-display);
-  color: var(--iol-ink);
-  font-size: 1.18rem;
-  margin-bottom: 8px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+    font-family: var(--font-display);
+
+    color: var(--iol-ink);
+
+    font-size: 1.18rem;
+
+    margin: 0 0 8px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.01em;
 }
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
 
 .card p {
-  color: var(--iol-body);
-  line-height: 1.75;
-  font-size: 0.9rem;
-  margin: 0;
+    color: var(--iol-body);
+
+    line-height: 1.75;
+
+    font-size: 0.9rem;
+
+    margin: 0;
 }
 
-/* ---------- ANIMATIONS ---------- */
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
 @keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
+
+    0%,
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+
+        transform: scale(0.8);
+    }
 }
+
 
 @keyframes beamTravel {
-  0% { top: 0%; opacity: 0; }
-  12% { opacity: 1; }
-  88% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
+
+    0% {
+        top: 0%;
+
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    88% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+
+        opacity: 0;
+    }
 }
 
-/* ---------- ACCESSIBILITY ---------- */
+
+@keyframes gradientShift {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .highlight,
-  .badgeDot,
-  .beamGlow {
-    animation: none;
-  }
-  .card {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    filter: none;
-  }
+
+    .highlight,
+    .badgeDot,
+    .beamGlow {
+        animation: none;
+    }
+
+
+    .card {
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+
+        filter: none;
+    }
 }
 
-/* ---------- RESPONSIVE ---------- */
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 992px) {
-  .container {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
 
-  .content {
-    text-align: center;
-    align-items: center;
-  }
+    .container {
+        grid-template-columns: 1fr;
 
-  .statStrip {
-    justify-content: center;
-  }
+        gap: 50px;
+    }
 
-  .beam {
-    display: none;
-  }
+
+    .content {
+        text-align: center;
+
+        align-items: center;
+    }
+
+
+    .description {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .statStrip {
+        justify-content: center;
+    }
+
+
+    .beam {
+        display: none;
+    }
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 768px) {
-  .aboutSection {
-    padding: 70px 18px;
-  }
 
-  .heading {
-    font-size: 2rem;
-  }
+    .aboutSection {
+        padding: 70px 18px;
+    }
 
-  .description {
-    font-size: 0.92rem;
-  }
 
-  .statStrip {
-    gap: 20px;
-  }
+    .heading {
+        font-size: 2rem;
+    }
 
-  .statValue {
-    font-size: 1.5rem;
-  }
 
-  .card {
-    padding: 20px;
-  }
+    .description {
+        font-size: 0.92rem;
+    }
 
-  .card h3 {
-    font-size: 1.05rem;
-  }
+
+    .statStrip {
+        gap: 20px;
+    }
+
+
+    .stat {
+        padding-right: 20px;
+    }
+
+
+    .statValue {
+        font-size: 1.5rem;
+    }
+
+
+    .card {
+        padding: 20px;
+
+        border-radius: 17px;
+    }
+
+
+    .card h3 {
+        font-size: 1.05rem;
+    }
+
+
+    .card p {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .aboutSection {
+        padding: 55px 14px;
+    }
+
+
+    .heading {
+        font-size: 1.8rem;
+    }
+
+
+    .description {
+        font-size: 0.88rem;
+
+        line-height: 1.75;
+    }
+
+
+    .statStrip {
+        gap: 14px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .stat {
+        padding-right: 14px;
+    }
+
+
+    .statValue {
+        font-size: 1.35rem;
+    }
+
+
+    .statLabel {
+        font-size: 0.6rem;
+    }
+
+
+    .button {
+        padding: 13px 22px;
+
+        font-size: 0.88rem;
+    }
+
+
+    .card {
+        gap: 14px;
+
+        padding: 18px;
+    }
+
+
+    .cardIconWrap {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .cardIcon {
+        width: 20px;
+        height: 20px;
+    }
 }

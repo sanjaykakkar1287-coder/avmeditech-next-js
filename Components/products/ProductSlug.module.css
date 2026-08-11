@@ -255,7 +255,7 @@
 .productContent h1 {
     margin: 0 0 18px;
 
-    color: #123c4a;
+    color: var(--theme-heading);
 
     font-size: clamp(36px, 4vw, 56px);
 
@@ -469,7 +469,7 @@
 
     margin: 0;
 
-    color: #163e4b;
+    color: var(--theme-heading);
 
     font-size: clamp(27px, 3vw, 36px);
 
@@ -905,7 +905,7 @@
 .enquiryContent h2 {
     margin: 0 0 9px;
 
-    color: #143d4a;
+    color: var(--theme-heading);
 
     font-size: 30px;
 

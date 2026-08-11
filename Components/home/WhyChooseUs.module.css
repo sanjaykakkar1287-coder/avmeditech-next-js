@@ -1,244 +1,780 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
+
+/* =========================================================
+   SECTION
+========================================================= */
+
 .section {
-  position: relative;
-  overflow: hidden;
-  padding: 90px 0;
-  background: #f8fafc;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 90px 0;
+
+    background: #ffffff;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Background Glowing Ambient Light */
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
 .glowBg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
-  filter: blur(80px);
-  pointer-events: none;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 700px;
+    height: 500px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22, 133, 165, 0.08) 0%,
+            transparent 70%
+        );
+
+    filter: blur(80px);
+
+    pointer-events: none;
 }
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  position: relative;
-  z-index: 2;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 24px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
-/* Centered Header */
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 .header {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 50px;
+    text-align: center;
+
+    max-width: 760px;
+
+    margin: 0 auto 50px;
 }
+
+
+/* =========================================================
+   BADGE
+========================================================= */
 
 .badgePill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  margin-bottom: 16px;
-  border-radius: 50px;
-  background: #ffffff;
-  border: 1px solid #bae6fd;
-  color: #0284c7;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.06);
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px 16px;
+
+    margin-bottom: 16px;
+
+    border-radius: 50px;
+
+    background: #f4fafb;
+
+    border: 1px solid #dcecef;
+
+    color: #1685a5;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 2px 8px
+        rgba(22, 133, 165, 0.06);
 }
+
+
+/* =========================================================
+   BADGE DOT
+========================================================= */
 
 .badgeDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #0ea5e9;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #1685a5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 133, 165, 0.16);
+
+    animation:
+        badgePulse 2s ease-in-out infinite;
 }
+
+
+/* =========================================================
+   HEADING
+========================================================= */
 
 .heading {
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  line-height: 1.18;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.5px;
-  margin-bottom: 16px;
+    font-size:
+        clamp(
+            2.2rem,
+            3.8vw,
+            3.2rem
+        );
+
+    line-height: 1.18;
+
+    font-weight: 800;
+
+    color: #163e4b;
+
+    letter-spacing: -0.5px;
+
+    margin: 0 0 16px;
 }
+
+
+/* =========================================================
+   HIGHLIGHT
+========================================================= */
 
 .highlight {
-  background: linear-gradient(115deg, #0ea5e9 0%, #2563eb 50%, #22c55e 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    background:
+        linear-gradient(
+            115deg,
+            #126f89 0%,
+            #1685a5 50%,
+            #1b91a5 100%
+        );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientShift 7s ease-in-out infinite;
 }
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .description {
-  font-size: 16px;
-  color: #64748b;
-  line-height: 1.7;
-  margin: 0;
+    font-size: 16px;
+
+    color: #71848a;
+
+    line-height: 1.7;
+
+    margin: 0;
 }
 
-/* 3-Card Grid */
+
+/* =========================================================
+   3 CARD GRID
+========================================================= */
+
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 50px;
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+
+    margin-bottom: 50px;
 }
+
+
+/* =========================================================
+   CARD
+========================================================= */
 
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 32px 26px 24px;
-  border-radius: 20px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 32px 26px 24px;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2edef;
+
+    box-shadow:
+        0 4px 20px
+        rgba(21, 72, 86, 0.035);
+
+    transition:
+        transform 0.35s
+            cubic-bezier(0.16, 1, 0.3, 1),
+
+        border-color 0.35s ease,
+
+        box-shadow 0.35s ease;
 }
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
 
 .card:hover {
-  transform: translateY(-8px);
-  border-color: #bae6fd;
-  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.12);
+    transform:
+        translateY(-8px);
+
+    border-color: #b9dce3;
+
+    box-shadow:
+        0 20px 40px
+        rgba(22, 133, 165, 0.12);
 }
 
-/* Featured Center Card Styling */
+
+/* =========================================================
+   FEATURED CENTER CARD
+========================================================= */
+
 .cardFeatured {
-  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
-  border-color: #38bdf8;
-  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.1);
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f2fafb 100%
+        );
+
+    border-color: #b9dce3;
+
+    box-shadow:
+        0 12px 30px
+        rgba(22, 133, 165, 0.10);
 }
+
+
+.cardFeatured:hover {
+    border-color: #8fc8d4;
+
+    box-shadow:
+        0 22px 45px
+        rgba(22, 133, 165, 0.15);
+}
+
+
+/* =========================================================
+   CARD BADGE
+========================================================= */
 
 .cardBadge {
-  align-self: flex-start;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: #f1f5f9;
-  color: #64748b;
-  margin-bottom: 20px;
+    align-self: flex-start;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    padding: 4px 10px;
+
+    border-radius: 6px;
+
+    background: #f1f7f8;
+
+    color: #71848a;
+
+    margin-bottom: 20px;
 }
+
 
 .cardFeatured .cardBadge {
-  background: #0ea5e9;
-  color: #ffffff;
+    background: #1685a5;
+
+    color: #ffffff;
 }
+
+
+/* =========================================================
+   ICON WRAPPER
+========================================================= */
 
 .iconWrapper {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
-  color: #0284c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
+    width: 52px;
+    height: 52px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0fafb 0%,
+            #e5f5f7 100%
+        );
+
+    border: 1px solid #d7edf0;
+
+    color: #1685a5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    transition:
+        transform 0.3s ease,
+
+        background 0.3s ease,
+
+        color 0.3s ease,
+
+        border-color 0.3s ease;
 }
+
 
 .iconWrapper svg {
-  width: 26px;
-  height: 26px;
+    width: 26px;
+    height: 26px;
 }
+
 
 .card:hover .iconWrapper {
-  transform: scale(1.08);
-  background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
-  color: #ffffff;
+    transform:
+        scale(1.08);
+
+    background:
+        linear-gradient(
+            135deg,
+            #1685a5 0%,
+            #126f89 100%
+        );
+
+    border-color: transparent;
+
+    color: #ffffff;
 }
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
 
 .cardTitle {
-  font-size: 20px;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 10px;
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #163e4b;
+
+    margin: 0 0 10px;
 }
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
 
 .cardText {
-  font-size: 14px;
-  color: #64748b;
-  line-height: 1.65;
-  margin: 0 0 24px;
-  flex-grow: 1;
+    font-size: 14px;
+
+    color: #71848a;
+
+    line-height: 1.65;
+
+    margin: 0 0 24px;
+
+    flex-grow: 1;
 }
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
 
 .cardFooter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 16px;
-  border-top: 1px solid #f1f5f9;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid #edf3f4;
 }
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
 
 .cardNumber {
-  font-size: 12px;
-  font-weight: 700;
-  color: #94a3b8;
-  text-transform: uppercase;
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #94aeb5;
+
+    text-transform: uppercase;
 }
+
+
+/* =========================================================
+   CHECK ICON
+========================================================= */
 
 .checkIcon {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #ecfdf5;
-  color: #10b981;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    background: #f2fafb;
+
+    border: 1px solid #d9edf0;
+
+    color: #1685a5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        transform 0.3s ease,
+
+        background 0.3s ease,
+
+        color 0.3s ease;
 }
 
-/* Bottom CTA Banner */
-.bottomCta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 32px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+
+.card:hover .checkIcon {
+    background: #1685a5;
+
+    color: #ffffff;
+
+    transform:
+        scale(1.08);
 }
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.bottomCta {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 24px 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2edef;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(21, 72, 86, 0.04);
+
+    transition:
+        border-color 0.3s ease,
+
+        box-shadow 0.3s ease;
+}
+
+
+.bottomCta:hover {
+    border-color: #c9e5ea;
+
+    box-shadow:
+        0 12px 30px
+        rgba(22, 133, 165, 0.08);
+}
+
+
+/* =========================================================
+   CTA TEXT
+========================================================= */
 
 .ctaText {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
 }
+
 
 .ctaText strong {
-  font-size: 16px;
-  color: #0f172a;
-  font-weight: 700;
+    font-size: 16px;
+
+    color: #163e4b;
+
+    font-weight: 700;
 }
+
 
 .ctaText span {
-  font-size: 13px;
-  color: #64748b;
+    font-size: 13px;
+
+    color: #71848a;
 }
 
-/* Responsive Rules */
-@media (max-width: 992px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
 
-  .bottomCta {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-    padding: 24px;
-  }
+/* =========================================================
+   OPTIONAL CTA BUTTON
+========================================================= */
+
+.ctaButton {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 20px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            115deg,
+            #126f89,
+            #1685a5
+        );
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px
+        rgba(22, 133, 165, 0.18);
+
+    transition:
+        transform 0.25s ease,
+
+        box-shadow 0.25s ease;
+}
+
+
+.ctaButton:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 26px
+        rgba(22, 133, 165, 0.25);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes gradientShift {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.55;
+
+        transform: scale(0.85);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .cardFeatured {
+        order: -1;
+    }
+
+
+    .bottomCta {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 20px;
+
+        padding: 24px;
+    }
+
+
+    .ctaText {
+        align-items: center;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .section {
+        padding: 60px 0;
+    }
+
+
+    .container {
+        padding: 0 16px;
+    }
+
+
+    .header {
+        margin-bottom: 38px;
+    }
+
+
+    .heading {
+        font-size: 2rem;
+    }
+
+
+    .description {
+        font-size: 14px;
+    }
+
+
+    .card {
+        padding: 26px 22px 22px;
+
+        border-radius: 18px;
+    }
+
+
+    .cardTitle {
+        font-size: 18px;
+    }
+
+
+    .cardText {
+        font-size: 13px;
+    }
+
+
+    .bottomCta {
+        border-radius: 14px;
+
+        padding: 22px 18px;
+    }
+
+
+    .ctaText strong {
+        font-size: 15px;
+    }
+
+
+    .ctaText span {
+        font-size: 12px;
+    }
+
+
+    .ctaButton {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .highlight,
+    .badgeDot {
+        animation: none;
+    }
+
+
+    .card,
+    .iconWrapper,
+    .checkIcon,
+    .bottomCta,
+    .ctaButton {
+        transition: none;
+    }
 }

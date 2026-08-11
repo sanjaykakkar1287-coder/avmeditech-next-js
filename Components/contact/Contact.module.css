@@ -1,509 +1,1132 @@
-/* Container & Background */
+/* =========================================================
+   SECTION & BACKGROUND
+========================================================= */
+
 .section {
-  position: relative;
-  overflow: hidden;
-  padding: 4rem 1rem;
-  background-color: #ffffff;
-  /* Light Grid / Pattern background matching the math page style */
-  background-image: 
-    radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px),
-    linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
-  background-size: 24px 24px, 48px 48px, 48px 48px;
-  background-position: 0 0, 0 0, 0 0;
+    position: relative;
+    overflow: hidden;
+
+    padding: 4rem 1rem;
+
+    background-color: #ffffff;
+
+    /* Light Teal Grid Pattern */
+    background-image:
+        radial-gradient(
+            rgba(22, 133, 165, 0.10) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to right,
+            rgba(220, 236, 239, 0.45) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(220, 236, 239, 0.45) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        24px 24px,
+        48px 48px,
+        48px 48px;
+
+    background-position:
+        0 0,
+        0 0,
+        0 0;
 }
+
 
 @media (min-width: 640px) {
-  .section {
-    padding: 6rem 2rem;
-  }
+    .section {
+        padding: 6rem 2rem;
+    }
 }
 
+
 @media (min-width: 1024px) {
-  .section {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
+    .section {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
 }
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container {
-  max-width: 80rem;
-  margin: 0 auto;
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+    max-width: 80rem;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3rem;
 }
 
-/* Header */
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 .headerRow {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    gap: 1.5rem;
+
+    padding-bottom: 1.5rem;
+
+    border-bottom:
+        1px solid
+        rgba(220, 236, 239, 0.9);
 }
+
 
 @media (min-width: 768px) {
-  .headerRow {
-    flex-direction: row;
-    align-items: flex-end;
-  }
+    .headerRow {
+        flex-direction: row;
+
+        align-items: flex-end;
+    }
 }
+
+
+/* =========================================================
+   BADGE
+========================================================= */
 
 .badgePill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
-  padding: 0.375rem 1rem;
-  border-radius: 9999px;
-  background-color: rgba(224, 242, 254, 0.8);
-  color: #075985;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border: 1px solid #bae6fd;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  margin-bottom: 0.75rem;
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.625rem;
+
+    padding: 0.375rem 1rem;
+
+    border-radius: 9999px;
+
+    background-color: #f4fafb;
+
+    color: #1685a5;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+
+    border:
+        1px solid
+        #dcecef;
+
+    box-shadow:
+        0 1px 2px
+        rgba(21, 72, 86, 0.04);
+
+    margin-bottom: 0.75rem;
 }
+
+
+/* =========================================================
+   PULSE DOT
+========================================================= */
 
 .pulseDot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 9999px;
-  background-color: #0284c7;
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    width: 0.5rem;
+
+    height: 0.5rem;
+
+    border-radius: 9999px;
+
+    background-color: #1685a5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 133, 165, 0.14);
+
+    animation:
+        pulse 2s
+        cubic-bezier(0.4, 0, 0.6, 1)
+        infinite;
 }
+
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
 
 .mainHeading {
-  font-size: 1.875rem;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.025em;
-  line-height: 1.15;
+    font-size: 1.875rem;
+
+    font-weight: 800;
+
+    color: #163e4b;
+
+    letter-spacing: -0.025em;
+
+    line-height: 1.15;
 }
+
 
 @media (min-width: 640px) {
-  .mainHeading { font-size: 2.25rem; }
+    .mainHeading {
+        font-size: 2.25rem;
+    }
 }
 
+
 @media (min-width: 1024px) {
-  .mainHeading { font-size: 3rem; }
+    .mainHeading {
+        font-size: 3rem;
+    }
 }
+
+
+/* =========================================================
+   GRADIENT TEXT
+========================================================= */
 
 .gradientText {
-  background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #4f46e5 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    background:
+        linear-gradient(
+            135deg,
+            #126f89 0%,
+            #1685a5 50%,
+            #1b91a5 100%
+        );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientShift 7s
+        ease-in-out
+        infinite;
 }
+
+
+@keyframes gradientShift {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =========================================================
+   HEADER SUBTEXT
+========================================================= */
 
 .headerSubtext {
-  font-size: 0.875rem;
-  color: #475569;
-  max-width: 28rem;
-  line-height: 1.625;
+    font-size: 0.875rem;
+
+    color: #71848a;
+
+    max-width: 28rem;
+
+    line-height: 1.625;
 }
+
 
 @media (min-width: 640px) {
-  .headerSubtext { font-size: 1rem; }
+    .headerSubtext {
+        font-size: 1rem;
+    }
 }
 
-/* Main Grid Layout */
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
 .mainGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+
+    align-items: start;
 }
+
 
 @media (min-width: 1024px) {
-  .mainGrid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
+    .mainGrid {
+        grid-template-columns:
+            repeat(12, minmax(0, 1fr));
+    }
 }
 
-/* Left Column: Offices */
+
+/* =========================================================
+   OFFICES COLUMN
+========================================================= */
+
 .officesCol {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
 }
 
+
 @media (min-width: 1024px) {
-  .officesCol {
-    grid-column: span 6 / span 6;
-  }
+    .officesCol {
+        grid-column:
+            span 6 / span 6;
+    }
 }
+
+
+/* =========================================================
+   OFFICE CARD
+========================================================= */
 
 .officeCard {
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+    border-radius: 1.5rem;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid
+        rgba(220, 236, 239, 0.95);
+
+    padding: 1.5rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    box-shadow:
+        0 4px 6px -1px
+        rgba(21, 72, 86, 0.035);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
+
 @media (min-width: 640px) {
-  .officeCard {
-    padding: 2rem;
-  }
+    .officeCard {
+        padding: 2rem;
+    }
 }
+
+
+.officeCard:hover {
+    transform:
+        translateY(-4px);
+
+    border-color: #b9dce3;
+
+    box-shadow:
+        0 16px 32px
+        rgba(22, 133, 165, 0.10);
+}
+
+
+/* =========================================================
+   OFFICE CARD HEADER
+========================================================= */
 
 .officeCardHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-  padding-bottom: 1rem;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid
+        rgba(220, 236, 239, 0.9);
+
+    padding-bottom: 1rem;
 }
+
+
+/* =========================================================
+   OFFICE TITLE WRAPPER
+========================================================= */
 
 .officeTitleWrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.75rem;
 }
 
-.iconBoxSky {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.75rem;
-  background-color: rgba(2, 132, 199, 0.1);
-  color: #0284c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-}
 
+/* =========================================================
+   ICON BOXES
+   Both old color classes now use same Teal system
+========================================================= */
+
+.iconBoxSky,
 .iconBoxIndigo {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.75rem;
-  background-color: rgba(79, 70, 229, 0.1);
-  color: #4f46e5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
+    width: 2.5rem;
+
+    height: 2.5rem;
+
+    border-radius: 0.75rem;
+
+    background:
+        rgba(22, 133, 165, 0.09);
+
+    color: #1685a5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    border:
+        1px solid
+        rgba(22, 133, 165, 0.08);
 }
+
+
+/* =========================================================
+   OFFICE TITLE
+========================================================= */
 
 .officeTitle {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #0f172a;
+    font-size: 1.125rem;
+
+    font-weight: 700;
+
+    color: #163e4b;
 }
 
-.locationSky {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #0284c7;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: block;
-}
 
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.locationSky,
 .locationIndigo {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #4f46e5;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: block;
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    color: #1685a5;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    display: block;
 }
+
+
+/* =========================================================
+   OFFICE TAG
+========================================================= */
 
 .officeTag {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #94a3b8;
-  background-color: #f1f5f9;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
+    font-size: 0.6875rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+    color: #71848a;
+
+    background-color: #f1f7f8;
+
+    padding: 0.25rem 0.75rem;
+
+    border-radius: 9999px;
+
+    border:
+        1px solid
+        #e1eef0;
 }
+
+
+/* =========================================================
+   ADDRESS ROW
+========================================================= */
 
 .addressRow {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.875rem;
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 0.875rem;
 }
+
+
+/* =========================================================
+   SLATE ICON BOX
+========================================================= */
 
 .slateIconBox {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: #f1f5f9;
-  color: #64748b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 0.125rem;
+    width: 2rem;
+
+    height: 2rem;
+
+    border-radius: 0.5rem;
+
+    background-color: #f1f7f8;
+
+    color: #66858d;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin-top: 0.125rem;
+
+    border:
+        1px solid
+        #e1eef0;
 }
+
+
+/* =========================================================
+   INFO LABEL
+========================================================= */
 
 .infoLabel {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    color: #94aeb5;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    display: block;
+
+    margin-bottom: 0.25rem;
 }
+
+
+/* =========================================================
+   INFO VALUE
+========================================================= */
 
 .infoVal {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #334155;
-  line-height: 1.625;
+    font-size: 0.875rem;
+
+    font-weight: 500;
+
+    color: #405d65;
+
+    line-height: 1.625;
 }
+
+
+/* =========================================================
+   CONTACT GRID
+========================================================= */
 
 .contactGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  padding-top: 0.5rem;
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+
+    padding-top: 0.5rem;
 }
 
+
 @media (min-width: 640px) {
-  .contactGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    .contactGrid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 }
+
+
+/* =========================================================
+   CONTACT ITEM
+========================================================= */
 
 .contactItem {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.75rem;
 }
 
-.contactIconSky {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: #e0f2fe;
-  color: #0284c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
 
-.contactIconBlue {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: #dbeafe;
-  color: #2563eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
+/* =========================================================
+   CONTACT ICONS
+   All old color variants -> Teal
+========================================================= */
 
+.contactIconSky,
+.contactIconBlue,
 .contactIconIndigo {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: #e0e7ff;
-  color: #4f46e5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+    width: 2rem;
+
+    height: 2rem;
+
+    border-radius: 0.5rem;
+
+    background-color: #eef9fa;
+
+    color: #1685a5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        #dceff1;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
 }
+
+
+.contactItem:hover
+.contactIconSky,
+.contactItem:hover
+.contactIconBlue,
+.contactItem:hover
+.contactIconIndigo {
+    transform:
+        scale(1.06);
+
+    background-color: #e4f5f7;
+}
+
+
+/* =========================================================
+   CONTACT LINK
+========================================================= */
 
 .contactLink {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #1e293b;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  display: block;
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    color: #263f47;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+
+    display: block;
 }
 
+
 @media (min-width: 640px) {
-  .contactLink {
-    font-size: 0.875rem;
-  }
+    .contactLink {
+        font-size: 0.875rem;
+    }
 }
+
 
 .contactLink:hover {
-  color: #0284c7;
+    color: #1685a5;
 }
 
-/* Right Column: Form Panel (Lighter Refined Theme) */
+
+/* =========================================================
+   FORM COLUMN
+========================================================= */
+
 .formCol {
-  position: relative;
+    position: relative;
 }
+
 
 @media (min-width: 1024px) {
-  .formCol {
-    grid-column: span 6 / span 6;
-  }
+    .formCol {
+        grid-column:
+            span 6 / span 6;
+    }
 }
+
+
+/* =========================================================
+   FORM GLOW
+========================================================= */
 
 .glowAura {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 16rem;
-  height: 16rem;
-  background-color: rgba(14, 165, 233, 0.15);
-  border-radius: 9999px;
-  filter: blur(40px);
-  pointer-events: none;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 16rem;
+
+    height: 16rem;
+
+    background-color:
+        rgba(22, 133, 165, 0.12);
+
+    border-radius: 9999px;
+
+    filter: blur(40px);
+
+    pointer-events: none;
 }
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
 
 .formCard {
-  position: relative;
-  z-index: 10;
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  padding: 1.5rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    position: relative;
+
+    z-index: 10;
+
+    border-radius: 1.5rem;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid
+        rgba(220, 236, 239, 0.95);
+
+    padding: 1.5rem;
+
+    box-shadow:
+        0 20px 25px -5px
+        rgba(21, 72, 86, 0.055);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.5rem;
 }
 
+
 @media (min-width: 640px) {
-  .formCard {
-    padding: 2.5rem;
-  }
+    .formCard {
+        padding: 2.5rem;
+    }
 }
+
+
+.formCard:hover {
+    border-color: #c7e4e8;
+}
+
+
+/* =========================================================
+   FORM TAG
+========================================================= */
 
 .formTag {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #0284c7;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  display: block;
-  margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    color: #1685a5;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+    display: block;
+
+    margin-bottom: 0.25rem;
 }
+
+
+/* =========================================================
+   FORM TITLE
+========================================================= */
 
 .formTitle {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.025em;
+    font-size: 1.5rem;
+
+    font-weight: 800;
+
+    color: #163e4b;
+
+    letter-spacing: -0.025em;
 }
+
+
+/* =========================================================
+   FORM DESCRIPTION
+========================================================= */
 
 .formDesc {
-  font-size: 0.75rem;
-  color: #64748b;
-  margin-top: 0.25rem;
-  line-height: 1.5;
+    font-size: 0.75rem;
+
+    color: #71848a;
+
+    margin-top: 0.25rem;
+
+    line-height: 1.5;
 }
 
+
 @media (min-width: 640px) {
-  .formDesc {
-    font-size: 0.875rem;
-  }
+    .formDesc {
+        font-size: 0.875rem;
+    }
 }
+
+
+/* =========================================================
+   FORM
+========================================================= */
 
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 0.5rem;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+    padding-top: 0.5rem;
 }
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
 
 .formGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
 }
 
+
 @media (min-width: 640px) {
-  .formGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    .formGrid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 }
+
+
+/* =========================================================
+   LABEL
+========================================================= */
 
 .label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #475569;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.375rem;
+    display: block;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    color: #60777e;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    margin-bottom: 0.375rem;
 }
 
-.input, .select, .textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  color: #0f172a;
-  font-size: 0.75rem;
-  outline: none;
-  transition: all 0.2s ease;
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+
+    padding: 0.75rem 1rem;
+
+    border-radius: 0.75rem;
+
+    background-color: #f8fbfc;
+
+    border:
+        1px solid
+        #dfecef;
+
+    color: #163e4b;
+
+    font-size: 0.75rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
+
 
 @media (min-width: 640px) {
-  .input, .select, .textarea {
-    font-size: 0.875rem;
-  }
+
+    .input,
+    .select,
+    .textarea {
+        font-size: 0.875rem;
+    }
 }
 
-.input::placeholder, .textarea::placeholder {
-  color: #94a3b8;
+
+.input::placeholder,
+.textarea::placeholder {
+    color: #9aafb5;
 }
 
-.input:focus, .select:focus, .textarea:focus {
-  border-color: #0284c7;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+
+/* =========================================================
+   FORM FOCUS
+========================================================= */
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    border-color: #1685a5;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 133, 165, 0.12);
 }
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
 
 .textarea {
-  resize: none;
+    resize: none;
 }
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
 
 .submitBtn {
-  width: 100%;
-  padding: 0.875rem;
-  border-radius: 0.75rem;
-  background: linear-gradient(90deg, #0284c7 0%, #2563eb 100%);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.875rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+    width: 100%;
+
+    padding: 0.875rem;
+
+    border-radius: 0.75rem;
+
+    background:
+        linear-gradient(
+            90deg,
+            #126f89 0%,
+            #1685a5 100%
+        );
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    font-size: 0.875rem;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+    box-shadow:
+        0 4px 6px -1px
+        rgba(22, 133, 165, 0.20);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.5rem;
 }
+
 
 .submitBtn:hover {
-  background: linear-gradient(90deg, #0369a1 0%, #1d4ed8 100%);
-  box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3);
+    background:
+        linear-gradient(
+            90deg,
+            #0f6075 0%,
+            #126f89 100%
+        );
+
+    box-shadow:
+        0 10px 15px -3px
+        rgba(22, 133, 165, 0.28);
+
+    transform:
+        translateY(-2px);
 }
 
+
+.submitBtn:active {
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   SVG ICON
+========================================================= */
+
 .svgIcon {
-  width: 1rem;
-  height: 1rem;
+    width: 1rem;
+
+    height: 1rem;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.submitBtn:hover .svgIcon {
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .section {
+        padding: 3.5rem 1rem;
+    }
+
+    .container {
+        gap: 2.5rem;
+    }
+
+    .mainHeading {
+        font-size: 2rem;
+    }
+
+    .headerSubtext {
+        font-size: 0.875rem;
+    }
+
+    .officeCard {
+        border-radius: 1.25rem;
+        padding: 1.25rem;
+    }
+
+    .formCard {
+        border-radius: 1.25rem;
+        padding: 1.25rem;
+    }
+
+    .officeTitle {
+        font-size: 1rem;
+    }
+
+    .formTitle {
+        font-size: 1.35rem;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .gradientText,
+    .pulseDot {
+        animation: none;
+    }
+
+    .officeCard,
+    .productTag,
+    .contactIconSky,
+    .contactIconBlue,
+    .contactIconIndigo,
+    .submitBtn,
+    .svgIcon {
+        transition: none;
+    }
 }

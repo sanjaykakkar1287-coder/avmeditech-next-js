@@ -1,307 +1,521 @@
+/* =========================================================
+   PARTNERS / MARQUEE SECTION
+   Healthcare Teal Theme
+========================================================= */
+
 .section {
-  position: relative;
-  padding: 80px 20px;
-  overflow: hidden;
-  background: #fff;
+    position: relative;
+
+    padding: 80px 20px;
+
+    overflow: hidden;
+
+    background: #ffffff;
 }
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container {
-  max-width: 1280px;
-  margin: auto;
-  position: relative;
-  z-index: 2;
+    max-width: 1280px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
 }
 
-/* ===========================
-   Header
-=========================== */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .header {
-  max-width: 700px;
-  margin: 0 auto 60px;
-  text-align: center;
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
 }
+
+
+/* =========================================================
+   BADGE
+========================================================= */
 
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+    display: inline-flex;
 
-  padding: 8px 16px;
+    align-items: center;
 
-  border-radius: 999px;
+    gap: 8px;
 
-  background: #e0f2fe;
+    padding: 8px 16px;
 
-  border: 1px solid #bae6fd;
+    margin-bottom: 20px;
 
-  color: #0369a1;
+    border: 1px solid #dcecef;
 
-  font-size: 12px;
+    border-radius: 999px;
 
-  font-weight: 700;
+    background: #f4fafb;
 
-  letter-spacing: 1px;
+    color: #1685a5;
 
-  text-transform: uppercase;
+    font-size: 12px;
 
-  margin-bottom: 20px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
 }
+
+
+/* =========================================================
+   BADGE DOT
+========================================================= */
 
 .badgeDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #0ea5e9;
+    width: 8px;
+    height: 8px;
 
-  animation: pulse 1.5s infinite;
+    border-radius: 50%;
+
+    background: #1685a5;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 133, 165, 0.12);
+
+    animation: pulse 1.5s infinite;
 }
+
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 .title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  color: #0f172a;
-  line-height: 1.2;
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-weight: 800;
+
+    color: #163e4b;
+
+    line-height: 1.2;
+
+    letter-spacing: -1px;
+
+    margin: 0;
 }
+
+
+/* =========================================================
+   TITLE HIGHLIGHT
+========================================================= */
 
 .highlight {
-  background: linear-gradient(
-    90deg,
-    #0ea5e9,
-    #2563eb
-  );
+    background:
+        linear-gradient(
+            90deg,
+            #1685a5,
+            #126f89
+        );
 
-  -webkit-background-clip: text;
+    -webkit-background-clip: text;
 
-  -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
 }
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .description {
-  margin-top: 16px;
+    margin-top: 16px;
 
-  color: #64748b;
+    color: #71848a;
 
-  font-size: 16px;
+    font-size: 16px;
 
-  line-height: 1.7;
+    line-height: 1.7;
 }
 
-/* ===========================
-   Marquee
-=========================== */
+
+/* =========================================================
+   MARQUEE CONTAINER
+========================================================= */
 
 .marqueeContainer {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
 }
+
+
+/* =========================================================
+   MARQUEE ROWS
+========================================================= */
 
 .marqueeForward,
 .marqueeReverse {
-  display: flex;
-  width: max-content;
-  gap: 24px;
+    display: flex;
+
+    width: max-content;
+
+    gap: 24px;
 }
+
 
 .marqueeForward {
-  animation: marquee 30s linear infinite;
+    animation:
+        marquee 30s linear infinite;
 }
+
 
 .marqueeReverse {
-  animation: marqueeReverse 30s linear infinite;
+    animation:
+        marqueeReverse 30s linear infinite;
 }
+
+
+/* =========================================================
+   PARTNER CARD
+========================================================= */
 
 .partnerCard {
-  width: 220px;
-  height: 80px;
+    width: 220px;
 
-  flex-shrink: 0;
+    height: 80px;
 
-  display: flex;
+    flex-shrink: 0;
 
-  justify-content: center;
+    display: flex;
 
-  align-items: center;
+    justify-content: center;
 
-  background: white;
+    align-items: center;
 
-  border-radius: 20px;
+    background: #ffffff;
 
-  border: 1px solid #e2e8f0;
+    border: 1px solid #e2edef;
 
-  transition: 0.3s;
+    border-radius: 20px;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    box-shadow:
+        0 8px 24px rgba(21, 72, 86, 0.055);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
+
 
 .partnerCard:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    border-color: #c9e5ea;
+
+    box-shadow:
+        0 18px 40px rgba(21, 72, 86, 0.10);
 }
+
+
+/* =========================================================
+   PARTNER IMAGE
+========================================================= */
 
 .partnerImg {
-  max-height: 48px;
+    max-height: 48px;
 
-  width: auto;
+    width: auto;
 
-  object-fit: contain;
+    object-fit: contain;
 
-  transition: transform .3s;
+    transition:
+        transform 0.3s ease;
 }
+
 
 .partnerCard:hover .partnerImg {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
+
+
+/* =========================================================
+   FALLBACK TEXT
+========================================================= */
 
 .partnerFallbackText {
-  font-size: 15px;
+    font-size: 15px;
 
-  font-weight: 700;
+    font-weight: 700;
 
-  color: #0f172a;
+    color: #163e4b;
 }
 
-/* ===========================
-   Footer
-=========================== */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer {
-  margin-top: 50px;
+    margin-top: 50px;
 
-  display: flex;
+    display: flex;
 
-  justify-content: center;
+    justify-content: center;
 
-  align-items: center;
+    align-items: center;
 
-  gap: 18px;
+    gap: 18px;
 
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 
-  text-transform: uppercase;
+    text-transform: uppercase;
 
-  font-size: 12px;
+    font-size: 12px;
 
-  letter-spacing: 2px;
+    letter-spacing: 2px;
 
-  color: #94a3b8;
+    color: #94aeb5;
 
-  font-weight: 600;
+    font-weight: 600;
 }
+
+
+/* =========================================================
+   FOOTER DOT
+========================================================= */
 
 .footerDot {
-  width: 5px;
+    width: 5px;
 
-  height: 5px;
+    height: 5px;
 
-  border-radius: 50%;
+    border-radius: 50%;
 
-  background: #cbd5e1;
+    background: #c9dfe3;
 }
 
-/* ===========================
-   Aura
-=========================== */
+
+/* =========================================================
+   AURA GLOW
+========================================================= */
 
 .auraGlow {
-  position: absolute;
+    position: absolute;
 
-  left: 50%;
+    left: 50%;
 
-  top: 50%;
+    top: 50%;
 
-  transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
-  width: 650px;
+    width: 650px;
 
-  height: 650px;
+    height: 650px;
 
-  background: radial-gradient(
-    circle,
-    rgba(14, 165, 233, 0.15),
-    transparent 70%
-  );
+    background:
+        radial-gradient(
+            circle,
+            rgba(22, 133, 165, 0.12),
+            transparent 70%
+        );
 
-  filter: blur(90px);
+    filter: blur(90px);
 
-  z-index: 0;
+    z-index: 0;
+
+    pointer-events: none;
 }
 
-/* ===========================
-   Animations
-=========================== */
+
+/* =========================================================
+   MARQUEE ANIMATIONS
+========================================================= */
 
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
 
-  to {
-    transform: translateX(-50%);
-  }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
+
 
 @keyframes marqueeReverse {
-  from {
-    transform: translateX(-50%);
-  }
 
-  to {
-    transform: translateX(0);
-  }
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
+
+
+/* =========================================================
+   PULSE ANIMATION
+========================================================= */
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: .8;
-  }
 
-  70% {
-    transform: scale(1.8);
-    opacity: 0;
-  }
+    0% {
+        transform: scale(1);
 
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
+        opacity: 0.8;
+    }
+
+    70% {
+        transform: scale(1.8);
+
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+
+        opacity: 0;
+    }
 }
 
-/* ===========================
-   Responsive
-=========================== */
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media (max-width: 768px) {
-  .section {
-    padding: 60px 16px;
-  }
 
-  .partnerCard {
-    width: 170px;
-    height: 70px;
-  }
+    .section {
+        padding: 60px 16px;
+    }
 
-  .partnerImg {
-    max-height: 40px;
-  }
 
-  .title {
-    font-size: 2rem;
-  }
+    .header {
+        margin-bottom: 40px;
+    }
 
-  .description {
-    font-size: 15px;
-  }
+
+    .partnerCard {
+        width: 170px;
+
+        height: 70px;
+
+        border-radius: 16px;
+    }
+
+
+    .partnerImg {
+        max-height: 40px;
+    }
+
+
+    .title {
+        font-size: 2rem;
+    }
+
+
+    .description {
+        font-size: 15px;
+    }
+
+
+    .marqueeContainer {
+        gap: 16px;
+    }
+
+
+    .marqueeForward,
+    .marqueeReverse {
+        gap: 16px;
+    }
+
+
+    .footer {
+        margin-top: 35px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .section {
+        padding: 50px 14px;
+    }
+
+
+    .badge {
+        padding: 7px 13px;
+
+        font-size: 10px;
+    }
+
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+
+    .description {
+        font-size: 14px;
+    }
+
+
+    .partnerCard {
+        width: 150px;
+
+        height: 64px;
+    }
+
+
+    .partnerImg {
+        max-height: 34px;
+    }
 }

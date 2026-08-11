@@ -1,229 +1,565 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-/* ================= Section Shell ================= */
+
+/* =========================================================
+   VALUES SECTION
+   Unified Healthcare Teal Theme
+========================================================= */
+
 .valuesSection {
-  position: relative;
-  padding: 80px 0;
-  background: #f8fafc;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  overflow: hidden;
+    position: relative;
+
+    padding: 80px 0;
+
+    background: #ffffff;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    overflow: hidden;
 }
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
 
 .glowPrimary {
-  position: absolute;
-  top: -60px;
-  left: -60px;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(22, 133, 165, 0.12) 0%, transparent 70%);
-  filter: blur(60px);
-  pointer-events: none;
+    position: absolute;
+
+    top: -60px;
+    left: -60px;
+
+    width: 320px;
+    height: 320px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22, 133, 165, 0.10) 0%,
+            transparent 70%
+        );
+
+    filter: blur(60px);
+
+    pointer-events: none;
 }
+
 
 .glowSecondary {
-  position: absolute;
-  bottom: -80px;
-  right: -80px;
-  width: 340px;
-  height: 340px;
-  background: radial-gradient(circle, rgba(23, 105, 232, 0.1) 0%, transparent 70%);
-  filter: blur(60px);
-  pointer-events: none;
+    position: absolute;
+
+    bottom: -80px;
+    right: -80px;
+
+    width: 340px;
+    height: 340px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(18, 111, 137, 0.08) 0%,
+            transparent 70%
+        );
+
+    filter: blur(60px);
+
+    pointer-events: none;
 }
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .valuesContainer {
-  position: relative;
-  z-index: 2;
-  width: min(1200px, calc(100% - 32px));
-  margin: 0 auto;
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        1200px,
+        calc(100% - 32px)
+    );
+
+    margin: 0 auto;
 }
 
-/* ================= Header ================= */
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 .valuesHeader {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 52px;
+    text-align: center;
+
+    max-width: 720px;
+
+    margin: 0 auto 52px;
 }
+
+
+/* =========================================================
+   CATEGORY BADGE
+========================================================= */
 
 .categoryBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 14px;
-  margin-bottom: 14px;
-  border: 1px solid #dcecef;
-  border-radius: 50px;
-  background: #ffffff;
-  color: #1685a5;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 5px 14px;
+
+    margin-bottom: 14px;
+
+    border: 1px solid #dcecef;
+
+    border-radius: 50px;
+
+    background: #f4fafb;
+
+    color: #1685a5;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
 }
+
+
+/* =========================================================
+   BADGE DOT
+========================================================= */
 
 .badgeDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #1685a5;
-  box-shadow: 0 0 0 3px rgba(22, 133, 165, 0.15);
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #1685a5;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 133, 165, 0.15);
+
+    animation:
+        valuePulse 2s ease-in-out infinite;
 }
+
+
+/* =========================================================
+   HEADLINE
+========================================================= */
 
 .valuesHeadline {
-  margin: 0 0 16px;
-  color: #0f172a;
-  font-size: clamp(24px, 3.4vw, 34px);
-  font-weight: 800;
-  line-height: 1.25;
-  letter-spacing: -0.5px;
+    margin: 0 0 16px;
+
+    color: #163e4b;
+
+    font-size: clamp(
+        24px,
+        3.4vw,
+        34px
+    );
+
+    font-weight: 800;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.5px;
 }
+
+
+/* =========================================================
+   GRADIENT HIGHLIGHT
+========================================================= */
 
 .gradientHighlight {
-  background: linear-gradient(115deg, #087fbd 0%, #078fca 25%, #1769e8 55%, #315bea 78%, #087fbd 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradientShift 8s ease-in-out infinite;
+    background:
+        linear-gradient(
+            115deg,
+            #1685a5 0%,
+            #126f89 50%,
+            #1685a5 100%
+        );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientShift 8s ease-in-out infinite;
 }
+
+
+/* =========================================================
+   SUBHEADLINE
+========================================================= */
 
 .valuesSubheadline {
-  margin: 0;
-  color: #64748b;
-  font-size: 15px;
-  line-height: 1.7;
+    margin: 0;
+
+    color: #71848a;
+
+    font-size: 15px;
+
+    line-height: 1.7;
 }
 
-/* ================= Grid ================= */
+
+/* =========================================================
+   GRID
+========================================================= */
+
 .valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
 }
 
-/* ================= Card ================= */
+
+/* =========================================================
+   VALUE CARD
+========================================================= */
+
 .valueCard {
-  position: relative;
-  padding: 32px 28px;
-  border-radius: 20px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
+    position: relative;
+
+    padding: 32px 28px;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2edef;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 16px
+        rgba(21, 72, 86, 0.035);
+
+    transition:
+        transform 0.35s
+            cubic-bezier(0.16, 1, 0.3, 1),
+
+        box-shadow 0.35s ease,
+
+        border-color 0.35s ease;
 }
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
 
 .valueCard:hover {
-  transform: translateY(-6px);
-  border-color: transparent;
-  box-shadow: 0 20px 40px rgba(23, 105, 232, 0.16);
+    transform: translateY(-6px);
+
+    border-color: #c9e5ea;
+
+    box-shadow:
+        0 20px 40px
+        rgba(22, 133, 165, 0.12);
 }
+
 
 .valueCard:hover .cardBottomLine {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
+
 
 .valueCard:hover .valueCardIcon {
-  background: linear-gradient(135deg, #087fbd, #1769e8);
-  border-color: transparent;
-  color: #ffffff;
-  transform: scale(1.08) rotate(-4deg);
+    background:
+        linear-gradient(
+            135deg,
+            #1685a5,
+            #126f89
+        );
+
+    border-color: transparent;
+
+    color: #ffffff;
+
+    transform:
+        scale(1.08)
+        rotate(-4deg);
 }
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
 
 .cardNum {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-  font-size: 34px;
-  font-weight: 800;
-  color: #f1f5f9;
-  line-height: 1;
-  z-index: 0;
+    position: absolute;
+
+    top: 18px;
+    right: 22px;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    color: #edf5f7;
+
+    line-height: 1;
+
+    z-index: 0;
 }
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
 
 .valueCardIcon {
-  position: relative;
-  z-index: 1;
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: #ecfeff;
-  border: 1px solid #cffaff;
-  color: #0891b2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: all 0.35s ease;
+    position: relative;
+
+    z-index: 1;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 14px;
+
+    background: #f2fafb;
+
+    border: 1px solid #d9edf0;
+
+    color: #1685a5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    transition:
+        all 0.35s ease;
 }
+
 
 .valueCardIcon svg {
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
 }
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
 
 .valueCardTitle {
-  position: relative;
-  z-index: 1;
-  margin: 0 0 10px;
-  color: #0f172a;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
+    position: relative;
+
+    z-index: 1;
+
+    margin: 0 0 10px;
+
+    color: #163e4b;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.2px;
 }
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
 
 .valueCardText {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  color: #64748b;
-  font-size: 14px;
-  line-height: 1.7;
+    position: relative;
+
+    z-index: 1;
+
+    margin: 0;
+
+    color: #71848a;
+
+    font-size: 14px;
+
+    line-height: 1.7;
 }
+
+
+/* =========================================================
+   CARD BOTTOM LINE
+========================================================= */
 
 .cardBottomLine {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #087fbd, #1769e8, #315bea);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1685a5,
+            #126f89,
+            #1685a5
+        );
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+        transform 0.4s
+        cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ================= Shared gradient animation ================= */
+
+/* =========================================================
+   PULSE
+========================================================= */
+
+@keyframes valuePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.55;
+
+        transform: scale(0.85);
+    }
+}
+
+
+/* =========================================================
+   GRADIENT ANIMATION
+========================================================= */
+
 @keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-/* ================= Responsive ================= */
+
+/* =========================================================
+   TABLET
+========================================================= */
+
 @media (max-width: 900px) {
-  .valuesGrid {
-    grid-template-columns: 1fr;
-  }
+
+    .valuesGrid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .valueCard {
+        padding: 30px 26px;
+    }
 }
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 550px) {
-  .valuesSection {
-    padding: 56px 0;
-  }
-  .valueCard {
-    padding: 26px 22px;
-  }
+
+    .valuesSection {
+        padding: 56px 0;
+    }
+
+
+    .valuesContainer {
+        width:
+            calc(100% - 28px);
+    }
+
+
+    .valuesHeader {
+        margin-bottom: 38px;
+    }
+
+
+    .valuesHeadline {
+        font-size: 25px;
+    }
+
+
+    .valuesSubheadline {
+        font-size: 14px;
+    }
+
+
+    .valueCard {
+        padding: 26px 22px;
+
+        border-radius: 17px;
+    }
+
+
+    .valueCardTitle {
+        font-size: 17px;
+    }
+
+
+    .valueCardText {
+        font-size: 13px;
+    }
+
+
+    .cardNum {
+        font-size: 30px;
+
+        top: 16px;
+        right: 18px;
+    }
 }
 
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
-  .gradientHighlight {
-    animation: none;
-  }
-  .valueCard,
-  .valueCardIcon,
-  .cardBottomLine {
-    transition: none;
-  }
+
+    .gradientHighlight,
+    .badgeDot {
+        animation: none;
+    }
+
+
+    .valueCard,
+    .valueCardIcon,
+    .cardBottomLine {
+        transition: none;
+    }
 }

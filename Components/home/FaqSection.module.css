@@ -1,500 +1,1033 @@
-/* Background & Section Container */
+/* =========================================================
+   FAQ / SUPPORT SECTION
+   Healthcare Teal Theme
+========================================================= */
+
 .section {
-  position: relative;
-  overflow: hidden;
-  padding: 4rem 1rem;
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 1rem;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(22, 133, 165, 0.06),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(18, 111, 137, 0.045),
+            transparent 25%
+        ),
+        #ffffff;
 }
 
 @media (min-width: 640px) {
-  .section {
-    padding: 6rem 2rem;
-  }
+    .section {
+        padding: 6rem 2rem;
+    }
 }
 
 @media (min-width: 1024px) {
-  .section {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
+    .section {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
 }
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container {
-  max-width: 80rem;
-  margin: 0 auto;
-  position: relative;
-  z-index: 10;
+    max-width: 80rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
 }
 
-/* Header Section */
+
+/* =========================================================
+   DECORATIVE GLOWS
+========================================================= */
+
+.section::before,
+.section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(80px);
+}
+
+.section::before {
+    width: 280px;
+    height: 280px;
+    top: 60px;
+    left: -140px;
+    background: rgba(22, 133, 165, 0.055);
+}
+
+.section::after {
+    width: 300px;
+    height: 300px;
+    right: -150px;
+    bottom: 100px;
+    background: rgba(18, 111, 137, 0.04);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 .header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+
+    border-bottom: 1px solid rgba(220, 236, 239, 0.9);
 }
 
 @media (min-width: 768px) {
-  .header {
-    flex-direction: row;
-    align-items: flex-end;
-  }
+    .header {
+        flex-direction: row;
+        align-items: flex-end;
+    }
 }
+
+
+/* =========================================================
+   TAG PILL
+========================================================= */
 
 .tagPill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.875rem;
-  border-radius: 9999px;
-  background-color: rgba(224, 242, 254, 0.8);
-  color: #075985;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-  border: 1px solid #bae6fd;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.4rem 0.875rem;
+    margin-bottom: 0.75rem;
+
+    border: 1px solid #dcecef;
+    border-radius: 9999px;
+
+    background: #f4fafb;
+    color: #1685a5;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    box-shadow: 0 1px 2px rgba(21, 72, 86, 0.04);
 }
 
+
+/* =========================================================
+   PULSE DOT
+========================================================= */
+
 .pulseDot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 9999px;
-  background-color: #0284c7;
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    width: 0.5rem;
+    height: 0.5rem;
+
+    border-radius: 50%;
+
+    background: #1685a5;
+
+    box-shadow: 0 0 0 4px rgba(22, 133, 165, 0.1);
+
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
+
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 .title {
-  font-size: 1.875rem;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.025em;
-  line-height: 1.25;
+    margin: 0;
+
+    color: #163e4b;
+
+    font-size: 1.875rem;
+    font-weight: 800;
+
+    letter-spacing: -0.025em;
+    line-height: 1.25;
 }
 
 @media (min-width: 640px) {
-  .title {
-    font-size: 2.25rem;
-  }
+    .title {
+        font-size: 2.25rem;
+    }
 }
+
+
+/* =========================================================
+   GRADIENT HIGHLIGHT
+========================================================= */
 
 .gradientHighlight {
-  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    background: linear-gradient(
+        135deg,
+        #1685a5 0%,
+        #126f89 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
 }
+
+
+/* =========================================================
+   HEADER DESCRIPTION
+========================================================= */
 
 .headerDesc {
-  font-size: 0.875rem;
-  color: #475569;
-  max-width: 28rem;
-  line-height: 1.625;
+    max-width: 28rem;
+
+    margin: 0;
+
+    color: #71848a;
+
+    font-size: 0.875rem;
+    line-height: 1.625;
 }
 
 @media (min-width: 640px) {
-  .headerDesc {
-    font-size: 1rem;
-  }
+    .headerDesc {
+        font-size: 1rem;
+    }
 }
 
-/* Search & Filter Controls Bar */
+
+/* =========================================================
+   CONTROLS BAR
+========================================================= */
+
 .controlsBar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 @media (min-width: 640px) {
-  .controlsBar {
-    flex-direction: row;
-    align-items: center;
-  }
+    .controlsBar {
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
-/* Search Input Box */
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
 .searchBox {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 @media (min-width: 640px) {
-  .searchBox {
-    width: 20rem;
-  }
+    .searchBox {
+        width: 20rem;
+    }
 }
+
+
+/* =========================================================
+   SEARCH INPUT
+========================================================= */
 
 .searchInput {
-  width: 100%;
-  padding-left: 2.5rem;
-  padding-right: 1rem;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  border-radius: 0.75rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #e2e8f0;
-  font-size: 0.75rem;
-  color: #0f172a;
-  outline: none;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
+    width: 100%;
+
+    padding: 0.625rem 1rem 0.625rem 2.5rem;
+
+    border: 1px solid #e2edef;
+    border-radius: 0.75rem;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #163e4b;
+
+    font-size: 0.75rem;
+
+    outline: none;
+
+    box-shadow: 0 1px 2px rgba(21, 72, 86, 0.04);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 @media (min-width: 640px) {
-  .searchInput {
-    font-size: 0.875rem;
-  }
+    .searchInput {
+        font-size: 0.875rem;
+    }
+}
+
+.searchInput::placeholder {
+    color: #9aadb2;
 }
 
 .searchInput:focus {
-  border-color: #0284c7;
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    border-color: #1685a5;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 133, 165, 0.14);
 }
+
+
+/* =========================================================
+   SEARCH ICON
+========================================================= */
 
 .searchIcon {
-  width: 1rem;
-  height: 1rem;
-  color: #94a3b8;
-  position: absolute;
-  left: 0.875rem;
-  top: 50%;
-  transform: translateY(-50%);
+    position: absolute;
+
+    left: 0.875rem;
+    top: 50%;
+
+    width: 1rem;
+    height: 1rem;
+
+    transform: translateY(-50%);
+
+    color: #94aeb5;
+
+    pointer-events: none;
 }
 
-/* Category Filter Pills */
+
+/* =========================================================
+   FILTER PILLS
+========================================================= */
+
 .filterPills {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 0.5rem;
+
+    width: 100%;
 }
 
 @media (min-width: 640px) {
-  .filterPills {
-    width: auto;
-  }
+    .filterPills {
+        width: auto;
+    }
 }
 
+
+/* =========================================================
+   TAB PILL
+========================================================= */
+
 .tabPill {
-  padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid #e2e8f0;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #475569;
+    padding: 0.5rem 1rem;
+
+    border: 1px solid #e2edef;
+    border-radius: 0.75rem;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    color: #647b82;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .tabPill:hover {
-  background-color: #f1f5f9;
+    background: #f4fafb;
+    color: #1685a5;
+    border-color: #d9edf0;
 }
 
 .tabPillActive {
-  background-color: #0284c7;
-  color: #ffffff;
-  border-color: #0284c7;
-  box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.25);
+    background: #1685a5;
+
+    color: #ffffff;
+
+    border-color: #1685a5;
+
+    box-shadow:
+        0 4px 6px -1px rgba(22, 133, 165, 0.25);
 }
 
-/* Main Grid Layout */
+.tabPillActive:hover {
+    background: #126f89;
+    color: #ffffff;
+    border-color: #126f89;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
 .mainGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+
+    align-items: start;
 }
 
 @media (min-width: 1024px) {
-  .mainGrid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
+    .mainGrid {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
 }
 
-/* Left Sidebar Column */
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
 .sidebarCol {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
 }
 
 @media (min-width: 1024px) {
-  .sidebarCol {
-    grid-column: span 4 / span 4;
-    position: sticky;
-    top: 1.5rem;
-  }
+    .sidebarCol {
+        grid-column: span 4 / span 4;
+
+        position: sticky;
+        top: 1.5rem;
+    }
 }
+
+
+/* =========================================================
+   SUPPORT CARD
+========================================================= */
 
 .supportCard {
-  border-radius: 1.5rem;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #082f49 100%);
-  padding: 2rem;
-  color: #ffffff;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
+
+    padding: 2rem;
+
+    border-radius: 1.5rem;
+
+    background: linear-gradient(
+        135deg,
+        #163e4b 0%,
+        #154856 50%,
+        #126f89 100%
+    );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 20px 25px -5px rgba(21, 72, 86, 0.12);
 }
+
+
+/* =========================================================
+   SUPPORT GLOW
+========================================================= */
 
 .supportGlow {
-  position: absolute;
-  right: -2.5rem;
-  bottom: -2.5rem;
-  width: 10rem;
-  height: 10rem;
-  background-color: rgba(14, 165, 233, 0.2);
-  border-radius: 9999px;
-  filter: blur(24px);
-  pointer-events: none;
+    position: absolute;
+
+    right: -2.5rem;
+    bottom: -2.5rem;
+
+    width: 10rem;
+    height: 10rem;
+
+    border-radius: 50%;
+
+    background: rgba(22, 133, 165, 0.22);
+
+    filter: blur(24px);
+
+    pointer-events: none;
 }
+
+
+/* =========================================================
+   QUESTION ICON
+========================================================= */
 
 .questionIconBadge {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 1rem;
-  background-color: rgba(14, 165, 233, 0.2);
-  color: #38bdf8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(56, 189, 248, 0.3);
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1.5rem;
+
+    border: 1px solid rgba(108, 195, 213, 0.3);
+    border-radius: 1rem;
+
+    background: rgba(22, 133, 165, 0.2);
+
+    color: #6cc3d5;
+
+    font-size: 1.25rem;
+    font-weight: 700;
 }
+
+
+/* =========================================================
+   SUPPORT TITLE
+========================================================= */
 
 .supportTitle {
-  font-size: 1.25rem;
-  font-weight: 800;
-  margin-bottom: 0.75rem;
-  line-height: 1.375;
+    margin: 0 0 0.75rem;
+
+    color: #ffffff;
+
+    font-size: 1.25rem;
+    font-weight: 800;
+
+    line-height: 1.375;
 }
+
+
+/* =========================================================
+   SUPPORT TEXT
+========================================================= */
 
 .supportText {
-  font-size: 0.75rem;
-  color: #cbd5e1;
-  line-height: 1.625;
-  margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem;
+
+    color: #c5d7dc;
+
+    font-size: 0.75rem;
+
+    line-height: 1.625;
 }
 
 @media (min-width: 640px) {
-  .supportText {
-    font-size: 0.875rem;
-  }
+    .supportText {
+        font-size: 0.875rem;
+    }
 }
+
+
+/* =========================================================
+   CONTACT BUTTON
+========================================================= */
 
 .contactBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.75rem;
-  background-color: #0284c7;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3);
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.5rem;
+
+    padding: 0.75rem 1.25rem;
+
+    border-radius: 0.75rem;
+
+    background: #1685a5;
+
+    color: #ffffff;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 15px -3px rgba(22, 133, 165, 0.3);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 @media (min-width: 640px) {
-  .contactBtn {
-    font-size: 0.875rem;
-  }
+    .contactBtn {
+        font-size: 0.875rem;
+    }
 }
 
 .contactBtn:hover {
-  background-color: #38bdf8;
+    background: #126f89;
+    color: #ffffff;
+
+    transform: translateY(-2px);
 }
 
 .arrowIcon {
-  width: 1rem;
-  height: 1rem;
+    width: 1rem;
+    height: 1rem;
 }
 
-/* Stats Box */
+
+/* =========================================================
+   STATS CARD
+========================================================= */
+
 .statsCard {
-  border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    padding: 1.5rem;
+
+    border: 1px solid rgba(220, 236, 239, 0.9);
+    border-radius: 1rem;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 28px rgba(21, 72, 86, 0.04);
 }
+
+
+/* =========================================================
+   STATS TITLE
+========================================================= */
 
 .statsTitle {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+    color: #94aeb5;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
+
+
+/* =========================================================
+   STATS GRID
+========================================================= */
 
 .statsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
 }
 
+
+/* =========================================================
+   STAT VALUES
+========================================================= */
+
 .statValSky {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #0284c7;
+    display: block;
+
+    color: #1685a5;
+
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
 .statValBlue {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #2563eb;
+    display: block;
+
+    color: #126f89;
+
+    font-size: 1.5rem;
+    font-weight: 800;
 }
+
+
+/* =========================================================
+   STAT LABEL
+========================================================= */
 
 .statLabel {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #475569;
+    color: #647b82;
+
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
-/* FAQ Accordion List Column */
+
+/* =========================================================
+   FAQ COLUMN
+========================================================= */
+
 .faqCol {
-  display: flex;
-  flex-direction: column;
-  gap: 0.875rem;
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.875rem;
 }
 
 @media (min-width: 1024px) {
-  .faqCol {
-    grid-column: span 8 / span 8;
-  }
+    .faqCol {
+        grid-column: span 8 / span 8;
+    }
 }
 
+
+/* =========================================================
+   FAQ CARD
+========================================================= */
+
 .faqCard {
-  border-radius: 1rem;
-  padding: 1.25rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.25rem;
+
+    border: 1px solid rgba(226, 237, 239, 0.85);
+    border-radius: 1rem;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
 
 .faqCard:hover {
-  background-color: #ffffff;
+    background: #ffffff;
+
+    border-color: #d9edf0;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(21, 72, 86, 0.055);
 }
 
 .faqCardOpen {
-  background-color: #ffffff;
-  border-color: #bae6fd;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+
+    border-color: #c9e5ea;
+
+    box-shadow:
+        0 8px 24px rgba(21, 72, 86, 0.07);
 }
+
+
+/* =========================================================
+   FAQ HEADER
+========================================================= */
 
 .faqHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
 }
+
+
+/* =========================================================
+   BADGE
+========================================================= */
 
 .badgeTag {
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.25rem 0.625rem;
-  border-radius: 0.375rem;
-  border: 1px solid;
-  flex-shrink: 0;
+    flex-shrink: 0;
+
+    padding: 0.25rem 0.625rem;
+
+    border: 1px solid;
+
+    border-radius: 0.375rem;
+
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
+
+/* =========================================================
+   BADGE VARIATIONS
+========================================================= */
+
 .badgeSky {
-  color: #0284c7;
-  background-color: #f0f9ff;
-  border-color: #e0f2fe;
+    color: #1685a5;
+
+    background: #f2fafb;
+
+    border-color: #d9edf0;
 }
 
 .badgeIndigo {
-  color: #4f46e5;
-  background-color: #eef2ff;
-  border-color: #e0e7ff;
+    color: #126f89;
+
+    background: #f4fafb;
+
+    border-color: #dcecef;
 }
 
 .badgeEmerald {
-  color: #059669;
-  background-color: #ecfdf5;
-  border-color: #d1fae5;
+    color: #1685a5;
+
+    background: #f2fafb;
+
+    border-color: #d9edf0;
 }
+
+
+/* =========================================================
+   FAQ QUESTION
+========================================================= */
 
 .faqQuestion {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #0f172a;
-  flex: 1;
+    flex: 1;
+
+    color: #163e4b;
+
+    font-size: 1rem;
+    font-weight: 700;
 }
 
+
+/* =========================================================
+   CHEVRON
+========================================================= */
+
 .chevronContainer {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 9999px;
-  background-color: #f1f5f9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #64748b;
-  flex-shrink: 0;
-  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    width: 2rem;
+    height: 2rem;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f4fafb;
+
+    color: #647b82;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .chevronOpen {
-  transform: rotate(180deg);
-  background-color: #e0f2fe;
-  color: #0284c7;
+    transform: rotate(180deg);
+
+    background: #e4f5f7;
+
+    color: #1685a5;
 }
 
-/* Accordion Expanded Content */
+
+/* =========================================================
+   ACCORDION CONTENT
+========================================================= */
+
 .accordionContent {
-  padding-top: 0.75rem;
+    padding-top: 0.75rem;
 }
+
+
+/* =========================================================
+   ANSWER
+========================================================= */
 
 .answerText {
-  font-size: 0.75rem;
-  color: #475569;
-  line-height: 1.625;
-  padding-left: 2.5rem;
-  border-left-width: 2px;
-  border-left-style: solid;
-  margin-top: 0.5rem;
+    margin-top: 0.5rem;
+
+    padding-left: 2.5rem;
+
+    border-left: 2px solid #1685a5;
+
+    color: #71848a;
+
+    font-size: 0.75rem;
+
+    line-height: 1.625;
 }
 
 @media (min-width: 640px) {
-  .answerText {
-    font-size: 0.875rem;
-  }
+    .answerText {
+        font-size: 0.875rem;
+    }
 }
 
-.borderSky { border-color: #0284c7; }
-.borderIndigo { border-color: #6366f1; }
-.borderEmerald { border-color: #10b981; }
+
+/* =========================================================
+   BORDER COLORS
+========================================================= */
+
+.borderSky {
+    border-color: #1685a5;
+}
+
+.borderIndigo {
+    border-color: #126f89;
+}
+
+.borderEmerald {
+    border-color: #1685a5;
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
 
 .noResults {
-  padding: 2rem;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 1rem;
-  border: 1px solid #e2e8f0;
-  color: #64748b;
-  font-size: 0.875rem;
+    padding: 2rem;
+
+    text-align: center;
+
+    border: 1px solid #e2edef;
+    border-radius: 1rem;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #71848a;
+
+    font-size: 0.875rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .mainGrid {
+        gap: 1.5rem;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .section {
+        padding: 3.75rem 1.25rem 4.5rem;
+    }
+
+    .mainGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sidebarCol {
+        grid-column: span 2;
+    }
+
+    .faqCol {
+        grid-column: span 2;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .section {
+        padding: 3rem 0.875rem 3.5rem;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .headerDesc {
+        font-size: 0.8125rem;
+    }
+
+    .controlsBar {
+        margin-bottom: 1.5rem;
+    }
+
+    .searchBox {
+        width: 100%;
+    }
+
+    .filterPills {
+        gap: 0.4rem;
+    }
+
+    .tabPill {
+        padding: 0.45rem 0.75rem;
+        font-size: 0.7rem;
+    }
+
+    .mainGrid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .sidebarCol,
+    .faqCol {
+        grid-column: auto;
+    }
+
+    .supportCard {
+        padding: 1.5rem;
+    }
+
+    .statsCard {
+        padding: 1.25rem;
+    }
+
+    .faqCard {
+        padding: 1rem;
+    }
+
+    .faqQuestion {
+        font-size: 0.9rem;
+    }
+
+    .answerText {
+        padding-left: 1.5rem;
+        font-size: 0.8rem;
+    }
 }

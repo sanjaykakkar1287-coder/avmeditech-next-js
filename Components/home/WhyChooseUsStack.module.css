@@ -227,7 +227,7 @@
 .mainHeading {
   font-size: 1.875rem;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--theme-heading);
   letter-spacing: -0.025em;
   line-height: 1.15;
   margin-bottom: 1.5rem;

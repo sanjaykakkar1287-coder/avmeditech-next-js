@@ -27,6 +27,8 @@
 
   /* Dynamic Properties */
   --border-light: rgba(0, 0, 0, 0.06);
+  --theme-heading: #1685a5;
+  --theme-gradient: linear-gradient(115deg, #1685a5 0%, #1769e8 100%);
 }
 
 @property --beam-angle {
@@ -193,6 +195,7 @@ body {
   line-height: 1.22;
   letter-spacing: -0.01em;
   margin-bottom: 1.1rem;
+  color: var(--theme-heading);
 }
 
 .focus-wrap {
@@ -336,7 +339,7 @@ body {
 
 .section-title {
   margin: 0 0 16px;
-  color: #0f172a;
+  color: var(--theme-heading);
   font-size: clamp(24px, 3.4vw, 34px);
   font-weight: 800;
   line-height: 1.25;

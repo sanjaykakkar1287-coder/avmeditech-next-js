@@ -1,5 +1,6 @@
 /* =========================================================
    IOL SHOWCASE
+   Healthcare Teal Theme
 ========================================================= */
 
 .iolSection {
@@ -10,12 +11,12 @@
     background:
         radial-gradient(
             circle at 10% 20%,
-            rgba(18, 150, 190, 0.07),
+            rgba(22, 133, 165, 0.07),
             transparent 30%
         ),
         radial-gradient(
             circle at 90% 80%,
-            rgba(37, 99, 235, 0.05),
+            rgba(18, 111, 137, 0.05),
             transparent 30%
         ),
         #ffffff;
@@ -37,23 +38,29 @@
 }
 
 
+/* =========================================================
+   CATEGORY BADGE
+========================================================= */
+
 .categoryBadge {
     display: inline-flex;
+
     align-items: center;
+
     gap: 9px;
 
     padding: 8px 15px;
 
     margin-bottom: 20px;
 
-    border: 1px solid #d8edf2;
+    border: 1px solid #dcecef;
 
     border-radius: 50px;
 
     background:
         linear-gradient(
             135deg,
-            #effbfd,
+            #f2fafb,
             #ffffff
         );
 
@@ -81,14 +88,19 @@
     box-shadow:
         0 0 0 5px rgba(22, 133, 165, 0.10);
 
-    animation: badgePulse 2s ease-in-out infinite;
+    animation:
+        badgePulse 2s ease-in-out infinite;
 }
 
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
 
 .sectionTitle {
     margin: 0;
 
-    color: #123c4a;
+    color: #163e4b;
 
     font-size: clamp(32px, 4vw, 48px);
 
@@ -100,35 +112,44 @@
 }
 
 
+/* =========================================================
+   GRADIENT HIGHLIGHT
+========================================================= */
+
 .gradientHighlight {
     display: inline;
 
     background:
         linear-gradient(
             100deg,
-            #078fca,
-            #1769e8,
-            #5146e5,
-            #078fca
+            #1685a5,
+            #126f89,
+            #1685a5
         );
 
     background-size: 250% auto;
 
     -webkit-background-clip: text;
+
     background-clip: text;
 
     -webkit-text-fill-color: transparent;
 
-    animation: textGradient 6s ease infinite;
+    animation:
+        textGradient 6s ease infinite;
 }
 
+
+/* =========================================================
+   SECTION INTRO
+========================================================= */
 
 .sectionIntro {
     max-width: 790px;
 
     margin: 22px auto 0;
 
-    color: #6d8086;
+    color: #71848a;
 
     font-size: 14px;
 
@@ -160,9 +181,15 @@
 }
 
 
+/* =========================================================
+   COLUMN HEADING
+========================================================= */
+
 .columnHeading {
     display: flex;
+
     align-items: center;
+
     gap: 12px;
 
     margin-bottom: 20px;
@@ -179,7 +206,7 @@
         linear-gradient(
             90deg,
             #1685a5,
-            #5ac6d7
+            #6cc3d5
         );
 }
 
@@ -187,13 +214,17 @@
 .columnLabel {
     margin: 0;
 
-    color: #183f4c;
+    color: #163e4b;
 
     font-size: 15px;
 
     font-weight: 700;
 }
 
+
+/* =========================================================
+   PILLS WRAPPER
+========================================================= */
 
 .pillsWrapper {
     display: flex;
@@ -214,13 +245,14 @@
     width: 100%;
 
     display: flex;
+
     align-items: center;
 
     min-height: 92px;
 
     padding: 17px 18px;
 
-    border: 1px solid #e3eef1;
+    border: 1px solid #e2edef;
 
     border-radius: 16px;
 
@@ -231,7 +263,7 @@
             #f8fcfd
         );
 
-    color: #183f4c;
+    color: #163e4b;
 
     text-align: left;
 
@@ -240,7 +272,7 @@
     overflow: hidden;
 
     box-shadow:
-        0 5px 18px rgba(25, 80, 95, 0.035);
+        0 5px 18px rgba(21, 72, 86, 0.035);
 
     transition:
         transform 0.35s ease,
@@ -253,10 +285,10 @@
 .iolPill:hover {
     transform: translateX(5px);
 
-    border-color: #c9e5eb;
+    border-color: #c9e5ea;
 
     box-shadow:
-        0 12px 28px rgba(25, 80, 95, 0.08);
+        0 12px 28px rgba(21, 72, 86, 0.08);
 }
 
 
@@ -268,7 +300,7 @@
     background:
         linear-gradient(
             120deg,
-            #edfafd,
+            #f2fafb,
             #ffffff
         );
 
@@ -293,14 +325,15 @@
     background:
         linear-gradient(
             90deg,
-            #078fca,
-            #1769e8,
-            #5146e5
+            #1685a5,
+            #126f89,
+            #1685a5
         );
 
     transform-origin: left;
 
-    animation: progressAnimation 4s linear forwards;
+    animation:
+        progressAnimation 4s linear forwards;
 }
 
 
@@ -319,6 +352,7 @@
 
 .pillHeader {
     display: flex;
+
     align-items: center;
 
     gap: 12px;
@@ -339,7 +373,7 @@
 
 
 .pillTitle {
-    color: #173f4d;
+    color: #163e4b;
 
     font-size: 15px;
 
@@ -360,9 +394,15 @@
 }
 
 
+/* =========================================================
+   PILL ARROW
+========================================================= */
+
 .pillArrow {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     width: 30px;
@@ -388,8 +428,8 @@
     background:
         linear-gradient(
             135deg,
-            #078fca,
-            #1769e8
+            #1685a5,
+            #126f89
         );
 
     transform: translateX(3px);
@@ -405,12 +445,17 @@
 }
 
 
+/* =========================================================
+   GLASS STAGE
+========================================================= */
+
 .glassStage {
     position: relative;
 
     min-height: 470px;
 
     display: flex;
+
     align-items: center;
 
     padding: 45px;
@@ -428,7 +473,7 @@
 
     box-shadow:
         0 30px 70px rgba(24, 76, 91, 0.10),
-        inset 0 1px 0 rgba(255,255,255,0.9);
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
     overflow: hidden;
 
@@ -454,13 +499,14 @@
     background:
         radial-gradient(
             circle,
-            rgba(21, 151, 190, 0.17),
+            rgba(22, 133, 165, 0.17),
             transparent 68%
         );
 
     filter: blur(3px);
 
-    animation: stageFloat 7s ease-in-out infinite;
+    animation:
+        stageFloat 7s ease-in-out infinite;
 
     pointer-events: none;
 }
@@ -479,7 +525,8 @@
 
     border: 1px solid rgba(22, 133, 165, 0.09);
 
-    animation: ringRotate 14s linear infinite;
+    animation:
+        ringRotate 14s linear infinite;
 
     pointer-events: none;
 }
@@ -526,6 +573,10 @@
 }
 
 
+/* =========================================================
+   BIG NUMBER
+========================================================= */
+
 .bigNumber {
     position: absolute;
 
@@ -550,10 +601,13 @@
 
 .typeTag {
     position: relative;
+
     z-index: 2;
 
     display: inline-flex;
+
     align-items: center;
+
     gap: 8px;
 
     width: fit-content;
@@ -566,7 +620,7 @@
 
     background: #ffffff;
 
-    border: 1px solid #d9edf1;
+    border: 1px solid #d9edf0;
 
     color: #1685a5;
 
@@ -593,13 +647,18 @@
 }
 
 
+/* =========================================================
+   STAGE CARD HEADING
+========================================================= */
+
 .stageCard h3 {
     position: relative;
+
     z-index: 2;
 
     margin: 0 0 14px;
 
-    color: #123c4a;
+    color: #163e4b;
 
     font-size: clamp(28px, 3vw, 38px);
 
@@ -611,15 +670,20 @@
 }
 
 
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
 .cardDesc {
     position: relative;
+
     z-index: 2;
 
     max-width: 570px;
 
     margin: 0;
 
-    color: #637a81;
+    color: #71848a;
 
     font-size: 14px;
 
@@ -633,6 +697,7 @@
 
 .specsBox {
     position: relative;
+
     z-index: 2;
 
     display: flex;
@@ -647,12 +712,15 @@
 
     border-radius: 14px;
 
-    background:
-        rgba(255,255,255,0.72);
+    background: rgba(255, 255, 255, 0.72);
 
     backdrop-filter: blur(10px);
 }
 
+
+/* =========================================================
+   SPECS ICON
+========================================================= */
 
 .specsIcon {
     flex-shrink: 0;
@@ -661,7 +729,9 @@
     height: 34px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border-radius: 10px;
@@ -669,8 +739,8 @@
     background:
         linear-gradient(
             135deg,
-            #078fca,
-            #1769e8
+            #1685a5,
+            #126f89
         );
 
     color: #ffffff;
@@ -680,7 +750,7 @@
     font-weight: 800;
 
     box-shadow:
-        0 7px 16px rgba(23, 105, 232, 0.18);
+        0 7px 16px rgba(22, 133, 165, 0.18);
 }
 
 
@@ -732,7 +802,9 @@
 
 .qualityItem {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     gap: 9px;
@@ -758,9 +830,15 @@
 }
 
 
+/* =========================================================
+   CHECK ICON
+========================================================= */
+
 .checkIcon {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     flex-shrink: 0;
@@ -862,11 +940,13 @@
         padding: 80px 0;
     }
 
+
     .showcaseGrid {
         grid-template-columns: 1fr;
 
         gap: 30px;
     }
+
 
     .selectorColumn {
         max-width: 750px;
@@ -876,17 +956,21 @@
         margin: auto;
     }
 
+
     .glassStage {
         min-height: 440px;
     }
+
 
     .qualityBanner {
         grid-template-columns: repeat(2, 1fr);
     }
 
+
     .qualityItem:nth-child(2) {
         border-right: none;
     }
+
 
     .qualityItem:nth-child(-n + 2) {
         border-bottom: 1px solid #edf2f3;
@@ -904,9 +988,11 @@
         padding: 65px 0;
     }
 
+
     .sectionHeader {
         margin-bottom: 40px;
     }
+
 
     .categoryBadge {
         font-size: 8px;
@@ -914,11 +1000,13 @@
         letter-spacing: 1.3px;
     }
 
+
     .sectionTitle {
         font-size: 31px;
 
         letter-spacing: -0.8px;
     }
+
 
     .sectionIntro {
         margin-top: 18px;
@@ -928,24 +1016,29 @@
         line-height: 1.75;
     }
 
+
     .iolPill {
         min-height: 86px;
 
         padding: 15px;
     }
 
+
     .iolPill.active,
     .iolPill:hover {
         transform: translateX(0);
     }
 
+
     .pillTitle {
         font-size: 14px;
     }
 
+
     .pillSub {
         font-size: 11px;
     }
+
 
     .glassStage {
         min-height: 500px;
@@ -955,9 +1048,11 @@
         border-radius: 22px;
     }
 
+
     .stageCard {
         inset: 28px;
     }
+
 
     .bigNumber {
         font-size: 100px;
@@ -965,13 +1060,16 @@
         top: -10px;
     }
 
+
     .stageCard h3 {
         font-size: 29px;
     }
 
+
     .cardDesc {
         font-size: 13px;
     }
+
 
     .specsBox {
         margin-top: 22px;
@@ -979,11 +1077,13 @@
         padding: 14px;
     }
 
+
     .qualityBanner {
         grid-template-columns: 1fr;
 
         border-radius: 14px;
     }
+
 
     .qualityItem {
         justify-content: flex-start;
@@ -996,6 +1096,7 @@
 
         border-bottom: 1px solid #edf2f3;
     }
+
 
     .qualityItem:last-child {
         border-bottom: none;
@@ -1013,17 +1114,21 @@
         font-size: 27px;
     }
 
+
     .sectionIntro {
         font-size: 12.5px;
     }
+
 
     .columnLabel {
         font-size: 14px;
     }
 
+
     .pillSub {
         padding-left: 0;
     }
+
 
     .pillArrow {
         width: 26px;
@@ -1032,27 +1137,33 @@
         font-size: 16px;
     }
 
+
     .glassStage {
         min-height: 530px;
 
         padding: 22px;
     }
 
+
     .stageCard {
         inset: 22px;
     }
+
 
     .stageCard h3 {
         font-size: 26px;
     }
 
+
     .typeTag {
         font-size: 8px;
     }
 
+
     .bigNumber {
         font-size: 80px;
     }
+
 
     .specsBox {
         flex-direction: column;

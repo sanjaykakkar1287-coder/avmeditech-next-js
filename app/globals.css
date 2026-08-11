@@ -2,6 +2,11 @@
 @import '../Components/layout/header/Header.css';
 @import '../Components/home/home.css';
 
+:root {
+  --theme-heading: #1685a5;
+  --theme-gradient: linear-gradient(115deg, #1685a5 0%, #1769e8 100%);
+}
+
 .pageLoader {
   position: fixed;
   inset: 0;

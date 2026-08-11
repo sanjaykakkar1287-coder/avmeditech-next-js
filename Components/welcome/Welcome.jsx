@@ -55,7 +55,7 @@ export default function Welcome() {
           <Image
             src="/images/logo/LOGO2.PNG"
             alt="AV Meditech Logo"
-            width={80}
+            width={180}
             height={80}
           />
         </div>
