@@ -6,10 +6,9 @@ import IolShowcase from "@/Components/home/IolShowcase";
 import IolBenefitsSection from "@/Components/home/IolBenefitsSection";
 import OurPartnersMarquee from "../Components/home/OurPartnersMarquee";
 import WhyChooseUs from "../Components/home/WhyChooseUs";
-import WhyChooseUsStack from "../Components/home/WhyChooseUsStack";
 import FaqSection from "../Components/home/FaqSection";
 import AboutSection from "../Components/home/AboutSection";
-import Welcome from "@/components/welcome/Welcome";
+import Welcome from "@/Components/welcome/Welcome";
 import "./home-responsive.css";
 
 

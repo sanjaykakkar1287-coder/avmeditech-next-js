@@ -1,0 +1,249 @@
+/* =========================================
+   TREATMENTS GRID
+========================================= */
+
+.treatments {
+    --navy: #0d2b35;
+    --ink: #193b45;
+    --teal: #1685a5;
+    --teal-deep: #0f6883;
+    --mist: #eef7f9;
+    --paper: #ffffff;
+    --slate: #6d8188;
+
+    padding: 70px 0;
+    background: var(--mist);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    max-width: 620px;
+    margin: 0 auto 44px;
+
+    text-align: center;
+}
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin-bottom: 15px;
+
+    color: var(--teal-deep);
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+.labelDot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--teal);
+
+    box-shadow: 0 0 0 3px rgba(22, 133, 165, 0.15);
+}
+
+.header h2 {
+    margin: 0 0 14px;
+
+    color: var(--ink);
+
+    font-family: "Fraunces", serif;
+    font-size: clamp(26px, 3.2vw, 36px);
+    font-weight: 600;
+
+    line-height: 1.22;
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    margin: 0;
+
+    color: var(--slate);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 30px 26px 26px;
+
+    border: 1px solid #dfeaec;
+    border-radius: 14px;
+
+    background: var(--paper);
+
+    text-decoration: none;
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card:hover {
+    border-color: var(--teal);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 28px rgba(20, 70, 85, 0.09);
+}
+
+.iconBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    background: var(--mist);
+
+    color: var(--teal-deep);
+
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.iconBadge svg {
+    width: 24px;
+    height: 24px;
+}
+
+.card:hover .iconBadge {
+    background: var(--teal);
+    color: #ffffff;
+}
+
+.card h3 {
+    margin: 0 0 8px;
+
+    color: var(--ink);
+
+    font-family: "Fraunces", serif;
+    font-size: 17px;
+    font-weight: 600;
+
+    letter-spacing: -0.2px;
+}
+
+.card p {
+    margin: 0 0 20px;
+
+    color: var(--slate);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12.5px;
+    line-height: 1.7;
+}
+
+.cardLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: auto;
+
+    color: var(--teal);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 11.5px;
+    font-weight: 650;
+}
+
+.arrow {
+    font-size: 13px;
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+.card:hover .arrow {
+    transform: translateX(3px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .treatments {
+        padding: 55px 0;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .treatments {
+        padding: 45px 0;
+    }
+
+    .header {
+        margin-bottom: 32px;
+    }
+
+    .header h2 {
+        font-size: 25px;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 24px 22px 22px;
+    }
+}

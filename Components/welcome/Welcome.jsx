@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import styles from "./Welcome.module.css";
 
 const words = [
@@ -14,10 +14,13 @@ const words = [
 ];
 
 export default function Welcome() {
-    const router = useRouter();
-
     const [wordIndex, setWordIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
+
+    const closeOverlay = () => {
+        document.body.style.overflow = "auto";
+        setIsVisible(false);
+    };
 
     useEffect(() => {
         document.body.style.overflow = isVisible ? "hidden" : "auto";
@@ -32,23 +35,11 @@ export default function Welcome() {
         };
     }, [isVisible]);
 
-    const handleProfessional = () => {
-        document.body.style.overflow = "auto";
-        setIsVisible(false);
-        router.push("/patients");
-    };
-
-    const handleVisitor = () => {
-        document.body.style.overflow = "auto";
-        setIsVisible(false);
-    };
-
     if (!isVisible) return null;
 
     return (
         <div className={styles.overlay}>
             <div className={styles.popup}>
-
                 <div className={styles.logo}>
                     <Image
                         src="/images/logo/LOGO2.PNG"
@@ -64,48 +55,40 @@ export default function Welcome() {
                 </h1>
 
                 <div className={styles.rotateBox}>
-                    <p className={styles.rotateLabel}>
-                        Designed for
-                    </p>
+                    <p className={styles.rotateLabel}>Designed for</p>
 
-                    <h3
-                        key={wordIndex}
-                        className={styles.rotateWord}
-                    >
+                    <h3 key={wordIndex} className={styles.rotateWord}>
                         {words[wordIndex]}
                     </h3>
                 </div>
 
                 <p className={styles.description}>
-                    Delivering world-class ophthalmic solutions
-                    for surgeons, hospitals and vision experts.
-                    Please select your preferred experience.
+                    Delivering world-class ophthalmic solutions for surgeons,
+                    hospitals and vision experts. Please select your preferred
+                    experience.
                 </p>
 
                 <div className={styles.buttons}>
-
-                    <button
-    type="button"
-    className={styles.primaryBtn}
-    onClick={() => {
-        window.location.href = "/patients";
-    }}
->
-    I'm Patient
-    <span>→</span>
-</button>
+                    <Link
+                        href="/patients"
+                        className={styles.primaryBtn}
+                        onClick={closeOverlay}
+                    >
+                        I&apos;m Patient
+                        <span aria-hidden="true">→</span>
+                    </Link>
 
                     <button
                         type="button"
-                        onClick={handleVisitor}
+                        onClick={closeOverlay}
+                        onPointerUp={closeOverlay}
+                        onMouseUp={closeOverlay}
                         className={styles.secondaryBtn}
                     >
                         Continue as Visitor
-                        <span>→</span>
+                        <span aria-hidden="true">→</span>
                     </button>
-
                 </div>
-
             </div>
         </div>
     );

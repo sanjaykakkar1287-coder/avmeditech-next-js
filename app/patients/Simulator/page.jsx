@@ -1,7 +1,9 @@
-export default function HomeSimulator(){
+import VisionSimulator from "../component/Simulator/VisionSimulator";
 
-    return(
-<h1>Patients</h1>
-    
+export default function SimulatorPage() {
+    return (
+        <>
+            <VisionSimulator />
+        </>
     );
 }

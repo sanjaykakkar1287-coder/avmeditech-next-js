@@ -8,7 +8,7 @@ const links = [
     },
     {
         label: "Treatments",
-        href: "/patient/treatments",
+        href: "/patients/treatments",
     },
     {
         label: "Procedures",
