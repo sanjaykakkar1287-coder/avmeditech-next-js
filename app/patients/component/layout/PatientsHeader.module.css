@@ -1,191 +1,90 @@
-/* ==========================================
-   AV MEDITECH DYNAMIC GRADIENT HEADER MODULE
-   ========================================== */
-
-.avHeader {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 1rem 0;
-
-  /* Multi-color shifting gradient matching AV Meditech palette */
-  background: linear-gradient(-45deg, #071224, #007aff, #05665b, #0052b4, #071224);
-  background-size: 400% 400%;
-  animation: headerGradientShift 12s ease infinite;
-
-  /* Glassmorphic overlay */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 30px rgba(7, 18, 36, 0.25);
-}
-
-@keyframes headerGradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.headerContainer {
-  width: 90%;
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Logo */
-.brandLogo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-}
-
-.logoDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #63e6c6;
-  box-shadow: 0 0 10px #63e6c6;
-  animation: pulseDot 2.4s ease-in-out infinite;
-}
-
-.logoText {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #ffffff;
-  letter-spacing: -0.02em;
-}
-
-/* Navigation Links */
-.navMenu {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.navLink {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #dce4ec;
-  text-decoration: none;
-  position: relative;
-  padding: 0.4rem 0;
-  transition: color 0.3s ease;
-}
-
-.navLink:hover,
-.navLinkActive {
-  color: #ffffff;
-}
-
-.navLink::after,
-.navLinkActive::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #bfe0ff;
-  transition: width 0.3s ease;
-  border-radius: 2px;
-}
-
-.navLink:hover::after,
-.navLinkActive::after {
-  width: 100%;
-}
-
-/* Header Actions */
-.headerActions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.btnHeader {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.4rem;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
-}
-
-.btnHeader:hover {
-  background: #ffffff;
-  color: #007aff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Mobile Hamburger Toggle */
-.mobileToggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
-
-.mobileToggle span {
-  width: 24px;
-  height: 2px;
-  background-color: #ffffff;
-  transition: all 0.3s ease;
-  border-radius: 2px;
-}
-
-/* Mobile View Adjustments */
-@media (max-width: 992px) {
-  .mobileToggle {
-    display: flex;
-  }
-
-  .navMenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
+.patientNav {
     width: 100%;
-    flex-direction: column;
-    padding: 1.5rem 0;
-    background: rgba(7, 18, 36, 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    gap: 1.2rem;
-    display: none;
-  }
+    height: 48px;
 
-  .navMenuActive {
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8f0f2;
+}
+
+.container {
+    width: min(100% - 32px, 1120px);
+    height: 100%;
+
+    margin: 0 auto;
+
     display: flex;
-  }
+    align-items: center;
+    justify-content: center;
+
+    gap: 38px;
 }
 
-@keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
+.link {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    color: #526a72;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease;
 }
-.site-header{
-    display:none;
+
+.link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    background: #1685a5;
+
+    transform: scaleX(0);
+
+    transition: transform 0.25s ease;
+}
+
+.link:hover {
+    color: #1685a5;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: min(100% - 20px, 600px);
+
+        justify-content: flex-start;
+
+        gap: 24px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .link {
+        flex-shrink: 0;
+
+        font-size: 11px;
+    }
 }

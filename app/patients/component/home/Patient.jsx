@@ -56,7 +56,8 @@ export default function Patient() {
           </p>
 
           <div className={styles.ctaGroup}>
-            <Link href="/eye-conditions" className={styles.primaryBtn}>
+            <Link href="/eye-conditions" className={styles.primaryBtn} data-bs-toggle="modal"
+        data-bs-target="#Modal">
               Explore Eye Conditions
             </Link>
             <Link href="/treatments" className={styles.secondaryBtn}>
@@ -72,7 +73,7 @@ export default function Patient() {
 
           <div className={styles.imageFrame}>
             <Image
-              src="/images/patient/patient-hero.jpg"
+              src="/images/patients/patient-hero.jpg"
               alt="Ophthalmologist consulting with a patient during an eye examination"
               fill
               priority

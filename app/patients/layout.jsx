@@ -1,11 +1,11 @@
-import PatientsHeader from "./component/layout/PatientsHeader";
+import PatientNav from "./component/layout/PatientsHeader";
 
 
 export default function PatientsLayout({ children }) {
   return (
     <>
-      <PatientsHeader />
-
+      
+<PatientNav/>
       <main>
         {children}
       </main>

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { patientConditions } from "./patientdata";
 import styles from "./ConditionDetail.module.css";
 
@@ -43,9 +44,11 @@ export default function ConditionDetail({ conditionSlug }) {
 
                     <div className={styles.heroImage}>
 
-                        <img
+                        <Image
                             src={condition.image}
                             alt={condition.name}
+                            width={500}
+                            height={500}
                         />
 
                     </div>
@@ -75,7 +78,7 @@ export default function ConditionDetail({ conditionSlug }) {
 
                                 <div
                                     className={styles.symptomCard}
-                                    key={index}
+                                    key={symptom}
                                 >
 
                                     <span>

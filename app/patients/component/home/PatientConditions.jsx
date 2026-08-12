@@ -93,7 +93,7 @@ export default function PatientConditions() {
                         {/* LEARN MORE */}
 
                         <Link
-                            href={`/patient/conditions/${activeCondition.slug}`}
+                            href={`/patients/Conditions/${activeCondition.slug}`}
                             className={styles.learnMore}
                         >
                             <span>

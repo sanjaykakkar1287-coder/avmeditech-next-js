@@ -6,18 +6,30 @@ import styles from "./HeroButtons.module.css";
 const HeroButtons = ({ text }) => {
     return (
         <div className={styles.heroButtons}>
-            <Link href="/contact" className={styles.heroPrimaryBtn}>
-                <span>{text || "Request a Call Back"}</span>
 
-                <span className={styles.heroArrow}>
-                    →
-                </span>
-            </Link>
+    <button
+        type="button"
+        className={styles.heroPrimaryBtn}
+        data-bs-toggle="modal"
+        data-bs-target="#Modal"
+    >
+        <span>{text || "Request a Call Back"}</span>
 
-            <Link href="/contact" className={styles.heroSecondaryBtn}>
-                Contact Us
-            </Link>
-        </div>
+        <span className={styles.heroArrow}>
+            →
+        </span>
+    </button>
+
+    <button
+        type="button"
+        className={styles.heroSecondaryBtn}
+        data-bs-toggle="modal"
+        data-bs-target="#Modal"
+    >
+        Contact Us
+    </button>
+
+</div>
     );
 };
 
