@@ -60,7 +60,7 @@ export default function HeroSection() {
                             <div className={styles.apertureFrame}>
 
                                 <img
-                                    src="/images/patient/treatment-hero.webp"
+                                    src="/images/patient/treatment.jpg"
                                     alt="Eye care treatment"
                                     className={styles.visualImage}
                                 />

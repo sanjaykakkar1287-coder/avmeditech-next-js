@@ -2,15 +2,51 @@
 
 import React from "react";
 import styles from "./Contact.module.css";
+import { useState } from "react";
+ 
+
+
+
+
+export const handleSubmit = (e) => {
+  e.preventDefault();
+
+  
+const formData = new FormData(e.currentTarget);
+
+  const name = formData.get("name");
+  const phone = formData.get("phone");
+  const email = formData.get("email");
+  const inquiryType = formData.get("inquiryType");
+  const message = formData.get("message");
+
+   
+
+  const whatsappNumber = "919896099091"; 
+
+  const whatsappMessage = `
+Hello AV Meditech,
+
+New Inquiry
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Inquiry Type: ${inquiryType}
+Message: ${message || "N/A"}
+  `.trim();
+
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
+
+  window.location.href = whatsappURL;
+};
 
 
 
 export default function Contact() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Thank you for your message! Our team will contact you shortly.");
-  };
-
+ 
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.container}>
@@ -176,65 +212,90 @@ export default function Contact() {
               </div>
 
               <form onSubmit={handleSubmit} className={styles.form}>
-                <div className={styles.formGrid}>
-                  <div>
-                    <label className={styles.label}>Your Name *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Dr. Rahul Sharma"
-                      className={styles.input}
-                    />
-                  </div>
+  <div className={styles.formGrid}>
+    <div>
+      <label className={styles.label}>Your Name *</label>
+      <input
+        type="text"
+        name="name"
+        required
+        placeholder="Dr. Rahul Sharma"
+        className={styles.input}
+      />
+    </div>
 
-                  <div>
-                    <label className={styles.label}>Phone Number *</label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="+91 98765 43210"
-                      className={styles.input}
-                    />
-                  </div>
-                </div>
+    <div>
+      <label className={styles.label}>Phone Number *</label>
+      <input
+  type="tel"
+  name="phone"
+  required
+  maxLength={10}
+  placeholder="+91 98765 43210"
+  className={styles.input}
+  
+/>
 
-                <div>
-                  <label className={styles.label}>Email Address *</label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="name@hospital.com"
-                    className={styles.input}
-                  />
-                </div>
 
-                <div>
-                  <label className={styles.label}>Inquiry Type</label>
-                  <select className={styles.select}>
-                    <option>Intraocular Lenses (IOLs)</option>
-                    <option>Surgical Blades &amp; Knives</option>
-                    <option>Phaco Equipment &amp; Accessories</option>
-                    <option>Distribution &amp; Partnership</option>
-                    <option>General Enquiry</option>
-                  </select>
-                </div>
+    </div>
+  </div>
 
-                <div>
-                  <label className={styles.label}>Message / Requirements</label>
-                  <textarea
-                    rows={3}
-                    placeholder="Tell us about your clinic or product requirements..."
-                    className={styles.textarea}
-                  ></textarea>
-                </div>
+  <div>
+    <label className={styles.label}>Email Address *</label>
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="name@hospital.com"
+      className={styles.input}
+    />
+  </div>
 
-                <button type="submit" className={styles.submitBtn}>
-                  <span>Submit Inquiry</span>
-                  <svg className={styles.svgIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </form>
+  <div>
+    <label className={styles.label}>Inquiry Type</label>
+    <select
+      name="inquiryType"
+      className={styles.select}
+    >
+      <option>Intraocular Lenses (IOLs)</option>
+      <option>Surgical Blades &amp; Knives</option>
+      <option>Phaco Equipment &amp; Accessories</option>
+      <option>Distribution &amp; Partnership</option>
+      <option>General Enquiry</option>
+    </select>
+  </div>
+
+  <div>
+    <label className={styles.label}>
+      Message / Requirements
+    </label>
+
+    <textarea
+      name="message"
+      rows={3}
+      placeholder="Tell us about your clinic or product requirements..."
+      className={styles.textarea}
+    ></textarea>
+  </div>
+
+  <button type="submit" className={styles.submitBtn}>
+    <span>Submit Inquiry</span>
+
+    <svg
+      className={styles.svgIcon}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M14 5l7 7m0 0l-7 7m7-7H3"
+      />
+    </svg>
+  </button>
+</form>
             </div>
           </div>
 

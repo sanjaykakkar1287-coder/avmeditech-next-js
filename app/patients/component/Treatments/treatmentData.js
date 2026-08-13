@@ -4,7 +4,7 @@ export const treatments = [
         name: "Cataract Surgery",
         slug: "cataract-surgery",
         category: "Cataract",
-        image: "/images/patient/treatments/cataract-surgery.webp",
+        image: "/images/treatments/cataract-surgery.jpg",
 
         shortDescription:
             "A surgical treatment that replaces the cloudy natural lens with an artificial intraocular lens to improve vision.",
@@ -31,7 +31,7 @@ export const treatments = [
         name: "Glaucoma Management",
         slug: "glaucoma",
         category: "Glaucoma",
-        image: "/images/patient/treatments/glaucoma.webp",
+        image: "/images/treatments/glaucoma.jpg",
 
         shortDescription:
             "Ongoing evaluation and management designed to help protect vision and monitor eye pressure.",
@@ -58,7 +58,7 @@ export const treatments = [
         name: "Refractive Surgery",
         slug: "refractive-surgery",
         category: "Vision Correction",
-        image: "/images/patient/treatments/refractive-surgery.webp",
+        image: "/images/treatments/refractive-surgery.jpg",
 
         shortDescription:
             "Vision correction procedures designed to reduce dependence on glasses or contact lenses for suitable patients.",
@@ -85,7 +85,7 @@ export const treatments = [
         name: "Corneal Transplant",
         slug: "corneal-transplant",
         category: "Cornea",
-        image: "/images/patient/treatments/corneal-transplant.webp",
+        image: "/images/treatments/corneal-transplant.jpg",
 
         shortDescription:
             "A surgical procedure that replaces damaged corneal tissue when appropriate for the patient's condition.",
@@ -112,7 +112,7 @@ export const treatments = [
         name: "Retinal Disorders",
         slug: "retinal-disorders",
         category: "Retina",
-        image: "/images/patient/treatments/retinal-disorders.webp",
+        image: "/images/treatments/retinal-disorders.jpg",
 
         shortDescription:
             "Evaluation and treatment options for conditions affecting the retina and central vision.",
@@ -139,7 +139,7 @@ export const treatments = [
         name: "Diabetic Eye Care",
         slug: "diabetic-eye-care",
         category: "Diabetic Eye Care",
-        image: "/images/patient/treatments/diabetic-eye-care.webp",
+        image: "/images/treatments/diabetic-eye-care.jpg",
 
         shortDescription:
             "Eye evaluation and management for people with diabetes and diabetes-related eye changes.",

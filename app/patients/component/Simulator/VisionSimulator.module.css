@@ -1,106 +1,176 @@
 /* =========================================
-   LIGHT DASHBOARD LAYOUT (SAME ON ALL DEVICES)
+   VISION SIMULATOR — SINGLE SCREEN LAYOUT
 ========================================= */
+
 .simulatorLayout {
     position: relative;
+
     display: flex;
+
     width: 100vw;
     height: 100vh;
-    background-color: #f8fafc;
-    color: #1e293b;
+
+    background: #f5f9fc;
+    color: #0f172a;
+
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
     overflow: hidden;
     box-sizing: border-box;
 }
 
 .ambientGlow {
-    display: none; /* Removed for clean light theme */
+    position: absolute;
+    top: -180px;
+    left: -180px;
+
+    width: 520px;
+    height: 520px;
+
+    background: radial-gradient(circle, rgba(2, 132, 199, 0.14), transparent 70%);
+    filter: blur(50px);
+
+    pointer-events: none;
+    z-index: 0;
+
+    animation: drift 14s ease-in-out infinite;
 }
 
+.ambientGlow::after {
+    content: "";
+
+    position: absolute;
+    bottom: -420px;
+    right: -680px;
+
+    width: 480px;
+    height: 480px;
+
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.1), transparent 70%);
+    filter: blur(60px);
+
+    animation: drift 18s ease-in-out infinite reverse;
+}
+
+
 /* =========================================
-   LEFT SIDEBAR (CONTROLS & BUTTONS)
+   SIDEBAR
 ========================================= */
+
 .sidebar {
     position: relative;
-    width: 340px;
-    min-width: 340px;
+    z-index: 2;
+
+    width: 320px;
+    min-width: 320px;
     height: 100%;
-    background: #ffffff;
-    border-right: 1px solid #e2e8f0;
-    padding: 24px 20px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 2;
+
+    padding: 26px 22px;
+
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+
+    box-shadow: 3px 0 18px rgba(2, 132, 199, 0.04);
+
     box-sizing: border-box;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
 }
 
 .brandHeader {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+
+    margin-bottom: 10px;
     padding: 4px 10px;
-    border-radius: 999px;
-    background: #f0f9ff;
+
     border: 1px solid #bae6fd;
+    border-radius: 999px;
+
+    background: #f0f9ff;
+
     color: #0284c7;
+
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1px;
-    margin-bottom: 8px;
 }
 
 .badgeDot {
     width: 6px;
     height: 6px;
+
     border-radius: 50%;
-    background-color: #0284c7;
+
+    background: #0284c7;
+
+    animation: pulseDot 1.8s ease-in-out infinite;
 }
 
 .brandHeader h2 {
     margin: 0 0 6px;
-    font-size: 22px;
-    font-weight: 700;
-    color: #0f172a;
-    letter-spacing: -0.5px;
+
+    background: linear-gradient(100deg, #0284c7, #06b6d4, #0ea5e9, #0284c7);
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    font-size: 23px;
+    font-weight: 750;
+    letter-spacing: -0.6px;
+
+    animation: gradientShift 6s ease infinite;
 }
 
 .brandHeader p {
     margin: 0;
-    font-size: 12px;
+
     color: #64748b;
-    line-height: 1.4;
+
+    font-size: 12px;
+    line-height: 1.5;
 }
 
-/* CONTROLS STACK */
+
+/* =========================================
+   CONTROLS
+========================================= */
+
 .controlsStack {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
     flex: 1;
+    flex-direction: column;
     justify-content: center;
+
+    gap: 17px;
 }
 
 .controlGroup {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 7px;
 }
 
 .controlGroup label {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 11px;
-    font-weight: 700;
+
     color: #475569;
+
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .baselineLabel {
@@ -114,31 +184,40 @@
 .divider {
     height: 1px;
     width: 100%;
-    background: #e2e8f0;
-    margin: 4px 0;
+    margin: 2px 0;
+
+    background: linear-gradient(90deg, transparent, #e2e8f0 20%, #e2e8f0 80%, transparent);
 }
 
-/* PILL BUTTONS */
 .pillGroup {
     display: flex;
     gap: 4px;
-    background: #f1f5f9;
     padding: 4px;
-    border-radius: 8px;
+
     border: 1px solid #e2e8f0;
+    border-radius: 9px;
+
+    background: #f1f5f9;
 }
 
 .pillBtn {
     flex: 1;
-    padding: 8px 10px;
-    border-radius: 6px;
+
+    padding: 9px 10px;
+
     border: none;
+    border-radius: 6px;
+
     background: transparent;
+
     color: #64748b;
+
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 650;
+
     cursor: pointer;
-    transition: all 0.2s ease;
+
+    transition: all 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .pillBtn:hover {
@@ -146,90 +225,136 @@
 }
 
 .pillBtn.activePill {
-    background: #0284c7;
+    background: linear-gradient(135deg, #0284c7, #06b6d4);
+
     color: #ffffff;
-    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
+
+    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.3);
+
+    transform: scale(1.02);
 }
 
-/* MODERN SELECT */
 .modernSelect {
     width: 100%;
+
     appearance: none;
+
     padding: 10px 30px 10px 12px;
-    background: #ffffff;
+
     border: 1px solid #cbd5e1;
     border-radius: 8px;
+
+    background: #ffffff
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230284c7' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")
+        no-repeat right 12px center;
+
     color: #0f172a;
+
     font-size: 12px;
     font-weight: 500;
+
     cursor: pointer;
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
+
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.modernSelect:hover {
+    border-color: #7dd3fc;
 }
 
 .modernSelect:focus {
     border-color: #0284c7;
-    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.14);
+
+    transform: translateY(-1px);
 }
 
 .disclaimer {
-    font-size: 10.5px;
-    color: #94a3b8;
-    line-height: 1.4;
     padding-top: 14px;
+
     border-top: 1px solid #e2e8f0;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+    line-height: 1.4;
 }
 
+
 /* =========================================
-   RIGHT STAGE (FULL SCREEN DUAL VIEWPORTS)
+   VIEWPORT STAGE
 ========================================= */
+
 .viewportStage {
     position: relative;
+    z-index: 1;
     flex: 1;
-    height: 100%;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    padding: 16px;
-    box-sizing: border-box;
     align-items: center;
+    gap: 16px;
+
+    height: 100%;
+    padding: 18px;
+
+    box-sizing: border-box;
 }
 
 .imageFrame {
     position: relative;
-    width: 100%;
-    height: 100%;
+
     display: flex;
     flex-direction: column;
-    background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
+
+    width: 100%;
+    height: 100%;
+
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.05);
+
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.imageFrame:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 28px rgba(2, 132, 199, 0.1);
 }
 
 .highlightFrame {
-    border-color: #bae6fd;
-    box-shadow: 0 4px 16px rgba(2, 132, 199, 0.08);
+    border-color: #7dd3fc;
+
+    box-shadow: 0 8px 24px rgba(2, 132, 199, 0.12);
 }
 
 .imageHeader {
+    z-index: 2;
+
     padding: 12px 16px;
+
     background: #f8fafc;
     border-bottom: 1px solid #e2e8f0;
-    z-index: 2;
 }
 
 .tag {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #64748b;
+
     font-size: 9px;
     font-weight: 700;
-    letter-spacing: 1px;
-    color: #64748b;
-    display: block;
-    margin-bottom: 2px;
+    letter-spacing: 1.2px;
 }
 
 .accentTag {
@@ -238,44 +363,224 @@
 
 .imageHeader h3 {
     margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: #0f172a;
-    white-space: nowrap;
+
     overflow: hidden;
+
+    color: #0f172a;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 .imageContainer {
     position: relative;
     flex: 1;
+
     width: 100%;
     height: 100%;
+
     background: #f1f5f9;
 }
 
+.imageContainer::before {
+    content: "";
+
+    position: absolute;
+    inset: 16px;
+    z-index: 3;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(#0284c7, #0284c7) top left / 18px 2px no-repeat,
+        linear-gradient(#0284c7, #0284c7) top left / 2px 18px no-repeat,
+        linear-gradient(#0284c7, #0284c7) top right / 18px 2px no-repeat,
+        linear-gradient(#0284c7, #0284c7) top right / 2px 18px no-repeat,
+        linear-gradient(#0284c7, #0284c7) bottom left / 18px 2px no-repeat,
+        linear-gradient(#0284c7, #0284c7) bottom left / 2px 18px no-repeat,
+        linear-gradient(#0284c7, #0284c7) bottom right / 18px 2px no-repeat,
+        linear-gradient(#0284c7, #0284c7) bottom right / 2px 18px no-repeat;
+
+    pointer-events: none;
+
+    transition: opacity 0.3s ease, inset 0.3s ease;
+}
+
+.imageFrame:hover .imageContainer::before {
+    inset: 12px;
+    opacity: 0.9;
+}
+
+.highlightFrame .imageContainer::before {
+    opacity: 0.55;
+}
+
 .fullImage {
-    object-fit: cover !important;
     width: 100% !important;
     height: 100% !important;
+
+    object-fit: cover !important;
+
+    transition: transform 0.6s ease;
+}
+
+.imageFrame:hover .fullImage {
+    transform: scale(1.015);
 }
 
 .vsBadge {
     position: absolute;
-    left: 50%;
     top: 50%;
+    left: 50%;
+    z-index: 10;
+
     transform: translate(-50%, -50%);
-    width: 36px;
-    height: 36px;
-    background: #0284c7;
-    color: #ffffff;
-    border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #0284c7, #06b6d4);
+
+    color: #ffffff;
+
     font-size: 11px;
     font-weight: 800;
-    z-index: 10;
-    box-shadow: 0 2px 10px rgba(2, 132, 199, 0.3);
-    border: 3px solid #ffffff;
+
+    animation: vsPulse 2.4s ease-in-out infinite;
+}
+
+.vsBadge::after {
+    content: "";
+
+    position: absolute;
+    inset: -11px;
+
+    border: 1px dashed rgba(2, 132, 199, 0.4);
+    border-radius: 50%;
+
+    animation: spin 14s linear infinite;
+}
+
+
+/* =========================================
+   MOBILE MESSAGE
+========================================= */
+
+.mobileMessage {
+    display: none;
+}
+
+
+/* =========================================
+   KEYFRAMES
+========================================= */
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(50px, 60px); }
+}
+
+@keyframes pulseDot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(2, 132, 199, 0); }
+}
+
+@keyframes vsPulse {
+    0%, 100% { box-shadow: 0 2px 10px rgba(2, 132, 199, 0.3); }
+    50% { box-shadow: 0 2px 22px rgba(2, 132, 199, 0.55); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+/* =========================================
+   MOBILE / TABLET — GATE OUT
+========================================= */
+
+@media (max-width: 1023px) {
+
+    .simulatorLayout {
+        display: none;
+    }
+
+    .mobileMessage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        padding: 32px;
+
+        background: #f5f9fc;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+    .mobileBadge {
+        margin-bottom: 14px;
+        padding: 5px 12px;
+
+        border: 1px solid #bae6fd;
+        border-radius: 999px;
+
+        background: #f0f9ff;
+
+        color: #0284c7;
+
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .mobileMessage h2 {
+        max-width: 320px;
+        margin: 0 0 10px;
+
+        background: linear-gradient(100deg, #0284c7, #06b6d4, #0ea5e9, #0284c7);
+        background-size: 300% auto;
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.35;
+
+        animation: gradientShift 6s ease infinite;
+    }
+
+    .mobileMessage p {
+        max-width: 280px;
+        margin: 0;
+
+        color: #64748b;
+
+        font-size: 12.5px;
+        line-height: 1.6;
+    }
 }

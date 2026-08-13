@@ -73,7 +73,7 @@ export default function Patient() {
 
           <div className={styles.imageFrame}>
             <Image
-              src="/images/patients/patient-hero.jpg"
+              src="/images/patient/patient-hero.jpg"
               alt="Ophthalmologist consulting with a patient during an eye examination"
               fill
               priority

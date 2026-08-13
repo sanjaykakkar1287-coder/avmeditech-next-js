@@ -10,6 +10,7 @@ const iolData = [
         sub: "Provides sharp vision at a single distance...",
         tag: "Single Vision Focus",
         desc: "Provides sharp vision at a single distance, ideal for patients comfortable using glasses for reading.",
+        href: "../products/iol-lens/monofocal"
     },
     {
         num: "02",
@@ -17,6 +18,7 @@ const iolData = [
         sub: "Enables clear vision at multiple distances...",
         tag: "Multi-Distance Clarity",
         desc: "Enables clear vision at multiple distances, reducing the need for glasses.",
+        href: "./products/iol-lens/monofocal"
     },
     {
         num: "03",
@@ -24,6 +26,7 @@ const iolData = [
         sub: "Offers seamless vision at near, intermediate, and far...",
         tag: "Active Lifestyle Focus",
         desc: "Offers seamless vision at near, intermediate, and far distances, perfect for an active lifestyle.",
+        href: "./products/iol-lens/monofocal"
     },
     {
         num: "04",
@@ -31,8 +34,11 @@ const iolData = [
         sub: "Corrects astigmatism, ensuring sharper vision...",
         tag: "Astigmatism Correction",
         desc: "Corrects astigmatism, ensuring sharper and distortion-free vision.",
+        href: "./products/iol-lens/monofocal"
     },
 ];
+
+ {iolData.map((item, i) => (console.log(item.href)))}
 
 export default function IolShowcase() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -122,6 +128,7 @@ export default function IolShowcase() {
                                 <button
                                     key={item.num}
                                     type="button"
+                                    href={item.href}
                                     className={`${styles.iolPill} ${
                                         activeIndex === i
                                             ? styles.active
@@ -137,6 +144,7 @@ export default function IolShowcase() {
                                             className={styles.progressBar}
                                             key={`${i}-${activeIndex}`}
                                         ></span>
+                                          
                                     )}
 
 
@@ -164,11 +172,13 @@ export default function IolShowcase() {
                                     <span className={styles.pillArrow}>
                                         →
                                     </span>
+                                    
 
                                 </button>
+                             
 
                             ))}
-
+   
                         </div>
 
                     </div>

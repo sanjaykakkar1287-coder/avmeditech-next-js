@@ -2,22 +2,21 @@ import Link from "next/link";
 import styles from "./PatientsHeader.module.css";
 
 const links = [
+
     {
-        label: "AVSimulator",
+        label: "Home",
+        href: "/patients",
+    },
+    {
+        label: "Vision Simulator",
         href: "/patients/Simulator",
     },
     {
         label: "Treatments",
         href: "/patients/treatments",
-    },
-    {
-        label: "Procedures",
-        href: "/patient/procedures",
-    },
-    {
-        label: "FAQs",
-        href: "/patient/faqs",
-    },
+    }
+    
+    
 ];
 
 export default function PatientNav() {

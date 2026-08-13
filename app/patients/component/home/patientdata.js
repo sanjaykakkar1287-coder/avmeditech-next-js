@@ -4,7 +4,7 @@ export const patientConditions = [
         slug: "cataract",
         category: "Cataract",
 
-        image: "/images/patient/conditions/cataract.webp",
+        image: "/images/conditions/cataract.jpg",
 
         
 
@@ -31,7 +31,7 @@ export const patientConditions = [
         slug: "dry-eye",
         category: "Dry Eye",
 
-        image: "/images/patient/conditions/dry-eye.webp",
+        image: "/images/conditions/dry-eye.jpg",
 
         
 
@@ -59,7 +59,7 @@ export const patientConditions = [
         slug: "presbyopia",
         category: "Vision Correction",
 
-        image: "/images/patient/conditions/presbyopia.webp",
+        image: "/images/conditions/presbyopia.jpg",
        
 
         shortDescription:
@@ -85,7 +85,7 @@ export const patientConditions = [
         slug: "myopia",
         category: "Vision Correction",
 
-        image: "/images/patient/conditions/myopia.webp",
+        image: "/images/conditions/myopia.jpg",
 
          
 
@@ -112,7 +112,7 @@ export const patientConditions = [
         slug: "astigmatism",
         category: "Vision Correction",
 
-        image: "/images/patient/conditions/astigmatism.webp",
+        image: "/images/conditions/astigmatism.jpg",
 
             
 

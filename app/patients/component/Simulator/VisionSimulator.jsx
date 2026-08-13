@@ -58,6 +58,12 @@ export default function VisionSimulator() {
     };
 
     return (
+        <>
+        <div className={styles.mobileMessage}>
+    <span className={styles.mobileBadge}>Desktop Experience</span>
+    <h2>Please open on a desktop or laptop</h2>
+    <p>The Vision Simulator is built for larger screens so you can compare both lenses side by side.</p>
+</div>
         <section className={styles.simulatorLayout}>
             {/* Ambient Lighting Accent */}
             <div className={styles.ambientGlow} />
@@ -69,7 +75,7 @@ export default function VisionSimulator() {
                         <span className={styles.badgeDot} />
                         VISION SIMULATOR
                     </div>
-                    <h2>Clinical Studio</h2>
+                    <h2>AVMEDITECH</h2>
                     <p>Compare pre-op vs. post-op visual outcomes interactively.</p>
                 </div>
 
@@ -201,5 +207,6 @@ export default function VisionSimulator() {
                 </div>
             </main>
         </section>
+        </>
     );
 }

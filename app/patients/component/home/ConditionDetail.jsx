@@ -50,7 +50,7 @@ export default function ConditionDetail({ conditionSlug }) {
                             width={500}
                             height={500}
                         />
-
+                        
                     </div>
 
                 </section>
