@@ -1,326 +1,657 @@
-/* ===========================
-   Overlay (Fixed Container)
-=========================== */
+/* ==========================================
+   WELCOME OVERLAY
+========================================== */
 
 .overlay {
   position: fixed;
   inset: 0;
   z-index: 9999999999;
 
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   padding: 16px;
+  box-sizing: border-box;
 
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(22, 62, 75, 0.58);
 
-  overflow-y: hidden;
-  overflow-x: hidden;
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+
+  overflow: hidden;
+
+  overscroll-behavior: none;
 }
 
-/* ===========================
-   Popup
-=========================== */
+
+/* ==========================================
+   POPUP
+========================================== */
 
 .popup {
   position: relative;
-  box-sizing: border-box;
+  z-index: 1;
 
   width: 100%;
-  max-width: 380px;
+  max-width: 390px;
 
-  background: #ffffff;
-  border-radius: 24px;
+  box-sizing: border-box;
 
-  padding: 36px 32px;
+  padding: 34px 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f8fcfd
+    );
+
+  border: 1px solid #dcecef;
+
+  border-radius: 22px;
 
   text-align: center;
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.15);
 
-  /* Prevent Viewport Overflow */
-  max-height: 90vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  box-shadow:
+    0 25px 70px rgba(21, 72, 86, 0.16),
+    0 8px 30px rgba(21, 72, 86, 0.08);
 
-  /* Smooth Entrance */
-  animation: popup 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow: hidden;
+
+  animation:
+    popup 0.4s cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
 }
 
-/* ===========================
-   Contained Blue Glow Effects
-=========================== */
+
+/* ==========================================
+   TOP RIGHT TEAL GLOW
+========================================== */
 
 .popup::before {
   content: "";
+
   position: absolute;
-  pointer-events: none;
 
-  width: 220px;
-  height: 220px;
+  width: 230px;
+  height: 230px;
 
-  top: -60px;
-  right: -60px;
+  top: -100px;
+  right: -90px;
 
   border-radius: 50%;
 
-  background: radial-gradient(
-    circle,
-    rgba(14, 165, 233, 0.18) 0%,
-    transparent 70%
-  );
-  z-index: 0;
+  background:
+    radial-gradient(
+      circle,
+      rgba(22, 133, 165, 0.11) 0%,
+      rgba(22, 133, 165, 0.04) 45%,
+      transparent 72%
+    );
+
+  pointer-events: none;
+
+  z-index: -1;
 }
+
+
+/* ==========================================
+   BOTTOM LEFT TEAL GLOW
+========================================== */
 
 .popup::after {
   content: "";
+
   position: absolute;
-  pointer-events: none;
 
-  width: 200px;
-  height: 200px;
+  width: 210px;
+  height: 210px;
 
-  left: -50px;
-  bottom: -60px;
+  left: -90px;
+  bottom: -100px;
 
   border-radius: 50%;
 
-  background: radial-gradient(
-    circle,
-    rgba(37, 99, 235, 0.14) 0%,
-    transparent 70%
-  );
-  z-index: 0;
+  background:
+    radial-gradient(
+      circle,
+      rgba(22, 133, 165, 0.08) 0%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+
+  z-index: -1;
 }
 
-/* ===========================
-   Content Hierarchy
-=========================== */
+
+/* ==========================================
+   LOGO
+========================================== */
 
 .logo {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
-  width: 72px;
-  height: 72px;
+  width: 175px;
+  height: 78px;
 
-  margin: 0 auto 18px;
+  margin: 0 auto 16px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0ea5e9, #2563eb);
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.22);
+  justify-content: center;
 }
 
 .logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
+
+  width: 175px;
+  height: 78px;
+
+  object-fit: contain;
   object-position: center;
 }
 
-/* Title */
+
+/* ==========================================
+   TITLE
+========================================== */
 
 .title {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  line-height: 1.2;
-  margin-bottom: 10px;
-  color: #0f172a;
-  font-weight: 800;
+  margin: 0 0 10px;
+
+  color: #163e4b;
+
+  font-size: clamp(
+    1.75rem,
+    4vw,
+    2.4rem
+  );
+
+  line-height: 1.18;
+
+  font-weight: 700;
+
+  letter-spacing: -0.8px;
 }
+
+
+/* AV Meditech */
 
 .title span {
-  background: linear-gradient(90deg, #0ea5e9, #2563eb);
+  color: #1685a5;
 
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none;
+
+  -webkit-background-clip: initial;
+  background-clip: initial;
+
+  -webkit-text-fill-color: initial;
 }
 
-/* Rotating Text */
+
+/* ==========================================
+   ROTATING TEXT
+========================================== */
 
 .rotateBox {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+
+  min-height: 58px;
 
   margin-bottom: 10px;
 }
 
+
 .rotateLabel {
-  color: #64748b;
-  font-size: 12px;
-  margin-bottom: 6px;
+  margin: 0 0 5px;
+
+  color: #6d8188;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
 }
+
 
 .rotateWord {
-  color: #0ea5e9;
+  margin: 0;
 
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: #1685a5;
+
+  font-size: clamp(
+    1.2rem,
+    2.8vw,
+    1.55rem
+  );
+
+  line-height: 1.3;
+
   font-weight: 700;
 
-  animation: fadeWord 2s ease infinite;
+  letter-spacing: -0.2px;
+
+  animation:
+    fadeWord 2s ease infinite;
 }
 
-/* Description */
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
 
 .description {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
-  color: #64748b;
-  line-height: 1.6;
+  max-width: 340px;
+
+  margin: 0 auto 22px;
+
+  color: #6d8188;
+
   font-size: 12px;
 
-  max-width: 480px;
-  margin: 0 auto 24px;
+  line-height: 1.7;
+
+  font-weight: 400;
 }
 
-/* ===========================
-   Buttons
-=========================== */
+
+/* ==========================================
+   BUTTONS
+========================================== */
 
 .buttons {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
   display: flex;
+
   flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
+
+  gap: 10px;
+
+  margin-top: 18px;
 }
+
+
+/* ==========================================
+   COMMON BUTTON
+========================================== */
 
 .primaryBtn,
 .secondaryBtn {
   width: 100%;
+
+  min-height: 44px;
+
   box-sizing: border-box;
 
-  border: none;
-  padding: 14px 20px;
+  display: flex;
 
-  border-radius: 12px;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 16px;
+
+  border-radius: 9px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1px;
+
+  text-decoration: none;
 
   cursor: pointer;
 
-  font-size: 12px;
-  font-weight: 600;
-
-  transition: all 0.25s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
 }
+
+
+/* ==========================================
+   PATIENT BUTTON
+========================================== */
 
 .primaryBtn {
   color: #ffffff;
 
-  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  background: #1685a5;
 
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+  border: 1px solid #1685a5;
+
+  box-shadow:
+    0 9px 22px
+    rgba(22, 133, 165, 0.18);
 }
+
 
 .primaryBtn:hover {
+  color: #ffffff;
+
+  background: #126f89;
+
+  border-color: #126f89;
+
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+
+  box-shadow:
+    0 13px 28px
+    rgba(22, 133, 165, 0.25);
 }
+
+
+/* ==========================================
+   VISITOR BUTTON
+========================================== */
 
 .secondaryBtn {
-  background: #ffffff;
+  color: #1685a5;
 
-  color: #2563eb;
+  background: #f8fcfd;
 
-  border: 2px solid #2563eb;
+  border: 1px solid #d5e7ea;
 }
 
+
 .secondaryBtn:hover {
-  background: #eff6ff;
+  color: #1685a5;
+
+  background: #edf8fa;
+
+  border-color: #1685a5;
+
   transform: translateY(-2px);
 }
 
-/* ===========================
-   Animations
-=========================== */
+
+/* ==========================================
+   ARROW
+========================================== */
+
+.primaryBtn span:last-child,
+.secondaryBtn span:last-child {
+  font-size: 16px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.primaryBtn:hover span:last-child,
+.secondaryBtn:hover span:last-child {
+  transform: translateX(4px);
+}
+
+
+/* ==========================================
+   POPUP ANIMATION
+========================================== */
 
 @keyframes popup {
   from {
     opacity: 0;
-    transform: scale(0.94) translateY(10px);
+
+    transform:
+      scale(0.94)
+      translateY(12px);
   }
+
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+
+    transform:
+      scale(1)
+      translateY(0);
   }
 }
+
+
+/* ==========================================
+   ROTATING WORD ANIMATION
+========================================== */
 
 @keyframes fadeWord {
   0% {
     opacity: 0;
-    transform: translateY(8px);
+
+    transform:
+      translateY(8px);
   }
+
   20% {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
   }
+
   80% {
     opacity: 1;
+
+    transform:
+      translateY(0);
   }
+
   100% {
     opacity: 0;
-    transform: translateY(-8px);
+
+    transform:
+      translateY(-8px);
   }
 }
 
-/* ===========================
-   Custom Scrollbar
-=========================== */
 
-.popup::-webkit-scrollbar {
-  width: 5px;
-}
+/* ==========================================
+   TABLET
+========================================== */
 
-.popup::-webkit-scrollbar-track {
-  background: transparent;
-}
+@media (max-width: 768px) {
 
-.popup::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 10px;
-}
-
-/* ===========================
-   Mobile Optimization
-=========================== */
-
-@media (max-width: 640px) {
   .overlay {
-    padding: 12px;
+    padding: 14px;
   }
 
   .popup {
-    padding: 24px 18px;
-    border-radius: 18px;
-    max-height: 92vh;
+    max-width: 370px;
+
+    padding: 30px 25px;
   }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+
+  .overlay {
+    padding: 12px;
+
+    overflow: hidden;
+  }
+
+  .popup {
+    max-width: 360px;
+
+    padding: 25px 18px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+  }
+
+
+  /* Logo */
 
   .logo {
-    width: 60px;
-    height: 60px;
+    width: 155px;
+    height: 68px;
+
     margin-bottom: 10px;
   }
 
+  .logo img {
+    width: 155px;
+    height: 68px;
+  }
+
+
+  /* Title */
+
+  .title {
+    font-size: 1.7rem;
+
+    margin-bottom: 7px;
+  }
+
+
+  /* Rotating */
+
+  .rotateBox {
+    min-height: 52px;
+
+    margin-bottom: 7px;
+  }
+
+  .rotateLabel {
+    font-size: 10px;
+  }
+
+  .rotateWord {
+    font-size: 1.18rem;
+  }
+
+
+  /* Description */
+
   .description {
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+  }
+
+
+  /* Buttons */
+
+  .buttons {
+    gap: 9px;
+
+    margin-top: 12px;
   }
 
   .primaryBtn,
   .secondaryBtn {
-    padding: 12px 16px;
-    font-size: 12px;
+    min-height: 42px;
+
+    padding: 0 14px;
+
+    font-size: 11px;
   }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+  .overlay {
+    padding: 10px;
+  }
+
+  .popup {
+    max-width: 340px;
+
+    padding: 21px 15px;
+
+    border-radius: 16px;
+  }
+
+
+  .logo {
+    width: 140px;
+    height: 60px;
+
+    margin-bottom: 7px;
+  }
+
+  .logo img {
+    width: 140px;
+    height: 60px;
+  }
+
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+
+  .rotateWord {
+    font-size: 1.1rem;
+  }
+
+
+  .description {
+    font-size: 10.5px;
+
+    line-height: 1.5;
+
+    margin-bottom: 8px;
+  }
+
+
+  .primaryBtn,
+  .secondaryBtn {
+    min-height: 40px;
+
+    font-size: 10.5px;
+  }
+
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .popup,
+  .rotateWord,
+  .primaryBtn,
+  .secondaryBtn {
+    animation: none;
+
+    transition: none;
+  }
+
 }

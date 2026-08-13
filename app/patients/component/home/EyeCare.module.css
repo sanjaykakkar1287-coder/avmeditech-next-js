@@ -50,6 +50,10 @@
     letter-spacing: -0.5px;
 }
 
+.heading h2 span {
+    color: #1685a5;
+}
+
 .heading p {
     max-width: 560px;
 

@@ -1,0 +1,159 @@
+/* ==========================================
+   SCROLL TO TOP
+========================================== */
+
+.scrollTop {
+  position: fixed;
+
+  right: 24px;
+  bottom: 24px;
+
+  z-index: 9999;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 14px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #126f89 0%,
+      #1685a5 45%,
+      #2daabd 100%
+    );
+
+  box-shadow:
+    0 10px 25px rgba(22, 133, 165, 0.25),
+    0 0 24px rgba(22, 133, 165, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* ==========================================
+   SOFT GLOW
+========================================== */
+
+.scrollTop::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -5px;
+
+  z-index: -1;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #126f89,
+      #1685a5,
+      #3db5c8
+    );
+
+  filter: blur(12px);
+
+  opacity: 0.25;
+
+  transition:
+    opacity 0.3s ease;
+}
+
+
+/* ==========================================
+   HOVER
+========================================== */
+
+.scrollTop:hover {
+  transform:
+    translateY(-5px)
+    scale(1.04);
+
+  box-shadow:
+    0 16px 32px rgba(22, 133, 165, 0.30),
+    0 0 30px rgba(45, 170, 189, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.30);
+}
+
+
+.scrollTop:hover::before {
+  opacity: 0.5;
+}
+
+
+/* ==========================================
+   ICON
+========================================== */
+
+.scrollTop svg {
+  transition:
+    transform 0.3s ease;
+}
+
+
+.scrollTop:hover svg {
+  transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .scrollTop {
+    right: 16px;
+    bottom: 18px;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+  }
+
+  .scrollTop svg {
+    width: 18px;
+    height: 18px;
+  }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+  .scrollTop {
+    right: 14px;
+    bottom: 14px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 11px;
+  }
+
+}

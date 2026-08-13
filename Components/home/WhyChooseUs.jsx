@@ -46,60 +46,60 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className={styles.section}>
-      {/* Background Lighting */}
-      <div className={styles.glowBg}></div>
+    // <section className={styles.section}>
+    //   {/* Background Lighting */}
+    //   <div className={styles.glowBg}></div>
 
-      <div className={styles.container}>
-        {/* Centered Top Header */}
-        <div className={styles.header}>
-          <div className={styles.badgePill}>
-            <span className={styles.badgeDot}></span>
-            WHY AV MEDITECH
-          </div>
+    //   <div className={styles.container}>
+    //     {/* Centered Top Header */}
+    //     <div className={styles.header}>
+    //       <div className={styles.badgePill}>
+    //         <span className={styles.badgeDot}></span>
+    //         WHY AV MEDITECH
+    //       </div>
 
-          <h2 className={styles.heading}>
-            Why Choose AV Meditech for the{" "}
-            <span className={styles.highlight}>
-              Best Cataract IOL in India?
-            </span>
-          </h2>
+    //       <h2 className={styles.heading}>
+    //         Why Choose AV Meditech for the{" "}
+    //         <span className={styles.highlight}>
+    //           Best Cataract IOL in India?
+    //         </span>
+    //       </h2>
 
-          <p className={styles.description}>
-            If you're searching for the best IOL for cataract surgery, AV Meditech provides precision-engineered solutions tailored for exceptional vision restoration and long-term care.
-          </p>
-        </div>
+    //       <p className={styles.description}>
+    //         If you're searching for the best IOL for cataract surgery, AV Meditech provides precision-engineered solutions tailored for exceptional vision restoration and long-term care.
+    //       </p>
+    //     </div>
 
-        {/* 3-Card Feature Grid */}
-        <div className={styles.grid}>
-          {features.map((item) => (
-            <div
-              key={item.id}
-              className={`${styles.card} ${
-                item.featured ? styles.cardFeatured : ""
-              }`}
-            >
-              <div className={styles.cardBadge}>{item.badge}</div>
+    //     {/* 3-Card Feature Grid */}
+    //     <div className={styles.grid}>
+    //       {features.map((item) => (
+    //         <div
+    //           key={item.id}
+    //           className={`${styles.card} ${
+    //             item.featured ? styles.cardFeatured : ""
+    //           }`}
+    //         >
+    //           <div className={styles.cardBadge}>{item.badge}</div>
               
-              <div className={styles.iconWrapper}>
-                {item.icon}
-              </div>
+    //           <div className={styles.iconWrapper}>
+    //             {item.icon}
+    //           </div>
 
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <p className={styles.cardText}>{item.description}</p>
+    //           <h3 className={styles.cardTitle}>{item.title}</h3>
+    //           <p className={styles.cardText}>{item.description}</p>
 
-              <div className={styles.cardFooter}>
-                <span className={styles.cardNumber}>Pillar {item.id}</span>
-                <span className={styles.checkIcon}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
+    //           <div className={styles.cardFooter}>
+    //             <span className={styles.cardNumber}>Pillar {item.id}</span>
+    //             <span className={styles.checkIcon}>
+    //               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+    //                 <polyline points="20 6 9 17 4 12"></polyline>
+    //               </svg>
+    //             </span>
+    //           </div>
+    //         </div>
+    //       ))}
+    //     </div>
+<>
         {/* Bottom CTA Bar */}
         <div className={styles.bottomCta}>
           <div className={styles.ctaText}>
@@ -110,7 +110,9 @@ export default function WhyChooseUs() {
             <HeroButtons />
           </div>
         </div>
-      </div>
-    </section>
+      </>
+      //</div>
+      
+    //</section>
   );
 }

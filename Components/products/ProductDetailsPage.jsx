@@ -1,6 +1,10 @@
 import { notFound } from "next/navigation";
 import { categories } from "@/Components/products/productData";
 import styles from "./ProductDetails.module.css";
+import Link from "next/link";
+import modal from "@/Components/layout/modal/modal";
+
+
 
 export default async function ProductDetailsPage({ params }) {
   const { category, slug } = await params;
@@ -49,9 +53,11 @@ export default async function ProductDetailsPage({ params }) {
             {product.description}
           </p>
 
-          <button className={styles.button}>
+          <Link className={styles.heroPrimaryBtn}  
+          data-bs-toggle="modal"
+          data-bs-target="#Modal">
             Enquire Now
-          </button>
+          </Link>
 
         </div>
 

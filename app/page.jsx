@@ -26,7 +26,7 @@ export default function Home() {
       <CategoryTabs />
       <CoreValues />
       <IolShowcase />
-      <IolBenefitsSection />
+      {/* <IolBenefitsSection /> */}
       <OurPartnersMarquee />
       <StatsSection />
        <WhyChooseUs />

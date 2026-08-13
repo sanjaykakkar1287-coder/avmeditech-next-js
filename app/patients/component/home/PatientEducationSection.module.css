@@ -1,0 +1,568 @@
+@property --angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+
+/* =========================================
+   PATIENT EDUCATION — CONSOLE
+========================================= */
+
+.section {
+    --navy: #0d2b35;
+    --ink: #193b45;
+    --teal: #1685a5;
+    --teal-deep: #0f6883;
+    --teal-light: #8fd0e2;
+    --mist: #eef7f9;
+    --paper: #ffffff;
+    --slate: #6d8188;
+
+    padding: 80px 0;
+
+    background: var(--paper);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    max-width: 620px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 15px;
+
+    color: var(--teal-deep);
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--teal);
+
+    box-shadow: 0 0 0 3px rgba(22, 133, 165, 0.15);
+}
+
+.header h2 {
+    margin: 0 0 16px;
+
+    color: var(--ink);
+
+    font-family: "Fraunces", serif;
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 600;
+
+    line-height: 1.18;
+    letter-spacing: -0.7px;
+}
+
+.header h2 span {
+    color: var(--teal);
+}
+
+.header p {
+    margin: 0;
+
+    max-width: 560px;
+
+    color: var(--slate);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   CONSOLE SHELL
+========================================= */
+
+.console {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 8px;
+
+    border-radius: 26px;
+
+    background: linear-gradient(160deg, #ffffff, var(--mist));
+}
+
+.consoleRing {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    border-radius: 26px;
+    padding: 1.5px;
+
+    background: conic-gradient(from var(--angle), var(--teal), #bfeaf2, transparent 55%, var(--teal));
+
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    opacity: 0.6;
+
+    animation: spinRing 16s linear infinite;
+
+    pointer-events: none;
+}
+
+.aurora,
+.aurora2 {
+    position: absolute;
+    z-index: 0;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    opacity: 0.35;
+
+    pointer-events: none;
+
+    transition: filter 0.6s ease;
+}
+
+.aurora {
+    top: -160px;
+    left: -100px;
+
+    background: radial-gradient(circle, hsl(calc(190 + var(--hue)) 70% 60%), transparent 70%);
+
+    animation: driftA 12s ease-in-out infinite;
+}
+
+.aurora2 {
+    bottom: -180px;
+    right: -120px;
+
+    background: radial-gradient(circle, hsl(calc(230 - var(--hue)) 65% 68%), transparent 70%);
+
+    animation: driftB 15s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SEGMENTED NAV
+========================================= */
+
+.nav {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(var(--count), 1fr);
+    gap: 4px;
+
+    padding: 6px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(22, 133, 165, 0.12);
+}
+
+.navIndicator {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    z-index: 0;
+
+    width: calc((100% - 12px) / var(--count));
+    height: calc(100% - 12px);
+
+    border-radius: 13px;
+
+    background: linear-gradient(135deg, var(--teal), var(--teal-deep));
+
+    box-shadow: 0 6px 16px rgba(22, 133, 165, 0.3);
+
+    transform: translateX(calc(var(--pos) * 100%));
+
+    transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.navPill {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+
+    padding: 12px 14px;
+
+    border: none;
+    border-radius: 13px;
+
+    background: transparent;
+
+    text-align: left;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+.navPill:hover {
+    transform: translateY(-1px);
+}
+
+.navIndex {
+    color: var(--teal-deep);
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 600;
+
+    transition: color 0.3s ease;
+}
+
+.navLabel {
+    color: var(--ink);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    transition: color 0.3s ease;
+}
+
+.navPillActive .navIndex,
+.navPillActive .navLabel {
+    color: #ffffff;
+}
+
+
+/* =========================================
+   STAGE
+========================================= */
+
+.stage {
+    position: relative;
+    z-index: 1;
+
+    padding: 54px 46px 40px;
+}
+
+.ghostNumber {
+    position: absolute;
+    top: 6px;
+    right: 30px;
+
+    color: rgba(22, 133, 165, 0.08);
+
+    font-family: "Fraunces", serif;
+    font-size: clamp(90px, 12vw, 170px);
+    font-weight: 600;
+
+    line-height: 1;
+
+    pointer-events: none;
+
+    animation: ghostPop 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.stageInner {
+    position: relative;
+
+    max-width: 640px;
+}
+
+.stageTitle {
+    margin: 0 0 20px;
+
+    color: var(--ink);
+
+    font-family: "Fraunces", serif;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 600;
+
+    line-height: 1.28;
+    letter-spacing: -0.5px;
+}
+
+.word {
+    display: inline-block;
+
+    filter: blur(6px);
+    opacity: 0;
+    transform: translateY(8px);
+
+    animation: wordIn 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    animation-delay: calc(var(--wi) * 0.05s);
+}
+
+.stageAnswer {
+    margin: 0;
+
+    max-width: 560px;
+
+    color: var(--slate);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 13.5px;
+    line-height: 1.9;
+
+    animation: fadeUp 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s both;
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.controls {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 0 46px 34px;
+}
+
+.arrowBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(22, 133, 165, 0.25);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
+
+    color: var(--teal-deep);
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.arrowBtn:hover {
+    background: var(--teal);
+
+    color: #ffffff;
+
+    transform: scale(1.08);
+
+    box-shadow: 0 8px 18px rgba(22, 133, 165, 0.25);
+}
+
+.progressTrack {
+    flex: 1;
+    height: 3px;
+
+    border-radius: 999px;
+
+    background: rgba(22, 133, 165, 0.14);
+
+    overflow: hidden;
+}
+
+.progressFill {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(90deg, var(--teal), var(--teal-light));
+
+    transform-origin: left;
+    transform: scaleX(0);
+
+    animation-name: progressGrow;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+
+/* =========================================
+   KEYFRAMES
+========================================= */
+
+@keyframes spinRing {
+    to { --angle: 360deg; }
+}
+
+@keyframes driftA {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(40px, 50px); }
+}
+
+@keyframes driftB {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-40px, -30px); }
+}
+
+@keyframes ghostPop {
+    0% { opacity: 0; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes wordIn {
+    to {
+        filter: blur(0);
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes progressGrow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .consoleRing,
+    .aurora,
+    .aurora2,
+    .ghostNumber,
+    .word,
+    .stageAnswer,
+    .progressFill {
+        animation: none;
+    }
+
+    .word {
+        opacity: 1;
+        filter: none;
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navIndicator {
+        width: calc((100% - 12px) / 2);
+        height: calc(50% - 8px);
+
+        transform:
+            translate(
+                calc((var(--pos) % 2) * 100%),
+                calc(floor(var(--pos) / 2) * 100%)
+            );
+    }
+
+    .stage {
+        padding: 46px 32px 34px;
+    }
+
+    .controls {
+        padding: 0 32px 30px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .header {
+        margin-bottom: 32px;
+    }
+
+    .header h2 {
+        font-size: 26px;
+    }
+
+    .nav {
+        grid-template-columns: 1fr;
+    }
+
+    .navIndicator {
+        width: calc(100% - 12px);
+        height: calc((100% - 12px) / var(--count));
+
+        transform: translateY(calc(var(--pos) * 100%));
+    }
+
+    .navLabel {
+        white-space: normal;
+    }
+
+    .ghostNumber {
+        font-size: 70px;
+
+        top: -4px;
+        right: 20px;
+    }
+
+    .stage {
+        padding: 36px 22px 26px;
+    }
+
+    .stageTitle {
+        font-size: 22px;
+    }
+
+    .controls {
+        padding: 0 22px 26px;
+    }
+}

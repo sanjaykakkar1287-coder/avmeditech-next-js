@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
 import { categories } from "./productData";
 import styles from "./ProductSlug.module.css";
+import Link from "next/link";
+
+
 
 export default function ProductSlug({
     categorySlug,
@@ -71,12 +74,14 @@ export default function ProductSlug({
 
                                 <div className={styles.productActions}>
 
-                                    <a
+                                    <Link
                                         href="#enquiry"
-                                        className={styles.enquiryBtn}
+                                        className={styles.heroPrimaryBtn}
+                                         data-bs-toggle="modal"
+                                         data-bs-target="#Modal"
                                     >
                                         Enquire Now
-                                    </a>
+                                    </Link>
 
 
                                     {product.brochure && (
@@ -290,12 +295,12 @@ export default function ProductSlug({
                         </div>
 
 
-                        <a
+                        <Link
                             href="/contact"
-                            className={styles.enquiryBtn}
+                            className={styles.heroPrimaryBtn}
                         >
                             Contact Us
-                        </a>
+                        </Link>
 
                     </div>
 

@@ -1,279 +1,645 @@
+
+
+
+/* =========================================
+   ROOT
+========================================= */
+
 :root {
   --header-height: 70px;
+
+  --primary: #1685a5;
+  --primary-dark: #126f89;
+  --primary-deep: #0b4355;
+  --primary-light: #3db5c8;
+
+  --header-text: #eefbfc;
+  --accent: #63c5d1;
 }
 
-/* Updated Site Header with Dynamic Gradient Effect */
+
+/* =========================================
+   SITE HEADER
+========================================= */
+
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
-  z-index: 1000;
   height: var(--header-height);
+
+  z-index: 1000;
+
   display: flex;
   align-items: center;
 
-  /* Color-shifting multi-color gradient background */
-  background: linear-gradient(-45deg, #071224, #007aff, #05665b, #0052b4, #071224);
-  background-size: 400% 400%;
-  animation: headerGradientShift 12s ease infinite;
+  /*
+    More visible teal gradient
+  */
+  background:
+    linear-gradient(
+      115deg,
+      rgba(7, 55, 70, 0.78) 0%,
+      rgba(18, 111, 137, 0.72) 25%,
+      rgba(22, 133, 165, 0.70) 45%,
+      rgba(48, 176, 194, 0.68) 65%,
+      rgba(12, 72, 91, 0.78) 82%,
+      rgba(7, 55, 70, 0.78) 100%
+    );
 
-  /* Glassmorphic blur & subtle border */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 30px rgba(7, 18, 36, 0.25);
+  background-size: 300% 300%;
 
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  /*
+    Faster movement so gradient is clearly visible
+  */
+  animation:
+    headerGradientShift 8s ease-in-out infinite;
+
+  /*
+    Transparent glass effect
+  */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom:
+    1px solid rgba(220, 236, 239, 0.16);
+
+  box-shadow:
+    0 8px 28px rgba(7, 55, 70, 0.14);
+
+  transition:
+    background 0.4s ease,
+    backdrop-filter 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
-/* Gradient Shifting Keyframe Animation */
+
+/* =========================================
+   GRADIENT ANIMATION
+========================================= */
+
 @keyframes headerGradientShift {
+
   0% {
     background-position: 0% 50%;
   }
+
+  25% {
+    background-position: 50% 100%;
+  }
+
   50% {
     background-position: 100% 50%;
   }
+
+  75% {
+    background-position: 50% 0%;
+  }
+
   100% {
     background-position: 0% 50%;
   }
+
 }
+
+
+/* =========================================
+   SCROLLED HEADER
+========================================= */
 
 .site-header.scrolled {
-  /* Slightly deeper blur on scroll while maintaining the gradient */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  background:
+    linear-gradient(
+      115deg,
+      rgba(7, 55, 70, 0.84) 0%,
+      rgba(18, 111, 137, 0.78) 25%,
+      rgba(22, 133, 165, 0.76) 45%,
+      rgba(48, 176, 194, 0.74) 65%,
+      rgba(12, 72, 91, 0.84) 82%,
+      rgba(7, 55, 70, 0.84) 100%
+    );
+
+  background-size: 300% 300%;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom:
+    1px solid rgba(220, 236, 239, 0.20);
+
+  box-shadow:
+    0 10px 32px rgba(7, 55, 70, 0.20);
 }
+
+/* =========================================
+   HEADER CONTAINER
+========================================= */
 
 .header-container {
+
   width: 90%;
   max-width: 1300px;
+
   margin: 0 auto;
+
   display: flex;
-  justify-content: flex-end; /* Aligns header contents (Logo & Nav) to the right */
+
+  justify-content: flex-end;
   align-items: center;
-  gap: 3rem; /* Space between logo and right-aligned nav */
+
+  gap: 3rem;
 }
+
+
+/* =========================================
+   HEADER LOGO
+========================================= */
 
 .header-logo {
+
   text-decoration: none;
+
   display: flex;
   align-items: center;
-  z-index: 1001; 
-  margin-right: auto; /* Pushes the logo to stay far left if desired, remove this line if you want the logo grouped right with the nav */
+
+  z-index: 1001;
+
+  margin-right: auto;
 }
 
-.header-logo img, 
+
+.header-logo img,
 .header-logo svg {
-  height: auto; /* Maintain aspect ratio */
+
+  height: auto;
+
+  display: block;
 }
+
+
+/* =========================================
+   HEADER NAVIGATION
+========================================= */
 
 .header-nav {
+
   display: block;
-  margin-left: auto; /* Ensures nav stays pushed to the right side */
+
+  margin-left: auto;
 }
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
 
 .nav-links {
+
   list-style: none;
+
   display: flex;
-  justify-content: flex-end; /* Right-aligns navigation items */
+
+  justify-content: flex-end;
   align-items: center;
+
   gap: 2.5rem;
+
   margin: 0;
   padding: 0;
-  text-align: center; /* Center-aligns menu item text */
+
+  text-align: center;
 }
+
 
 .nav-links a {
-  color: #E0EFFF;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
+
   position: relative;
-  padding: 0.5rem 0;
+
   display: inline-flex;
-  justify-content: center;
+
   align-items: center;
-  text-align: center; /* Ensures link text stays centered */
-  transition: color 0.2s ease;
+  justify-content: center;
+
+  padding: 0.5rem 0;
+
+  color: #eefbfc;
+
+  text-decoration: none;
+
+  font-size: 0.95rem;
+
+  font-weight: 500;
+
+  text-align: center;
+
+  transition:
+    color 0.25s ease;
 }
+
+
+/* =========================================
+   NAV HOVER
+========================================= */
 
 .nav-links a:hover {
-  color: #FFFFFF;
+
+  color: #ffffff;
 }
+
+
+/* =========================================
+   NAV UNDERLINE
+========================================= */
 
 .nav-links a::after {
-  content: '';
+
+  content: "";
+
   position: absolute;
+
   bottom: 0;
   left: 0;
+
   width: 100%;
   height: 2px;
-  background-color: var(--accent, #63e6c6);
+
+  background:
+    linear-gradient(
+      90deg,
+      #63c5d1,
+      #dcecef
+    );
+
   transform: scaleX(0);
-  transform-origin: center; /* Underline expands evenly from the center */
-  transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.3s
+    cubic-bezier(0.65, 0.05, 0.36, 1);
 }
+
 
 .nav-links a:hover::after {
+
   transform: scaleX(1);
-  transform-origin: center;
 }
 
-/* Submenu Styles */
+
+/* =========================================
+   SUBMENU
+========================================= */
+
 .has-submenu {
+
   position: relative;
 }
 
+
 .nav-links .has-submenu > a {
+
   display: flex;
-  justify-content: center;
+
   align-items: center;
+  justify-content: center;
+
   gap: 0.4rem;
 }
 
+
+/* =========================================
+   SUBMENU ARROW
+========================================= */
+
 .submenu-arrow {
+
   width: 14px;
   height: 14px;
-  transition: transform 0.2s ease;
+
+  transition:
+    transform 0.25s ease;
 }
+
 
 .has-submenu:hover .submenu-arrow {
-  transform: rotate(180deg);
+
+  transform:
+    rotate(180deg);
 }
 
+
+/* =========================================
+   DESKTOP SUBMENU
+========================================= */
+
 .submenu {
+
   position: absolute;
+
   top: calc(100% + 5px);
   left: 50%;
-  transform: translateX(-50%) translateY(15px);
-  background-color: rgba(7, 18, 36, 0.95);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+
+  transform:
+    translateX(-50%)
+    translateY(15px);
+
+  background:
+    rgba(15, 89, 109, 0.96);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
   list-style: none;
+
   padding: 0.75rem;
+
   margin: 0;
-  border-radius: 8px;
+
+  border-radius: 10px;
+
   min-width: 220px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+  border:
+    1px solid rgba(220, 236, 239, 0.18);
+
+  box-shadow:
+    0 12px 30px rgba(21, 72, 86, 0.25);
+
   opacity: 0;
+
   visibility: hidden;
-  text-align: center; /* Center-aligns dropdown text */
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+
+  text-align: center;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s;
+
   z-index: 10;
 }
 
+
 .has-submenu:hover .submenu {
+
   opacity: 1;
+
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+
+  transform:
+    translateX(-50%)
+    translateY(0);
 }
+
+
+/* =========================================
+   SUBMENU LINKS
+========================================= */
 
 .submenu li a {
+
   display: block;
+
   padding: 0.6rem 1rem;
-  border-radius: 5px;
-  text-align: center; /* Center dropdown link text */
+
+  border-radius: 7px;
+
+  text-align: center;
+
+  color: #eefbfc;
 }
+
+
+.submenu li a:hover {
+
+  background:
+    rgba(220, 236, 239, 0.10);
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   MOBILE NAV TOGGLE
+========================================= */
 
 .mobile-nav-toggle {
+
   display: none;
+
   background: none;
+
   border: none;
+
   cursor: pointer;
+
   padding: 0.1rem;
+
   z-index: 1001;
-  margin-left: auto; /* Aligns hamburger icon to the right on mobile */
+
+  margin-left: auto;
 }
+
+
+/* =========================================
+   HAMBURGER
+========================================= */
 
 .hamburger-line {
+
   display: block;
+
   width: 24px;
   height: 2px;
-  background-color: #FFFFFF;
+
+  background-color: #ffffff;
+
   margin: 5px 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  border-radius: 2px;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
-/* Responsive Mobile Menu */
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 768px) {
+
   .header-nav {
+
     position: fixed;
+
     top: 0;
     right: 0;
+
     width: 75%;
     max-width: 320px;
+
     height: 100vh;
-    background-color: rgba(7, 18, 36, 0.95);
+
+    background:
+      linear-gradient(
+        160deg,
+        rgba(15, 89, 109, 0.98),
+        rgba(18, 111, 137, 0.98)
+      );
+
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+    transform:
+      translateX(100%);
+
+    transition:
+      transform 0.4s
+      cubic-bezier(0.23, 1, 0.32, 1);
+
     padding-top: 100px;
+
+    box-shadow:
+      -12px 0 35px rgba(21, 72, 86, 0.20);
   }
+
 
   .header-nav.is-open {
-    transform: translateX(0);
+
+    transform:
+      translateX(0);
   }
+
+
+  /* ======================================
+     MOBILE NAV LINKS
+  ====================================== */
 
   .nav-links {
+
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
+
     gap: 1.5rem;
+
     text-align: center;
   }
+
 
   .nav-links a {
+
     font-size: 1.2rem;
+
     text-align: center;
   }
 
-  /* Mobile Submenu */
+
+  /* ======================================
+     MOBILE SUBMENU
+  ====================================== */
+
   .submenu {
+
     position: static;
+
     transform: none;
+
     background: none;
+
     backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
     border: none;
+
     box-shadow: none;
-    padding: 0.5rem 0 0 0;
+
+    padding:
+      0.5rem 0 0;
+
     min-width: unset;
+
     width: 100%;
+
     opacity: 1;
+
     visibility: visible;
+
     display: none;
+
     text-align: center;
   }
+
 
   .mobile-nav-toggle {
+
     display: block;
   }
 
-  /* Hamburger to X animation */
-  .mobile-nav-toggle.is-active .hamburger-line:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+
+  /* ======================================
+     HAMBURGER → X
+  ====================================== */
+
+  .mobile-nav-toggle.is-active
+  .hamburger-line:nth-child(1) {
+
+    transform:
+      translateY(7px)
+      rotate(45deg);
   }
-  .mobile-nav-toggle.is-active .hamburger-line:nth-child(2) {
+
+
+  .mobile-nav-toggle.is-active
+  .hamburger-line:nth-child(2) {
+
     opacity: 0;
   }
-  .mobile-nav-toggle.is-active .hamburger-line:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+
+
+  .mobile-nav-toggle.is-active
+  .hamburger-line:nth-child(3) {
+
+    transform:
+      translateY(-7px)
+      rotate(-45deg);
   }
+
+
+  /* ======================================
+     MOBILE SUBMENU OPEN
+  ====================================== */
 
   .has-submenu.open > .submenu {
+
     display: block;
   }
+
 }
 
-/* Add padding to body to prevent content overlap */
+
+/* =========================================
+   BODY OFFSET
+========================================= */
+
 body {
-  padding-top: var(--header-height);
+
+  padding-top:
+    var(--header-height);
 }
+
+
+/* =========================================
+   HERO
+========================================= */
 
 .hero-section {
+
   padding-top: 0;
 }

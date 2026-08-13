@@ -298,7 +298,7 @@
 }
 
 
-.enquiryBtn,
+.heroPrimaryBtn,
 .brochureBtn {
     position: relative;
 
@@ -328,7 +328,7 @@
 
 /* Primary button */
 
-.enquiryBtn {
+.heroPrimaryBtn {
     background:
         linear-gradient(
             135deg,
@@ -342,7 +342,7 @@
         0 12px 25px rgba(22, 133, 165, 0.22);
 }
 
-.enquiryBtn::before {
+.eheroPrimaryBtn::before {
     content: "";
 
     position: absolute;
@@ -1098,7 +1098,7 @@
         align-items: stretch;
     }
 
-    .enquiryBtn,
+    .heroPrimaryBtn,
     .brochureBtn {
         width: 100%;
     }

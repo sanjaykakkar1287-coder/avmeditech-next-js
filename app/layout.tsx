@@ -7,6 +7,7 @@ import Footer from "../Components/layout/footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from "@/Components/layout/modal/Modal";
 import BootstrapProvider from "./BootstrapProvider";
+import ScrollToTop from "@/Components/layout/Scrolltotop/ScrollToTop"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         <Footer />
         <Modal />
+        <ScrollToTop />
       </body>
     </html>
   );

@@ -1,521 +1,677 @@
-/* =========================================================
-   PARTNERS / MARQUEE SECTION
-   Healthcare Teal Theme
-========================================================= */
+/* =========================================
+   PARTNERS SECTION
+========================================= */
 
 .section {
-    position: relative;
+  position: relative;
 
-    padding: 80px 20px;
+  width: 100%;
 
-    overflow: hidden;
+  padding: 100px 0;
 
-    background: #ffffff;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7fbfc 100%
+    );
+
+  overflow: hidden;
 }
 
 
-/* =========================================================
+/* =========================================
+   BACKGROUND AURA
+========================================= */
+
+.auraGlow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -220px;
+  right: -180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(22, 133, 165, 0.10) 0%,
+      rgba(22, 133, 165, 0.035) 45%,
+      transparent 72%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
    CONTAINER
-========================================================= */
+========================================= */
 
 .container {
-    max-width: 1280px;
+  position: relative;
 
-    margin: auto;
+  width: 90%;
+  max-width: 1250px;
 
-    position: relative;
-
-    z-index: 2;
+  margin: 0 auto;
 }
 
 
-/* =========================================================
+/* =========================================
+   SINGLE ROW
+========================================= */
+
+.partnersRow {
+  display: grid;
+
+  grid-template-columns:
+    minmax(380px, 0.9fr)
+    minmax(0, 1.1fr);
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =========================================
+   LEFT IMAGE
+========================================= */
+
+.imageColumn {
+  position: relative;
+
+  width: 100%;
+}
+
+
+.imageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: 470px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: #eaf5f7;
+
+  border:
+    1px solid
+    rgba(22, 133, 165, 0.14);
+
+  box-shadow:
+    0 20px 50px
+    rgba(21, 72, 86, 0.10);
+}
+
+
+.teamImage {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.7s
+    cubic-bezier(.2,.8,.2,1);
+}
+
+
+.imageWrapper:hover .teamImage {
+  transform: scale(1.035);
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.imageOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 45%,
+      rgba(8, 55, 70, 0.58) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   IMAGE BADGE
+========================================= */
+
+.imageBadge {
+  position: absolute;
+
+  left: 22px;
+  bottom: 22px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 9px 14px;
+
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  background:
+    rgba(15, 89, 109, 0.82);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.20);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+}
+
+
+.imageBadge span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #63c5d1;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(99, 197, 209, 0.14);
+}
+
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+.contentColumn {
+  min-width: 0;
+}
+
+
+/* =========================================
    HEADER
-========================================================= */
+========================================= */
 
 .header {
-    max-width: 700px;
+  max-width: 650px;
 
-    margin: 0 auto 60px;
-
-    text-align: center;
+  margin-bottom: 30px;
 }
 
 
-/* =========================================================
+/* =========================================
    BADGE
-========================================================= */
+========================================= */
 
 .badge {
-    display: inline-flex;
+  display: inline-flex;
 
-    align-items: center;
+  align-items: center;
 
-    gap: 8px;
+  gap: 9px;
 
-    padding: 8px 16px;
+  margin-bottom: 14px;
 
-    margin-bottom: 20px;
+  color: #1685a5;
 
-    border: 1px solid #dcecef;
+  font-size: 10px;
 
-    border-radius: 999px;
+  font-weight: 800;
 
-    background: #f4fafb;
+  letter-spacing: 0.16em;
 
-    color: #1685a5;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
-
-/* =========================================================
-   BADGE DOT
-========================================================= */
 
 .badgeDot {
-    width: 8px;
-    height: 8px;
+  width: 7px;
+  height: 7px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #1685a5;
+  background: #1685a5;
 
-    box-shadow:
-        0 0 0 3px rgba(22, 133, 165, 0.12);
-
-    animation: pulse 1.5s infinite;
+  box-shadow:
+    0 0 0 5px
+    rgba(22, 133, 165, 0.10);
 }
 
 
-/* =========================================================
+/* =========================================
    TITLE
-========================================================= */
+========================================= */
 
 .title {
-    font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
 
-    font-weight: 800;
+  color: #163e4b;
 
-    color: #163e4b;
+  font-size: clamp(
+    2rem,
+    4vw,
+    3.2rem
+  );
 
-    line-height: 1.2;
+  line-height: 1.12;
 
-    letter-spacing: -1px;
+  font-weight: 750;
 
-    margin: 0;
+  letter-spacing: -1.5px;
 }
 
 
-/* =========================================================
-   TITLE HIGHLIGHT
-========================================================= */
+/* =========================================
+   HIGHLIGHT
+========================================= */
 
 .highlight {
-    background:
-        linear-gradient(
-            90deg,
-            #1685a5,
-            #126f89
-        );
+  color: #1685a5;
 
-    -webkit-background-clip: text;
+  background:
+    linear-gradient(
+      90deg,
+      #126f89,
+      #1685a5,
+      #2daabd
+    );
 
-    background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
 
-    -webkit-text-fill-color: transparent;
-
-    color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 
-/* =========================================================
+/* =========================================
    DESCRIPTION
-========================================================= */
+========================================= */
 
 .description {
-    margin-top: 16px;
+  max-width: 590px;
 
-    color: #71848a;
+  margin: 18px 0 0;
 
-    font-size: 16px;
+  color: #6d8188;
 
-    line-height: 1.7;
+  font-size: 13px;
+
+  line-height: 1.75;
 }
 
 
-/* =========================================================
-   MARQUEE CONTAINER
-========================================================= */
+/* =========================================
+   PARTNERS GRID
+========================================= */
 
-.marqueeContainer {
-    overflow: hidden;
+.partnersGrid {
+  display: grid;
 
-    display: flex;
+  grid-template-columns:
+    repeat(3, 1fr);
 
-    flex-direction: column;
+  gap: 12px;
 
-    gap: 25px;
-
-    mask-image:
-        linear-gradient(
-            to right,
-            transparent,
-            black 10%,
-            black 90%,
-            transparent
-        );
-
-    -webkit-mask-image:
-        linear-gradient(
-            to right,
-            transparent,
-            black 10%,
-            black 90%,
-            transparent
-        );
+  margin-top: 28px;
 }
 
 
-/* =========================================================
-   MARQUEE ROWS
-========================================================= */
-
-.marqueeForward,
-.marqueeReverse {
-    display: flex;
-
-    width: max-content;
-
-    gap: 24px;
-}
-
-
-.marqueeForward {
-    animation:
-        marquee 30s linear infinite;
-}
-
-
-.marqueeReverse {
-    animation:
-        marqueeReverse 30s linear infinite;
-}
-
-
-/* =========================================================
+/* =========================================
    PARTNER CARD
-========================================================= */
+========================================= */
 
 .partnerCard {
-    width: 220px;
+  position: relative;
 
-    height: 80px;
+  height: 82px;
 
-    flex-shrink: 0;
+  display: flex;
 
-    display: flex;
+  align-items: center;
+  justify-content: center;
 
-    justify-content: center;
+  padding: 12px;
 
-    align-items: center;
+  box-sizing: border-box;
 
-    background: #ffffff;
+  background:
+    rgba(255, 255, 255, 0.92);
 
-    border: 1px solid #e2edef;
+  border:
+    1px solid
+    #dcecef;
 
-    border-radius: 20px;
+  border-radius: 12px;
 
-    cursor: pointer;
+  box-shadow:
+    0 6px 18px
+    rgba(21, 72, 86, 0.045);
 
-    box-shadow:
-        0 8px 24px rgba(21, 72, 86, 0.055);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 
 .partnerCard:hover {
-    transform: translateY(-5px);
+  transform: translateY(-4px);
 
-    border-color: #c9e5ea;
+  background: #ffffff;
 
-    box-shadow:
-        0 18px 40px rgba(21, 72, 86, 0.10);
+  border-color:
+    rgba(22, 133, 165, 0.30);
+
+  box-shadow:
+    0 12px 28px
+    rgba(22, 133, 165, 0.10);
 }
 
 
-/* =========================================================
+/* =========================================
    PARTNER IMAGE
-========================================================= */
+========================================= */
 
 .partnerImg {
-    max-height: 48px;
+  display: block;
 
-    width: auto;
+  width: 100%;
+  height: 100%;
 
-    object-fit: contain;
+  object-fit: contain;
 
-    transition:
-        transform 0.3s ease;
+  object-position: center;
+
+  transition:
+    transform 0.3s ease;
 }
 
 
 .partnerCard:hover .partnerImg {
-    transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 
-/* =========================================================
+/* =========================================
    FALLBACK TEXT
-========================================================= */
+========================================= */
 
 .partnerFallbackText {
-    font-size: 15px;
+  color: #163e4b;
 
-    font-weight: 700;
+  font-size: 11px;
 
-    color: #163e4b;
+  font-weight: 700;
+
+  text-align: center;
 }
 
 
-/* =========================================================
+/* =========================================
    FOOTER
-========================================================= */
+========================================= */
 
 .footer {
-    margin-top: 50px;
+  display: flex;
 
-    display: flex;
+  align-items: center;
 
-    justify-content: center;
+  flex-wrap: wrap;
 
-    align-items: center;
+  gap: 12px;
 
-    gap: 18px;
+  margin-top: 26px;
 
-    flex-wrap: wrap;
+  color: #6d8188;
 
-    text-transform: uppercase;
+  font-size: 10px;
 
-    font-size: 12px;
+  font-weight: 600;
 
-    letter-spacing: 2px;
-
-    color: #94aeb5;
-
-    font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-
-/* =========================================================
-   FOOTER DOT
-========================================================= */
 
 .footerDot {
-    width: 5px;
+  width: 4px;
+  height: 4px;
 
-    height: 5px;
+  flex: 0 0 4px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #c9dfe3;
+  background: #1685a5;
 }
 
 
-/* =========================================================
-   AURA GLOW
-========================================================= */
+/* =========================================
+   TABLET
+========================================= */
 
-.auraGlow {
-    position: absolute;
+@media (max-width: 1000px) {
 
-    left: 50%;
+  .section {
+    padding: 80px 0;
+  }
 
-    top: 50%;
 
-    transform:
-        translate(-50%, -50%);
+  .partnersRow {
+    grid-template-columns:
+      minmax(300px, 0.85fr)
+      minmax(0, 1.15fr);
 
-    width: 650px;
+    gap: 40px;
+  }
 
-    height: 650px;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(22, 133, 165, 0.12),
-            transparent 70%
-        );
+  .imageWrapper {
+    height: 420px;
+  }
 
-    filter: blur(90px);
 
-    z-index: 0;
+  .title {
+    font-size: 2.25rem;
+  }
 
-    pointer-events: none;
 }
 
 
-/* =========================================================
-   MARQUEE ANIMATIONS
-========================================================= */
-
-@keyframes marquee {
-
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-
-@keyframes marqueeReverse {
-
-    from {
-        transform: translateX(-50%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-
-/* =========================================================
-   PULSE ANIMATION
-========================================================= */
-
-@keyframes pulse {
-
-    0% {
-        transform: scale(1);
-
-        opacity: 0.8;
-    }
-
-    70% {
-        transform: scale(1.8);
-
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 768px) {
 
-    .section {
-        padding: 60px 16px;
-    }
+  .section {
+    padding: 70px 0;
+  }
 
 
-    .header {
-        margin-bottom: 40px;
-    }
+  .container {
+    width: calc(100% - 32px);
+  }
 
 
-    .partnerCard {
-        width: 170px;
+  .partnersRow {
+    grid-template-columns: 1fr;
 
-        height: 70px;
-
-        border-radius: 16px;
-    }
+    gap: 40px;
+  }
 
 
-    .partnerImg {
-        max-height: 40px;
-    }
+  /* Image */
+
+  .imageWrapper {
+    height: 320px;
+
+    border-radius: 20px;
+  }
 
 
-    .title {
-        font-size: 2rem;
-    }
+  /* Content */
+
+  .header {
+    margin-bottom: 24px;
+  }
 
 
-    .description {
-        font-size: 15px;
-    }
+  .title {
+    font-size: 2rem;
+
+    letter-spacing: -0.8px;
+  }
 
 
-    .marqueeContainer {
-        gap: 16px;
-    }
+  .description {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
 
 
-    .marqueeForward,
-    .marqueeReverse {
-        gap: 16px;
-    }
+  /* Logos */
+
+  .partnersGrid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 24px;
+  }
 
 
-    .footer {
-        margin-top: 35px;
+  .partnerCard {
+    height: 75px;
+  }
 
-        font-size: 10px;
 
-        letter-spacing: 1.5px;
-    }
+  .footer {
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 9px;
+
+    margin-top: 22px;
+  }
+
 }
 
 
-/* =========================================================
+/* =========================================
    SMALL MOBILE
-========================================================= */
+========================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 420px) {
 
-    .section {
-        padding: 50px 14px;
-    }
-
-
-    .badge {
-        padding: 7px 13px;
-
-        font-size: 10px;
-    }
+  .section {
+    padding: 55px 0;
+  }
 
 
-    .title {
-        font-size: 1.8rem;
-    }
+  .container {
+    width: calc(100% - 24px);
+  }
 
 
-    .description {
-        font-size: 14px;
-    }
+  .imageWrapper {
+    height: 260px;
+
+    border-radius: 16px;
+  }
 
 
-    .partnerCard {
-        width: 150px;
+  .imageBadge {
+    left: 14px;
+    bottom: 14px;
 
-        height: 64px;
-    }
+    padding: 8px 12px;
+
+    font-size: 9px;
+  }
 
 
-    .partnerImg {
-        max-height: 34px;
-    }
+  .title {
+    font-size: 1.75rem;
+  }
+
+
+  .description {
+    font-size: 11px;
+  }
+
+
+  .partnerCard {
+    height: 68px;
+
+    padding: 9px;
+
+    border-radius: 10px;
+  }
+
+
+  .footer {
+    font-size: 9px;
+  }
+
+}
+.partnerCard {
+  position: relative;
+  isolation: isolate;
+
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid rgba(22, 133, 165, 0.16);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 6px 18px rgba(21, 72, 86, 0.045);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
 }
