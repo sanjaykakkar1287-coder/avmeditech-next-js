@@ -26,7 +26,7 @@ const HeroButtons = ({ text }) => {
         data-bs-toggle="modal"
         data-bs-target="#Modal"
     >
-        Contact Us
+        Contact
     </button>
 
 </div>

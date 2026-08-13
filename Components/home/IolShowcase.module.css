@@ -267,6 +267,8 @@
 
     text-align: left;
 
+    text-decoration: none;
+
     cursor: pointer;
 
     overflow: hidden;
@@ -544,6 +546,8 @@
     display: flex;
 
     flex-direction: column;
+
+    text-decoration: none;
 
     justify-content: center;
 
@@ -1021,6 +1025,7 @@
         min-height: 86px;
 
         padding: 15px;
+        text-decoration: none;
     }
 
 

@@ -1,44 +1,53 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import styles from "./IolShowcase.module.css";
 
 const iolData = [
-    {
-        num: "01",
-        title: "Monofocal IOLs",
-        sub: "Provides sharp vision at a single distance...",
-        tag: "Single Vision Focus",
-        desc: "Provides sharp vision at a single distance, ideal for patients comfortable using glasses for reading.",
-        href: "../products/iol-lens/monofocal"
-    },
-    {
-        num: "02",
-        title: "Multifocal IOLs",
-        sub: "Enables clear vision at multiple distances...",
-        tag: "Multi-Distance Clarity",
-        desc: "Enables clear vision at multiple distances, reducing the need for glasses.",
-        href: "./products/iol-lens/monofocal"
-    },
-    {
-        num: "03",
-        title: "Trifocal IOLs",
-        sub: "Offers seamless vision at near, intermediate, and far...",
-        tag: "Active Lifestyle Focus",
-        desc: "Offers seamless vision at near, intermediate, and far distances, perfect for an active lifestyle.",
-        href: "./products/iol-lens/monofocal"
-    },
-    {
-        num: "04",
-        title: "Toric IOLs",
-        sub: "Corrects astigmatism, ensuring sharper vision...",
-        tag: "Astigmatism Correction",
-        desc: "Corrects astigmatism, ensuring sharper and distortion-free vision.",
-        href: "./products/iol-lens/monofocal"
-    },
+   
+  {
+    num: "01",
+    title: "Trifocal",
+    sub: "Premium Trifocal Intraocular Lens designed for advanced visual correction and cataract surgery applications.",
+    tag: "Trifocal Optics",
+    desc: "Premium Trifocal Intraocular Lens designed to provide clear vision across near, intermediate, and distance ranges.",
+    href: "/products/iol-lens/trifocal"
+  },
+  {
+    num: "02",
+    title: "Trifocal Toric",
+    sub: "Premium Trifocal Toric Intraocular Lens designed for cataract surgery with astigmatism correction.",
+    tag: "Trifocal + Toric",
+    desc: "Premium Trifocal Toric Intraocular Lens designed to provide multi-distance vision while addressing corneal astigmatism.",
+    href: "/products/iol-lens/trifocal-toric"
+  },
+  {
+    num: "03",
+    title: "Premium Monofocal",
+    sub: "Premium Monofocal Intraocular Lens designed to provide reliable optical performance for cataract surgery.",
+    tag: "Monofocal Optics",
+    desc: "Premium Monofocal Intraocular Lens designed to provide reliable and consistent distance vision following cataract surgery.",
+    href: "/products/iol-lens/premium-monofocal"
+  },
+  {
+    num: "04",
+    title: "Monofocal Toric",
+    sub: "Monofocal Toric Intraocular Lens designed for cataract surgery requiring astigmatism correction.",
+    tag: "Monofocal + Toric",
+    desc: "Monofocal Toric Intraocular Lens designed to provide dependable distance vision while correcting corneal astigmatism.",
+    href: "/products/iol-lens/monofocal-toric"
+  },
+  {
+    num: "05",
+    title: "Monofocal",
+    sub: "Monofocal Intraocular Lens designed to provide reliable optical performance for cataract surgery.",
+    tag: "Monofocal Optics",
+    desc: "Monofocal Intraocular Lens designed to provide clear and reliable vision at a selected distance following cataract surgery.",
+    href: "/products/iol-lens/monofocal"
+  }
 ];
 
- {iolData.map((item, i) => (console.log(item.href)))}
 
 export default function IolShowcase() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -124,18 +133,16 @@ export default function IolShowcase() {
                         <div className={styles.pillsWrapper}>
 
                             {iolData.map((item, i) => (
-
-                                <button
+                                <Link
                                     key={item.num}
-                                    type="button"
                                     href={item.href}
                                     className={`${styles.iolPill} ${
                                         activeIndex === i
                                             ? styles.active
                                             : ""
                                     }`}
-                                    onClick={() => setActiveIndex(i)}
-                                    aria-pressed={activeIndex === i}
+                                    onMouseEnter={() => setActiveIndex(i)}
+                                    //onClick={(e) => e.preventDefault()} 
                                 >
 
                                     {/* Progress */}
@@ -173,9 +180,7 @@ export default function IolShowcase() {
                                         →
                                     </span>
                                     
-
-                                </button>
-                             
+                                </Link>
 
                             ))}
    
@@ -204,58 +209,55 @@ export default function IolShowcase() {
 
                             {iolData.map((item, i) => (
 
-                                <div
+                                <Link
                                     key={item.num}
-                                    className={`${styles.stageCard} ${
-                                        activeIndex === i
-                                            ? styles.active
-                                            : ""
-                                    }`}
+                                    href={item.href}
+                                    className={`${styles.stageCard} ${activeIndex === i ? styles.active : ""}`}
                                 >
+                                    <div>
+                                        <span className={styles.typeTag}>
+                                            <span></span>
+                                            {item.tag}
+                                        </span>
 
-                                    <span className={styles.typeTag}>
-                                        <span></span>
-                                        {item.tag}
-                                    </span>
+                                        <span className={styles.bigNumber}>
+                                            {item.num}
+                                        </span>
 
-                                    <span className={styles.bigNumber}>
-                                        {item.num}
-                                    </span>
+                                        <h3>
+                                            {item.title}
+                                        </h3>
 
-                                    <h3>
-                                        {item.title}
-                                    </h3>
-
-                                    <p className={styles.cardDesc}>
-                                        {item.desc}
-                                    </p>
+                                        <p className={styles.cardDesc}>
+                                            {item.desc}
+                                        </p>
 
 
-                                    <div className={styles.specsBox}>
+                                        <div className={styles.specsBox}>
 
-                                        <div className={styles.specsIcon}>
-                                            ✓
+                                            <div className={styles.specsIcon}>
+                                                ✓
+                                            </div>
+
+                                            <div>
+
+                                                <h4>
+                                                    Precision Optical Standard
+                                                </h4>
+
+                                                <p>
+                                                    Each of our lenses is designed
+                                                    with precision optics, offering
+                                                    high contrast sensitivity,
+                                                    reduced visual disturbances,
+                                                    and long-term durability.
+                                                </p>
+
+                                            </div>
+
                                         </div>
-
-                                        <div>
-
-                                            <h4>
-                                                Precision Optical Standard
-                                            </h4>
-
-                                            <p>
-                                                Each of our lenses is designed
-                                                with precision optics, offering
-                                                high contrast sensitivity,
-                                                reduced visual disturbances,
-                                                and long-term durability.
-                                            </p>
-
-                                        </div>
-
                                     </div>
-
-                                </div>
+                                </Link>
 
                             ))}
 
