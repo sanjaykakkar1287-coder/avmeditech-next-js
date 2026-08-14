@@ -9,7 +9,7 @@ const links = [
     },
     {
         label: "Vision Simulator",
-        href: "/patients/Simulator",
+        href: "/patients/vision-simulator",
     },
     {
         label: "Treatments",

@@ -5,6 +5,9 @@ import Link from "next/link";
 
 import styles from "./allProducts.module.css";
 import { categories } from "../products/productData";
+import HeroButtons from "../buttons/HeroButtons";
+
+
 
 export default function AllProducts() {
 
@@ -188,20 +191,7 @@ export default function AllProducts() {
 
                     <div className={styles.ctaButtonGroup}>
 
-                        <Link
-                            href="/contact"
-                            className={styles.ctaPrimaryBtn}
-                        >
-                            Request Catalog
-                        </Link>
-
-
-                        <Link
-                            href="/contact"
-                            className={styles.ctaSecondaryBtn}
-                        >
-                            Speak to a Specialist
-                        </Link>
+                        <HeroButtons text="Speak to a Specialist" />
 
                     </div>
 

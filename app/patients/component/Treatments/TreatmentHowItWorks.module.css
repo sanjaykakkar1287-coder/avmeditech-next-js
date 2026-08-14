@@ -1,0 +1,626 @@
+/* =========================================
+   TREATMENT HOW IT WORKS — GUIDED JOURNEY
+========================================= */
+
+.section {
+    --navy: #0d2b35;
+    --ink: #193b45;
+    --teal: #1685a5;
+    --teal-deep: #0f6883;
+    --teal-light: #8fd0e2;
+    --mist: #eef7f9;
+    --paper: #ffffff;
+    --slate: #6d8188;
+
+    padding: 70px 0;
+    background: var(--paper);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    max-width: 560px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    color: var(--teal-deep);
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--teal);
+
+    box-shadow: 0 0 0 3px rgba(22, 133, 165, 0.15);
+}
+
+.header h2 {
+    margin: 0 0 10px;
+
+    color: var(--ink);
+
+    font-family: "Fraunces", serif;
+    font-size: clamp(24px, 2.8vw, 32px);
+    font-weight: 600;
+
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    margin: 0;
+
+    color: var(--slate);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ENGINE
+========================================= */
+
+.engine {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 0;
+
+    margin-bottom: 30px;
+
+    border: 1px solid #e4eef0;
+    border-radius: 20px;
+
+    background: var(--paper);
+
+    box-shadow: 0 10px 30px rgba(20, 70, 85, 0.05);
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   RAIL
+========================================= */
+
+.rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    padding: 24px 14px;
+
+    background: var(--mist);
+    border-right: 1px solid #dfeaec;
+}
+
+.playBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    margin-bottom: 12px;
+
+    border: 1px solid #cfe4e8;
+    border-radius: 50%;
+
+    background: var(--paper);
+
+    color: var(--teal-deep);
+
+    cursor: pointer;
+
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.playBtn:hover {
+    background: var(--teal);
+    color: #ffffff;
+
+    transform: scale(1.06);
+}
+
+.node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    width: 100%;
+    padding: 8px 4px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: background 0.25s ease;
+}
+
+.node:hover {
+    background: rgba(22, 133, 165, 0.06);
+}
+
+.ringWrap {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ringTrack {
+    fill: none;
+    stroke: #d6e6e9;
+    stroke-width: 2;
+}
+
+.ringFill {
+    fill: none;
+    stroke: var(--teal);
+    stroke-width: 2;
+    stroke-linecap: round;
+
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+
+    transition: stroke-dashoffset 0.05s linear;
+}
+
+.nodeNumber {
+    position: absolute;
+
+    color: var(--slate);
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+}
+
+.nodeActive .nodeNumber {
+    color: var(--teal-deep);
+}
+
+.nodeLabel {
+    color: var(--slate);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.25;
+
+    transition: color 0.25s ease;
+}
+
+.nodeActive .nodeLabel {
+    color: var(--teal-deep);
+}
+
+
+/* =========================================
+   STAGE PANEL
+========================================= */
+
+.stagePanel {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    align-items: center;
+    gap: 26px;
+
+    padding: 30px 34px;
+
+    animation: stageIn 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.medallion {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 92px;
+    height: 92px;
+    margin: 0 auto;
+}
+
+.medallionRing {
+    position: absolute;
+    inset: 0;
+
+    border: 1.5px dashed var(--teal-light);
+    border-radius: 50%;
+
+    animation: ringSpin 22s linear infinite;
+}
+
+.medallionIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    background: var(--mist);
+
+    color: var(--teal);
+
+    box-shadow: 0 6px 16px rgba(22, 133, 165, 0.14);
+}
+
+.stageBody {
+    min-width: 0;
+}
+
+.stageTag {
+    display: inline-block;
+    margin-bottom: 8px;
+
+    color: var(--teal-deep);
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.stageBody h3 {
+    margin: 0 0 8px;
+
+    color: var(--ink);
+
+    font-family: "Fraunces", serif;
+    font-size: clamp(19px, 2vw, 24px);
+    font-weight: 600;
+
+    line-height: 1.25;
+}
+
+.stageBody p {
+    margin: 0 0 16px;
+
+    max-width: 520px;
+
+    color: var(--slate);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12.5px;
+    line-height: 1.7;
+}
+
+.chipRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 11px;
+
+    border: 1px solid #d6e6e9;
+    border-radius: 999px;
+
+    background: var(--mist);
+
+    color: var(--ink);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.chip svg {
+    width: 11px;
+    height: 11px;
+    color: var(--teal);
+    flex-shrink: 0;
+}
+
+.stageArrows {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    display: flex;
+    gap: 6px;
+}
+
+.arrowBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid #d6e6e9;
+    border-radius: 50%;
+
+    background: var(--paper);
+
+    color: var(--teal-deep);
+
+    font-size: 12px;
+    cursor: pointer;
+
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.arrowBtn:hover {
+    background: var(--teal);
+    color: #ffffff;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   CTA BANNER — CONVERSION
+========================================= */
+
+.ctaBanner {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 36px 40px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: linear-gradient(135deg, var(--navy), var(--teal-deep));
+}
+
+.ctaRing {
+    position: absolute;
+    top: -90px;
+    right: -60px;
+
+    width: 260px;
+    height: 260px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    animation: ringSpin 50s linear infinite;
+
+    pointer-events: none;
+}
+
+.ctaText {
+    position: relative;
+    z-index: 1;
+}
+
+.ctaLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: var(--teal-light);
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.ctaLabel .dot {
+    background: var(--teal-light);
+    box-shadow: 0 0 0 3px rgba(143, 208, 226, 0.2);
+}
+
+.ctaText h3 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-family: "Fraunces", serif;
+    font-size: clamp(19px, 2.2vw, 25px);
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+.ctaText p {
+    margin: 0;
+
+    max-width: 420px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12.5px;
+    line-height: 1.7;
+}
+
+.ctaButton {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-width: 210px;
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: var(--teal-deep);
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ctaButton:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ctaArrow {
+    font-size: 15px;
+    transition: transform 0.25s ease;
+}
+
+.ctaButton:hover .ctaArrow {
+    transform: translateX(3px);
+}
+
+
+/* =========================================
+   KEYFRAMES
+========================================= */
+
+@keyframes stageIn {
+    0% { opacity: 0; transform: translateY(8px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ringSpin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stagePanel, .medallionRing, .ctaRing, .ringFill {
+        animation: none;
+        transition: none;
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .section { padding: 55px 0; }
+
+    .engine {
+        grid-template-columns: 1fr;
+    }
+
+    .rail {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        border-right: none;
+        border-bottom: 1px solid #dfeaec;
+    }
+
+    .playBtn {
+        margin: 0 8px 0 0;
+    }
+
+    .node {
+        width: auto;
+    }
+
+    .stagePanel {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .medallion { margin-bottom: 4px; }
+
+    .stageBody p { margin-left: auto; margin-right: auto; }
+
+    .chipRow { justify-content: center; }
+
+    .stageArrows {
+        position: static;
+        justify-content: center;
+        margin-top: 18px;
+    }
+
+    .ctaBanner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ctaText p { margin-left: auto; margin-right: auto; }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .section { padding: 42px 0; }
+
+    .nodeLabel { display: none; }
+
+    .stagePanel { padding: 24px 20px; }
+
+    .ctaBanner {
+        padding: 28px 22px;
+        border-radius: 16px;
+    }
+
+    .ctaButton { width: 100%; }
+}

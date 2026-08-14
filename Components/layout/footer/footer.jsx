@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,17 +13,19 @@ export default function Footer() {
           {/* Col 1: Brand & Bio */}
           <div className="footer-col">
             <a href="/" className="header-logo mb-4">
-              <span className="text-logo">
-                AVMEDI<span className="logo-highlight">TECH</span>
-              </span>
+              <Image
+                src="/images/logo/Logo.png" // Update with your actual logo path
+                alt="AV Meditech Logo"
+                width={180} // Set appropriate width
+                height={40} // Set appropriate height
+                className="text-logo" // You can reuse or create new styles
+              />
             </a>
             <p className="footer-about-text">
               Delivering high-precision IOLs, advanced viscoelastic solutions,
               and ultra-sharp surgical blades to empower eye surgeons across
               India.
             </p>
-
-            
           </div>
 
           {/* Col 2: Quick Links */}
@@ -29,16 +33,22 @@ export default function Footer() {
             <h3 className="footer-col-title">Quick Links</h3>
             <ul className="footer-links">
               <li>
-                <a href="#products">Products</a>
+                <Link href="/products">Products</Link>
               </li>
               <li>
-                <a href="#why-choose-us">About Us</a>
+                <Link href="/about">About Us</Link>
               </li>
               <li>
-                <a href="#iol-benefits">Benefits</a>
+                <Link href="/contact">Contacts</Link>
               </li>
               <li>
-                <a href="#faq-section">FAQs</a>
+                <Link href="/Blogs">Blogs</Link>
+              </li>
+              <li>
+                <Link href="/patient">I am a Patient</Link>
+              </li>
+              <li>
+                <Link href="/patients/vision-simulator">Vision Simulator</Link>
               </li>
             </ul>
           </div>
@@ -48,16 +58,31 @@ export default function Footer() {
             <h3 className="footer-col-title">Our Solutions</h3>
             <ul className="footer-links">
               <li>
-                <a href="#">Intraocular Lenses</a>
+                <Link href="/products/iol-lens">IOL - Intraocular Lens</Link>
               </li>
               <li>
-                <a href="#">Surgical Consumables</a>
+                <Link href="/products/consumables">Consumables</Link>
               </li>
               <li>
-                <a href="#">Vitreoretinal</a>
+                <Link href="/products/vitreoretinal">Vitreoretinal</Link>
               </li>
               <li>
-                <a href="#">Phaco Equipments</a>
+                <Link href="/products/phaco-equipments">Phaco Equipments</Link>
+              </li>
+
+              <li>
+                <Link href="/products/plasmapp-sterilizer">
+                  Plasmapp Sterilizer
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/ecp-system">ECP System</Link>
+              </li>
+              <li>
+                <Link href="/products/endo-optiks">Endo Optiks®</Link>
+              </li>
+              <li>
+                <Link href="/products/dry-eye">Dry Eye</Link>
               </li>
             </ul>
           </div>
@@ -127,11 +152,12 @@ export default function Footer() {
                   />
                 </svg>
                 <span>
-                  Regd. Address: D.S.S 308, Ground Floor, Sector 20, Huda, Kaithal, Haryana 136027
+                  Regd. Address: D.S.S 308, Ground Floor, Sector 20, Huda,
+                  Kaithal, Haryana 136027
                 </span>
               </li>
 
-<li>
+              <li>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
@@ -152,12 +178,11 @@ export default function Footer() {
                   />
                 </svg>
 
-                <span>+91 9354343355 , +91 9812023148</span>
+                <span >
+                  <a className="text1" href="tel:+919354343355">+91 9354343355</a>,{" "}
+                  <a  className="text1" href="tel:+919812023148">+91 9812023148</a>
+                </span>
               </li>
-
-
-
-
 
               <li>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,12 +193,12 @@ export default function Footer() {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span>info@avmeditech.com</span>
+                <span >
+                  <a className="text1" href="mailto:info@avmeditech.com">info@avmeditech.com</a>
+                </span>
               </li>
             </ul>
-            
           </div>
-          
         </div>
 
         {/* BOTTOM ROW: Copyright & Social Links */}
