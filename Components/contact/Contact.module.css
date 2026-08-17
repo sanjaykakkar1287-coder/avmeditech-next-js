@@ -968,6 +968,15 @@
 }
 
 
+.inputError {
+    border-color: #ef4444;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(239, 68, 68, 0.10);
+}
+
+
 /* =========================================================
    TEXTAREA
 ========================================================= */
@@ -1137,4 +1146,12 @@
   font-size: 12px;
   line-height: 1.4;
   font-weight: 500;
+}
+
+.errorText {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #ef4444; /* A modern red color */
+  font-weight: 500;
+  line-height: 1;
 }

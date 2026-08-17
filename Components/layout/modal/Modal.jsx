@@ -1,10 +1,58 @@
 "use client";
+import { useState } from "react";
 import styles from "./Modal.module.css";
-import {handleSubmit} from "../../contact/Contact";
+import {
+  handleSubmit,
+  validateContactField,
+} from "../../contact/handleSubmit";
+
 
 
 
 export default function Modal() {
+  const [errors, setErrors] = useState({});
+  const [isPending, setIsPending] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    inquiryType: "Intraocular Lenses (IOLs)",
+    message: "",
+  });
+
+  const onSubmit = (e) => {
+    return handleSubmit(
+      e,
+      setErrors,
+      setIsPending,
+      setFormData
+    );
+  };
+
+  const handleFieldChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((current) => ({
+      ...current,
+      [name]: value,
+    }));
+
+    setErrors((current) => ({
+      ...current,
+      [name]: validateContactField(name, value),
+      form: "",
+    }));
+  };
+
+  const handleFieldBlur = (e) => {
+    const { name, value } = e.target;
+
+    setErrors((current) => ({
+      ...current,
+      [name]: validateContactField(name, value),
+    }));
+  };
+
   return (
     <div
       className="modal fade"
@@ -33,17 +81,20 @@ export default function Modal() {
                 <h3 className={styles.formTitle}>Send Us a Message</h3>
                
               </div>
-            <form onSubmit={handleSubmit} className={styles.form}>
+            <form onSubmit={onSubmit} className={styles.form}>
   <div className={styles.formGrid}>
     <div>
       <label className={styles.label}>Your Name *</label>
       <input
         type="text"
         name="name"
-        required
+        value={formData.name}
+        onChange={handleFieldChange}
+        onBlur={handleFieldBlur}
         placeholder="Dr. Rahul Sharma"
-        className={styles.input}
+        className={`${styles.input} ${errors?.name ? styles.inputError : ""}`}
       />
+      {errors?.name && <p className={styles.errorText}>{errors.name}</p>}
     </div>
 
     <div>
@@ -51,10 +102,13 @@ export default function Modal() {
       <input
         type="tel"
         name="phone"
-        required
+        value={formData.phone}
+        onChange={handleFieldChange}
+        onBlur={handleFieldBlur}
         placeholder="+91 98765 43210"
-        className={styles.input}
+        className={`${styles.input} ${errors?.phone ? styles.inputError : ""}`}
       />
+      {errors?.phone && <p className={styles.errorText}>{errors.phone}</p>}
     </div>
   </div>
 
@@ -63,17 +117,23 @@ export default function Modal() {
     <input
       type="email"
       name="email"
-      required
+      value={formData.email}
+      onChange={handleFieldChange}
+      onBlur={handleFieldBlur}
       placeholder="name@hospital.com"
-      className={styles.input}
+      className={`${styles.input} ${errors?.email ? styles.inputError : ""}`}
     />
+    {errors?.email && <p className={styles.errorText}>{errors.email}</p>}
   </div>
 
   <div>
     <label className={styles.label}>Inquiry Type</label>
     <select
       name="inquiryType"
-      className={styles.select}
+      value={formData.inquiryType}
+      onChange={handleFieldChange}
+      onBlur={handleFieldBlur}
+      className={`${styles.select} ${errors?.inquiryType ? styles.inputError : ""}`}
     >
       <option>Intraocular Lenses (IOLs)</option>
       <option>Surgical Blades &amp; Knives</option>
@@ -81,6 +141,7 @@ export default function Modal() {
       <option>Distribution &amp; Partnership</option>
       <option>General Enquiry</option>
     </select>
+    {errors?.inquiryType && <p className={styles.errorText}>{errors.inquiryType}</p>}
   </div>
 
   <div>
@@ -91,13 +152,19 @@ export default function Modal() {
     <textarea
       name="message"
       rows={3}
+      value={formData.message}
+      onChange={handleFieldChange}
+      onBlur={handleFieldBlur}
       placeholder="Tell us about your clinic or product requirements..."
-      className={styles.textarea}
+      className={`${styles.textarea} ${errors?.message ? styles.inputError : ""}`}
     ></textarea>
+    {errors?.message && <p className={styles.errorText}>{errors.message}</p>}
   </div>
 
-  <button type="submit" className={styles.submitBtn}>
-    <span>Submit Inquiry</span>
+  {errors?.form && <p className={styles.errorText}>{errors.form}</p>}
+
+  <button type="submit" className={styles.submitBtn} disabled={isPending}>
+    <span>{isPending ? "Submitting..." : "Submit Inquiry"}</span>
 
     <svg
       className={styles.svgIcon}

@@ -1,52 +1,55 @@
 "use client";
-
-import React from "react";
-import styles from "./Contact.module.css";
 import { useState } from "react";
- 
-
-
-
-
-export const handleSubmit = (e) => {
-  e.preventDefault();
-
-  
-const formData = new FormData(e.currentTarget);
-
-  const name = formData.get("name");
-  const phone = formData.get("phone");
-  const email = formData.get("email");
-  const inquiryType = formData.get("inquiryType");
-  const message = formData.get("message");
-
-   
-
-  const whatsappNumber = "919896099091"; 
-
-  const whatsappMessage = `
-Hello AV Meditech,
-
-New Inquiry
-
-Name: ${name}
-Phone: ${phone}
-Email: ${email}
-Inquiry Type: ${inquiryType}
-Message: ${message || "N/A"}
-  `.trim();
-
-  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
-
-  window.location.href = whatsappURL;
-};
-
-
+import styles from "./Contact.module.css";
+import {
+  handleSubmit,
+  validateContactField,
+} from "./handleSubmit";
 
 export default function Contact() {
- 
+  const [errors, setErrors] = useState({});
+  const [isPending, setIsPending] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    inquiryType: "Intraocular Lenses (IOLs)",
+    message: "",
+  });
+
+  const onSubmit = (e) => {
+    return handleSubmit(
+      e,
+      setErrors,
+      setIsPending,
+      setFormData
+    );
+  };
+
+  const handleFieldChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((current) => ({
+      ...current,
+      [name]: value,
+    }));
+
+    setErrors((current) => ({
+      ...current,
+      [name]: validateContactField(name, value),
+      form: "",
+    }));
+  };
+
+  const handleFieldBlur = (e) => {
+    const { name, value } = e.target;
+
+    setErrors((current) => ({
+      ...current,
+      [name]: validateContactField(name, value),
+    }));
+  };
+
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.container}>
@@ -211,60 +214,151 @@ export default function Contact() {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className={styles.form}>
+              <form onSubmit={onSubmit} className={styles.form}>
   <div className={styles.formGrid}>
+
+    {/* NAME */}
     <div>
-      <label className={styles.label}>Your Name *</label>
+      <label className={styles.label}>
+        Your Name *
+      </label>
+
       <input
         type="text"
         name="name"
-        required
+        value={formData.name}
+        onChange={handleFieldChange}
+        onBlur={handleFieldBlur}
         placeholder="Dr. Rahul Sharma"
-        className={styles.input}
+        className={`${styles.input} ${
+          errors?.name ? styles.inputError : ""
+        }`}
+        aria-describedby="name-error"
       />
+
+      {errors?.name && (
+        <p
+          id="name-error"
+          className={styles.errorText}
+        >
+          {errors.name}
+        </p>
+      )}
     </div>
 
+
+    {/* PHONE */}
     <div>
-      <label className={styles.label}>Phone Number *</label>
+      <label className={styles.label}>
+        Phone Number *
+      </label>
+
       <input
-  type="tel"
-  name="phone"
-  required
-  maxLength={10}
-  placeholder="+91 98765 43210"
-  className={styles.input}
-  
-/>
+        type="tel"
+        name="phone"
+        value={formData.phone}
+        onChange={handleFieldChange}
+        onBlur={handleFieldBlur}
+        maxLength={10}
+        placeholder="+91 98765 43210"
+        className={`${styles.input} ${
+          errors?.phone ? styles.inputError : ""
+        }`}
+        aria-describedby="phone-error"
+      />
 
-
+      {errors?.phone && (
+        <p
+          id="phone-error"
+          className={styles.errorText}
+        >
+          {errors.phone}
+        </p>
+      )}
     </div>
+
   </div>
 
+
+  {/* EMAIL */}
   <div>
-    <label className={styles.label}>Email Address *</label>
+    <label className={styles.label}>
+      Email Address *
+    </label>
+
     <input
       type="email"
       name="email"
-      required
+      value={formData.email}
+      onChange={handleFieldChange}
+      onBlur={handleFieldBlur}
       placeholder="name@hospital.com"
-      className={styles.input}
+      className={`${styles.input} ${
+        errors?.email ? styles.inputError : ""
+      }`}
+      aria-describedby="email-error"
     />
+
+    {errors?.email && (
+      <p
+        id="email-error"
+        className={styles.errorText}
+      >
+        {errors.email}
+      </p>
+    )}
   </div>
 
+
+  {/* INQUIRY TYPE */}
   <div>
-    <label className={styles.label}>Inquiry Type</label>
+    <label className={styles.label}>
+      Inquiry Type
+    </label>
+
     <select
       name="inquiryType"
-      className={styles.select}
+      value={formData.inquiryType}
+      onChange={handleFieldChange}
+      onBlur={handleFieldBlur}
+      className={`${styles.select} ${
+        errors?.inquiryType ? styles.inputError : ""
+      }`}
+      aria-describedby="inquiryType-error"
     >
-      <option>Intraocular Lenses (IOLs)</option>
-      <option>Surgical Blades &amp; Knives</option>
-      <option>Phaco Equipment &amp; Accessories</option>
-      <option>Distribution &amp; Partnership</option>
-      <option>General Enquiry</option>
+      <option value="Intraocular Lenses (IOLs)">
+        Intraocular Lenses (IOLs)
+      </option>
+
+      <option value="Surgical Blades & Knives">
+        Surgical Blades & Knives
+      </option>
+
+      <option value="Phaco Equipment & Accessories">
+        Phaco Equipment & Accessories
+      </option>
+
+      <option value="Distribution & Partnership">
+        Distribution & Partnership
+      </option>
+
+      <option value="General Enquiry">
+        General Enquiry
+      </option>
     </select>
+
+    {errors?.inquiryType && (
+      <p
+        id="inquiryType-error"
+        className={styles.errorText}
+      >
+        {errors.inquiryType}
+      </p>
+    )}
   </div>
 
+
+  {/* MESSAGE */}
   <div>
     <label className={styles.label}>
       Message / Requirements
@@ -272,14 +366,45 @@ export default function Contact() {
 
     <textarea
       name="message"
+      value={formData.message}
+      onChange={handleFieldChange}
+      onBlur={handleFieldBlur}
       rows={3}
       placeholder="Tell us about your clinic or product requirements..."
-      className={styles.textarea}
+      className={`${styles.textarea} ${
+        errors?.message ? styles.inputError : ""
+      }`}
+      aria-describedby="message-error"
     ></textarea>
+
+    {errors?.message && (
+      <p
+        id="message-error"
+        className={styles.errorText}
+      >
+        {errors.message}
+      </p>
+    )}
   </div>
 
-  <button type="submit" className={styles.submitBtn}>
-    <span>Submit Inquiry</span>
+
+  {/* FORM ERROR */}
+  {errors?.form && (
+    <p className={styles.errorText}>
+      {errors.form}
+    </p>
+  )}
+
+
+  {/* SUBMIT */}
+  <button
+    type="submit"
+    className={styles.submitBtn}
+    disabled={isPending}
+  >
+    <span>
+      {isPending ? "Submitting..." : "Submit Inquiry"}
+    </span>
 
     <svg
       className={styles.svgIcon}
@@ -295,6 +420,7 @@ export default function Contact() {
       />
     </svg>
   </button>
+
 </form>
             </div>
           </div>
