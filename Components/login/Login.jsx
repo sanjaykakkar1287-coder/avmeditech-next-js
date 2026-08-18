@@ -4,186 +4,171 @@ import { useState } from "react";
 import styles from "./Login.module.css";
 
 export default function LoginPage() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+    const [formData, setFormData] = useState({
+        username: "",
+        password: "",
+    });
 
-  const [error, setError] = useState("");
-  const [isPending, setIsPending] = useState(false);
+    const [error, setError] = useState("");
+    const [isPending, setIsPending] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+    const handleChange = (e) => {
+        const { name, value } = e.target;
 
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
 
-    setError("");
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+        setError("");
 
-    setError("");
+        if (!formData.username || !formData.password) {
+            setError("Username and password are required.");
+            return;
+        }
 
-    if (!formData.email || !formData.password) {
-      setError("Email and password are required.");
-      return;
-    }
+        setIsPending(true);
 
-    try {
-      setIsPending(true);
+        try {
+            const response = await fetch("/api/Auth/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
+                body: JSON.stringify(formData),
+            });
 
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+            const result = await response.json();
 
-      const result = await response.json();
+            if (!response.ok || !result.success) {
+                setError(
+                    result.message ||
+                    "Invalid username or password."
+                );
+                return;
+            }
 
-      if (!response.ok) {
-        throw new Error(
-          result.message || "Login failed"
-        );
-      }
+            // Login successful
+            window.location.href = "/admin/dashboard";
 
-      console.log("Login successful:", result);
+        } catch (error) {
+            console.error("Login Error:", error);
 
-      // Later:
-      // router.push("/dashboard");
+            setError(
+                "Unable to connect to server."
+            );
+        } finally {
+            setIsPending(false);
+        }
+    };
 
-    } catch (error) {
-      console.error("Login Error:", error);
-      setError(error.message);
-    } finally {
-      setIsPending(false);
-    }
-  };
+    return (
+        <main className={styles.loginPage}>
 
-  return (
-    <main className={styles.loginPage}>
-      <div className={styles.loginWrapper}>
+            <div className={styles.loginContainer}>
 
-        {/* LEFT SIDE */}
-        <div className={styles.loginInfo}>
+                <div className={styles.loginCard}>
 
-          <div className={styles.logo}>
-            AV <span>Meditech</span>
-          </div>
+                    {/* HEADER */}
 
-          <div className={styles.infoContent}>
-            <span className={styles.badge}>
-              ADMIN PORTAL
-            </span>
+                    <div className={styles.loginHeader}>
 
-            <h1>
-              Welcome to
-              <span> AV Meditech</span>
-            </h1>
+                        <h1>
+                            Welcome Back
+                        </h1>
 
-            <p>
-              Manage inquiries, products, users and
-              other business operations from your
-              secure admin dashboard.
-            </p>
-          </div>
+                        <p>
+                            Sign in to access the admin dashboard.
+                        </p>
 
-        </div>
+                    </div>
 
 
-        {/* RIGHT SIDE */}
-        <div className={styles.loginCard}>
+                    {/* LOGIN FORM */}
 
-          <div className={styles.cardHeader}>
-            <h2>Admin Login</h2>
+                    <form
+                        method="POST"
+                        onSubmit={handleSubmit}
+                        className={styles.form}
+                    >
 
-            <p>
-              Sign in to access your dashboard
-            </p>
-          </div>
+                        {/* USERNAME */}
+
+                        <div className={styles.formGroup}>
+
+                            <label htmlFor="username">
+                                Username
+                            </label>
+
+                            <input
+                                id="username"
+                                type="text"
+                                name="username"
+                                value={formData.username}
+                                onChange={handleChange}
+                                placeholder="Enter username"
+                                autoComplete="username"
+                                disabled={isPending}
+                            />
+
+                        </div>
 
 
-          <form
-            onSubmit={handleSubmit}
-            className={styles.form}
-          >
+                        {/* PASSWORD */}
 
-            {/* EMAIL */}
-            <div className={styles.formGroup}>
+                        <div className={styles.formGroup}>
 
-              <label htmlFor="email">
-                Email Address
-              </label>
+                            <label htmlFor="password">
+                                Password
+                            </label>
 
-              <input
-                id="email"
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="admin@avmeditech.com"
-                autoComplete="email"
-              />
+                            <input
+                                id="password"
+                                type="password"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleChange}
+                                placeholder="Enter your password"
+                                autoComplete="current-password"
+                                disabled={isPending}
+                            />
+
+                        </div>
+
+
+                        {/* ERROR */}
+
+                        {error && (
+                            <p className={styles.error}>
+                                {error}
+                            </p>
+                        )}
+
+
+                        {/* BUTTON */}
+
+                        <button
+                            type="submit"
+                            disabled={isPending}
+                            className={styles.loginButton}
+                        >
+                            {isPending
+                                ? "Signing in..."
+                                : "Sign In"
+                            }
+                        </button>
+
+                    </form>
+
+                </div>
 
             </div>
 
-
-            {/* PASSWORD */}
-            <div className={styles.formGroup}>
-
-              <label htmlFor="password">
-                Password
-              </label>
-
-              <input
-                id="password"
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                placeholder="Enter your password"
-                autoComplete="current-password"
-              />
-
-            </div>
-
-
-            {/* ERROR */}
-            {error && (
-              <p className={styles.error}>
-                {error}
-              </p>
-            )}
-
-
-            {/* BUTTON */}
-            <button
-              type="submit"
-              disabled={isPending}
-              className={styles.loginButton}
-            >
-              {isPending
-                ? "Signing in..."
-                : "Sign In"}
-            </button>
-
-          </form>
-
-
-          <div className={styles.cardFooter}>
-            <span>
-              AV Meditech Admin Portal
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-    </main>
-  );
+        </main>
+    );
 }

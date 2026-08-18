@@ -1,46 +1,46 @@
 import { notFound } from "next/navigation";
 
-import { blogs } from "./blogData";
 import styles from "./BlogList.module.css";
 
-export default function SingleBlog({ blogSlug }) {
+export default async function SingleBlog({ blogSlug }) {
 
-    // Find blog using URL slug
-    const blog = blogs.find(
-        (item) => item.slug === blogSlug
+    const response = await fetch(
+        `${process.env.NEXT_PUBLIC_SITE_URL}/api/blog/${blogSlug}`,
+        {
+            cache: "no-store",
+        }
     );
 
-    // Blog not found
-    if (!blog) {
+    if (!response.ok) {
         notFound();
     }
+
+    const result = await response.json();
+
+    if (!result.success || !result.data) {
+        notFound();
+    }
+
+    const blog = result.data;
 
     return (
         <main className={styles.blogDetail}>
 
             <div className="container">
 
-                {/* =========================
-                    CATEGORY
-                ========================= */}
+                {/* CATEGORY */}
 
                 <span className={styles.detailCategory}>
                     {blog.category}
                 </span>
 
-
-                {/* =========================
-                    TITLE
-                ========================= */}
+                {/* TITLE */}
 
                 <h1 className={styles.detailTitle}>
                     {blog.title}
                 </h1>
 
-
-                {/* =========================
-                    META
-                ========================= */}
+                {/* META */}
 
                 <div className={styles.detailMeta}>
 
@@ -49,15 +49,19 @@ export default function SingleBlog({ blogSlug }) {
                     </span>
 
                     <span>
-                        {blog.date}
+                        {new Date(blog.date).toLocaleDateString(
+                            "en-US",
+                            {
+                                month: "long",
+                                day: "numeric",
+                                year: "numeric",
+                            }
+                        )}
                     </span>
 
                 </div>
 
-
-                {/* =========================
-                    FEATURED IMAGE
-                ========================= */}
+                {/* FEATURED IMAGE */}
 
                 <div className={styles.detailImage}>
 
@@ -68,10 +72,7 @@ export default function SingleBlog({ blogSlug }) {
 
                 </div>
 
-
-                {/* =========================
-                    ARTICLE CONTENT
-                ========================= */}
+                {/* ARTICLE CONTENT */}
 
                 <article className={styles.articleContent}>
 
@@ -79,30 +80,23 @@ export default function SingleBlog({ blogSlug }) {
                         ?.trim()
                         .split("\n\n")
                         .map((paragraph, index) => (
-
                             <p key={index}>
                                 {paragraph.trim()}
                             </p>
-
                         ))}
 
                 </article>
 
-
-                {/* =========================
-                    TAGS
-                ========================= */}
+                {/* TAGS */}
 
                 {blog.tags?.length > 0 && (
 
                     <div className={styles.tags}>
 
                         {blog.tags.map((tag) => (
-
                             <span key={tag}>
                                 #{tag}
                             </span>
-
                         ))}
 
                     </div>
