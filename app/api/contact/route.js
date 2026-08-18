@@ -44,3 +44,32 @@ export async function POST(req) {
     );
   }
 }
+
+export async function GET() {
+  try {
+    await connectDB();
+
+    const contacts = await Contact.find()
+      .sort({ createdAt: -1 })
+      .lean();
+
+    return Response.json(
+      {
+        success: true,
+        count: contacts.length,
+        data: contacts,
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Contact GET Error:", error);
+
+    return Response.json(
+      {
+        success: false,
+        message: "Failed to fetch leads",
+      },
+      { status: 500 }
+    );
+  }
+}

@@ -21,11 +21,6 @@ export default function AdminDashboard() {
     // FETCH DASHBOARD DATA
     // =========================================
 
-    useEffect(() => {
-        fetchDashboardData();
-    }, []);
-
-
     const fetchDashboardData = async () => {
 
         try {
@@ -36,28 +31,38 @@ export default function AdminDashboard() {
 
             // Fetch Blogs + Leads together
 
-            const [blogsResponse, leadsResponse] =
-                await Promise.all([
-                    fetch("/api/blog"),
-                    fetch("/api/contact"),
-                ]);
+            const [blogsResponse, leadsResponse] = await Promise.all([
+                fetch("/api/blog"),
+                fetch("/api/contact"),
+            ]);
 
+            const parseJsonSafely = async (response) => {
+                const text = await response.text();
 
-            const blogsResult =
-                await blogsResponse.json();
+                if (!text) {
+                    return null;
+                }
 
-            const leadsResult =
-                await leadsResponse.json();
+                try {
+                    return JSON.parse(text);
+                } catch (parseError) {
+                    console.error("Invalid JSON response:", parseError);
+                    return null;
+                }
+            };
+
+            const blogsResult = await parseJsonSafely(blogsResponse);
+            const leadsResult = await parseJsonSafely(leadsResponse);
 
 
             // Check Blogs API
 
             if (
                 !blogsResponse.ok ||
-                !blogsResult.success
+                !blogsResult?.success
             ) {
                 throw new Error(
-                    blogsResult.message ||
+                    blogsResult?.message ||
                     "Failed to fetch blogs"
                 );
             }
@@ -67,10 +72,10 @@ export default function AdminDashboard() {
 
             if (
                 !leadsResponse.ok ||
-                !leadsResult.success
+                !leadsResult?.success
             ) {
                 throw new Error(
-                    leadsResult.message ||
+                    leadsResult?.message ||
                     "Failed to fetch leads"
                 );
             }
@@ -99,6 +104,13 @@ export default function AdminDashboard() {
         }
 
     };
+
+    useEffect(() => {
+        // This page loads dashboard data on mount.
+        // The effect is the correct place for this client-side fetch.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        fetchDashboardData();
+    }, []);
 
 
     // =========================================
@@ -267,7 +279,7 @@ export default function AdminDashboard() {
                     </h2>
 
                     <p>
-                        Here's what's happening with
+                        Here&apos;s what&apos;s happening with
                         your website today.
                     </p>
 

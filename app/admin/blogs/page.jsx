@@ -4,379 +4,293 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function BlogsPage() {
-    const [blogs, setBlogs] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState("");
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-    const [search, setSearch] = useState("");
-    const [status, setStatus] = useState("all");
+  const [search, setSearch] = useState("");
+  const [status, setStatus] = useState("all");
 
-    useEffect(() => {
-        fetchBlogs();
-    }, []);
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
 
-    const fetchBlogs = async () => {
-        try {
-            setLoading(true);
-            setError("");
+  const fetchBlogs = async () => {
+    try {
+      setLoading(true);
+      setError("");
 
-            const response = await fetch("/api/blog");
+      const response = await fetch("/api/blog");
 
-            const result = await response.json();
+      const result = await response.json();
 
-            if (!response.ok || !result.success) {
-                throw new Error(
-                    result.message || "Failed to fetch blogs"
-                );
-            }
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Failed to fetch blogs");
+      }
 
-            setBlogs(result.data || []);
+      setBlogs(result.data || []);
+    } catch (error) {
+      console.error("Fetch Blogs Error:", error);
 
-        } catch (error) {
-            console.error("Fetch Blogs Error:", error);
+      setError(error.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-            setError(
-                error.message || "Something went wrong"
-            );
-        } finally {
-            setLoading(false);
-        }
-    };
+  const filteredBlogs = blogs.filter((blog) => {
+    const searchText = search.toLowerCase();
 
+    const matchesSearch =
+      blog.title?.toLowerCase().includes(searchText) ||
+      blog.category?.toLowerCase().includes(searchText) ||
+      blog.author?.toLowerCase().includes(searchText);
 
-    const filteredBlogs = blogs.filter((blog) => {
+    const matchesStatus =
+      status === "all"
+        ? true
+        : status === "published"
+          ? blog.isPublished === true
+          : blog.isPublished === false;
 
-        const searchText = search.toLowerCase();
+    return matchesSearch && matchesStatus;
+  });
 
-        const matchesSearch =
-            blog.title?.toLowerCase().includes(searchText) ||
-            blog.category?.toLowerCase().includes(searchText) ||
-            blog.author?.toLowerCase().includes(searchText);
+  const formatDate = (date) => {
+    if (!date) return "-";
 
-        const matchesStatus =
-            status === "all"
-                ? true
-                : status === "published"
-                ? blog.isPublished === true
-                : blog.isPublished === false;
-
-        return matchesSearch && matchesStatus;
+    return new Date(date).toLocaleDateString("en-IN", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
     });
+  };
 
+  if (loading) {
+    return (
+      <div className="blog-page">
+        <div className="blog-page-header">
+          <div>
+            <h2>Blogs</h2>
+            <p>Manage all your website blog posts.</p>
+          </div>
+        </div>
 
-    const formatDate = (date) => {
-        if (!date) return "-";
+        <div className="blog-loading">Loading blogs...</div>
+      </div>
+    );
+  }
+const handleDelete = async (id) => {
 
-        return new Date(date).toLocaleDateString(
-            "en-IN",
-            {
-                day: "2-digit",
-                month: "short",
-                year: "numeric",
-            }
-        );
-    };
+    const confirmed = window.confirm(
+        "Are you sure you want to delete this blog?"
+    );
 
-
-    if (loading) {
-        return (
-            <div className="blog-page">
-
-                <div className="blog-page-header">
-                    <div>
-                        <h2>Blogs</h2>
-                        <p>
-                            Manage all your website blog posts.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="blog-loading">
-                    Loading blogs...
-                </div>
-
-            </div>
-        );
+    if (!confirmed) {
+        return;
     }
 
+    try {
 
-    return (
-        <div className="blog-page">
+        const response = await fetch(
+            `/api/blogs/admin/${id}`,
+            {
+                method: "DELETE",
+            }
+        );
 
-            {/* Header */}
+        const result = await response.json();
 
-            <div className="blog-page-header">
+        if (!response.ok || !result.success) {
+            throw new Error(
+                result.message ||
+                "Failed to delete blog"
+            );
+        }
 
-                <div>
-                    <h2>Blogs</h2>
+        // Remove deleted blog from UI
+        setBlogs((prev) =>
+            prev.filter(
+                (blog) => blog._id !== id
+            )
+        );
 
-                    <p>
-                        Manage all your website blog posts.
-                    </p>
-                </div>
+    } catch (error) {
 
-                <Link
-                    href="/admin/blogs/add"
-                    className="add-blog-btn"
-                >
-                    + Add New Blog
-                </Link>
+        console.error(
+            "Delete Blog Error:",
+            error
+        );
 
-            </div>
+        alert(
+            error.message ||
+            "Failed to delete blog"
+        );
+    }
+};
+  return (
+    <div className="blog-page">
+      {/* Header */}
 
+      <div className="blog-page-header">
+        <div>
+          <h2>Blogs</h2>
 
-            {/* Error */}
+          <p>Manage all your website blog posts.</p>
+        </div>
 
-            {error && (
-                <div className="blog-error">
-                    {error}
-                </div>
-            )}
+        <Link href="/admin/blogs/add" className="add-blog-btn">
+          + Add New Blog
+        </Link>
+      </div>
 
+      {/* Error */}
 
-            {/* Filters */}
+      {error && <div className="blog-error">{error}</div>}
 
-            <div className="blog-toolbar">
+      {/* Filters */}
 
-                <div className="blog-search">
+      <div className="blog-toolbar">
+        <div className="blog-search">
+          <span>⌕</span>
 
-                    <span>⌕</span>
+          <input
+            type="text"
+            placeholder="Search blogs..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
 
-                    <input
-                        type="text"
-                        placeholder="Search blogs..."
-                        value={search}
-                        onChange={(e) =>
-                            setSearch(e.target.value)
-                        }
-                    />
+        <div className="blog-filter">
+          <select value={status} onChange={(e) => setStatus(e.target.value)}>
+            <option value="all">All Blogs</option>
 
-                </div>
+            <option value="published">Published</option>
 
+            <option value="draft">Draft</option>
+          </select>
+        </div>
+      </div>
 
-                <div className="blog-filter">
+      {/* Blog Table */}
 
-                    <select
-                        value={status}
-                        onChange={(e) =>
-                            setStatus(e.target.value)
-                        }
-                    >
-                        <option value="all">
-                            All Blogs
-                        </option>
+      <div className="blog-table-card">
+        <div className="blog-table-header">
+          <div>
+            <h3>All Blogs</h3>
 
-                        <option value="published">
-                            Published
-                        </option>
+            <span>
+              {filteredBlogs.length} blog
+              {filteredBlogs.length !== 1 ? "s" : ""}
+            </span>
+          </div>
+        </div>
 
-                        <option value="draft">
-                            Draft
-                        </option>
-                    </select>
+        {filteredBlogs.length === 0 ? (
+          <div className="blog-empty">
+            <div className="empty-icon">✎</div>
 
-                </div>
+            <h3>No blogs found</h3>
 
-            </div>
+            <p>Try changing your search or create a new blog.</p>
 
+            <Link href="/admin/blogs/add" className="empty-add-btn">
+              Add New Blog
+            </Link>
+          </div>
+        ) : (
+          <div className="blog-table-wrapper">
+            <table className="blog-table">
+              <thead>
+                <tr>
+                  <th>Blog</th>
+                  <th>Category</th>
+                  <th>Author</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
 
-            {/* Blog Table */}
+              <tbody>
+                {filteredBlogs.map((blog) => (
+                  <tr key={blog._id}>
+                    {/* Blog */}
 
-            <div className="blog-table-card">
+                    <td>
+                      <div className="blog-info">
+                        {blog.image ? (
+                          <img
+                            src={blog.image}
+                            alt={blog.title}
+                            className="blog-thumbnail"
+                          />
+                        ) : (
+                          <div className="blog-thumbnail-placeholder">AV</div>
+                        )}
 
-                <div className="blog-table-header">
+                        <div>
+                          <strong>{blog.title}</strong>
 
-                    <div>
-                        <h3>All Blogs</h3>
-
-                        <span>
-                            {filteredBlogs.length} blog
-                            {filteredBlogs.length !== 1
-                                ? "s"
-                                : ""}
-                        </span>
-                    </div>
-
-                </div>
-
-
-                {filteredBlogs.length === 0 ? (
-
-                    <div className="blog-empty">
-
-                        <div className="empty-icon">
-                            ✎
+                          <span>/{blog.slug}</span>
                         </div>
+                      </div>
+                    </td>
 
-                        <h3>
-                            No blogs found
-                        </h3>
+                    {/* Category */}
 
-                        <p>
-                            Try changing your search or
-                            create a new blog.
-                        </p>
+                    <td>
+                      <span className="category-badge">{blog.category}</span>
+                    </td>
 
+                    {/* Author */}
+
+                    <td>{blog.author}</td>
+
+                    {/* Date */}
+
+                    <td>{formatDate(blog.date)}</td>
+
+                    {/* Status */}
+
+                    <td>
+                      <span
+                        className={`blog-status ${
+                          blog.isPublished ? "published" : "draft"
+                        }`}
+                      >
+                        {blog.isPublished ? "Published" : "Draft"}
+                      </span>
+                    </td>
+
+                    {/* Actions */}
+
+                    <td>
+                      <div className="blog-actions">
                         <Link
-                            href="/admin/blogs/add"
-                            className="empty-add-btn"
+                          href={`/admin/blogs/edit/${blog._id}`}
+                          className="action-btn edit"
                         >
-                            Add New Blog
+                          Edit
                         </Link>
 
-                    </div>
-
-                ) : (
-
-                    <div className="blog-table-wrapper">
-
-                        <table className="blog-table">
-
-                            <thead>
-                                <tr>
-
-                                    <th>Blog</th>
-                                    <th>Category</th>
-                                    <th>Author</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-
-                                </tr>
-                            </thead>
-
-
-                            <tbody>
-
-                                {filteredBlogs.map(
-                                    (blog) => (
-
-                                        <tr key={blog._id}>
-
-                                            {/* Blog */}
-
-                                            <td>
-
-                                                <div className="blog-info">
-
-                                                    {blog.image ? (
-
-                                                        <img
-                                                            src={blog.image}
-                                                            alt={
-                                                                blog.title
-                                                            }
-                                                            className="blog-thumbnail"
-                                                        />
-
-                                                    ) : (
-
-                                                        <div className="blog-thumbnail-placeholder">
-                                                            AV
-                                                        </div>
-
-                                                    )}
-
-                                                    <div>
-
-                                                        <strong>
-                                                            {blog.title}
-                                                        </strong>
-
-                                                        <span>
-                                                            /{blog.slug}
-                                                        </span>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </td>
-
-
-                                            {/* Category */}
-
-                                            <td>
-                                                <span className="category-badge">
-                                                    {blog.category}
-                                                </span>
-                                            </td>
-
-
-                                            {/* Author */}
-
-                                            <td>
-                                                {blog.author}
-                                            </td>
-
-
-                                            {/* Date */}
-
-                                            <td>
-                                                {formatDate(
-                                                    blog.date
-                                                )}
-                                            </td>
-
-
-                                            {/* Status */}
-
-                                            <td>
-
-                                                <span
-                                                    className={`blog-status ${
-                                                        blog.isPublished
-                                                            ? "published"
-                                                            : "draft"
-                                                    }`}
-                                                >
-                                                    {blog.isPublished
-                                                        ? "Published"
-                                                        : "Draft"}
-                                                </span>
-
-                                            </td>
-
-
-                                            {/* Actions */}
-
-                                            <td>
-
-                                                <div className="blog-actions">
-
-                                                    <Link
-                                                        href={`/admin/blogs/edit/${blog._id}`}
-                                                        className="action-btn edit"
-                                                    >
-                                                        Edit
-                                                    </Link>
-
-                                                    <button
-                                                        type="button"
-                                                        className="action-btn delete"
-                                                    >
-                                                        Delete
-                                                    </button>
-
-                                                </div>
-
-                                            </td>
-
-                                        </tr>
-
-                                    )
-                                )}
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                )}
-
-            </div>
-
-        </div>
-    );
+                        <button
+                          type="button"
+                          className="action-btn delete"
+                          onClick={() => handleDelete(blog._id)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }

@@ -11,7 +11,7 @@ export function proxy(request) {
     // Redirect unauthenticated users to login
     if (isAdminRoute && !isLoginPage && !session) {
         return NextResponse.redirect(
-            new URL("/admin/login", request.url)
+            new URL("/login", request.url)
         );
     }
 
