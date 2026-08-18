@@ -1,4 +1,4 @@
-import VisionSimulator from "../component/Simulator/VisionSimulator";
+import VisionSimulator from "../component/VisionSimulator/VisionSimulator";
 
 export default function SimulatorPage() {
     return (

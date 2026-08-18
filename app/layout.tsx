@@ -2,12 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "../Components/layout/footer/footer.css";
-import Header from "../Components/layout/header/Header";
-import Footer from "../Components/layout/footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Modal from "@/Components/layout/modal/Modal";
 import BootstrapProvider from "./BootstrapProvider";
-import ScrollToTop from "@/Components/layout/Scrolltotop/ScrollToTop"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,18 +48,14 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-          <BootstrapProvider />
-        <Header />
+        <BootstrapProvider />
         {children}
-        <Footer />
-        <Modal />
-        <ScrollToTop />
       </body>
     </html>
   );

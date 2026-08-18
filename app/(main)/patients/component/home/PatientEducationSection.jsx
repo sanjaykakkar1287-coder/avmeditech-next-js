@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import styles from "./PatientEducationSection.module.css";
-import HeroButtons from "../../../../Components/buttons/HeroButtons";
+import HeroButtons from "../../../../../Components/buttons/HeroButtons";
 import { AlignJustifyIcon } from "lucide-react";
 
 const AUTO_ADVANCE_MS = 6500;

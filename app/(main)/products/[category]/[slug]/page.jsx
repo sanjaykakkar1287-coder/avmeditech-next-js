@@ -1,4 +1,4 @@
-import ProductSlug from "../../../../Components/products/ProductSlug";
+import ProductSlug from "../../../../../Components/products/ProductSlug";
 
 export default async function Page({ params }) {
 

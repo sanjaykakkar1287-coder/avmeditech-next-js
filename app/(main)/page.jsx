@@ -4,12 +4,12 @@ import CoreValues from "@/Components/home/CoreValues";
 import StatsSection from "@/Components/home/Team";
 import IolShowcase from "@/Components/home/IolShowcase";
 import IolBenefitsSection from "@/Components/home/IolBenefitsSection";
-import OurPartnersMarquee from "../Components/home/OurPartnersMarquee";
-import WhyChooseUs from "../Components/home/WhyChooseUs";
-import FaqSection from "../Components/home/FaqSection";
-import AboutSection from "../Components/home/AboutSection";
+import OurPartnersMarquee from "@/Components/home/OurPartnersMarquee";
+import WhyChooseUs from "@/Components/home/WhyChooseUs";
+import FaqSection from "@/Components/home/FaqSection";
+import AboutSection from "@/Components/home/AboutSection";
 import Welcome from "@/Components/welcome/Welcome";
-import "./home-responsive.css";
+import "../home-responsive.css";
 
 
 export const metadata = {
